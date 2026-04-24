@@ -1,0 +1,339 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+import OptimizedImage from '../../components/OptimizedImage.astro';
+
+import {
+  PRODUCT_CATEGORIES,
+  PRODUCT_DETAIL_PAGES,
+  PRODUCT_WORKFLOW,
+  SERVICES,
+  SITE_CONFIG,
+  WHATSAPP_MESSAGES
+} from '../../utils/constants.js';
+
+import {
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generateMetaTags
+} from '../../utils/seo.ts';
+
+export function getStaticPaths() {
+  return PRODUCT_DETAIL_PAGES.map((product) => ({
+    params: { slug: product.slug },
+    props: { product }
+  }));
+}
+
+const { product } = Astro.props;
+
+const supportingServices = SERVICES.filter((service) =>
+  product.supportServiceIds.includes(service.id)
+);
+
+const relatedProducts = PRODUCT_CATEGORIES.filter(
+  (item) => item.href.startsWith('/produk/') && item.slug !== product.slug
+);
+
+const metaTags = generateMetaTags({
+  title: product.metaTitle,
+  description: product.metaDescription,
+  keywords: product.keywords,
+  image: product.image,
+  url: `/produk/${product.slug}/`,
+  type: 'service',
+  author: SITE_CONFIG.author
+});
+
+const faqSchema = generateFAQSchema(product.faqs);
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Beranda', url: '/' },
+  { name: product.name, url: `/produk/${product.slug}/` }
+]);
+---
+
+<BaseLayout metaTags={metaTags} jsonLd={[faqSchema, breadcrumbSchema]}>
+  <Header slot="header" />
+
+  <section class="relative overflow-hidden bg-background pt-32 pb-20">
+    <div class="absolute inset-0 opacity-5" aria-hidden="true">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0); background-size: 24px 24px;"></div>
+    </div>
+
+    <div class="container-custom relative z-10">
+      <nav class="mb-8 text-sm text-text-secondary" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-button transition-colors duration-300">Beranda</a></li>
+          <li>/</li>
+          <li class="text-text-main">{product.name}</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center px-5 py-2 bg-button/10 border border-button/20 rounded-full text-button font-semibold text-sm mb-6">
+            {product.kicker}
+          </div>
+          <h1 class="heading-xl text-text-main mb-8">{product.name}</h1>
+          <p class="text-xl text-text-secondary leading-relaxed mb-10 max-w-3xl">
+            {product.summary}
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            {product.highlights.map((item) => (
+              <div class="rounded-2xl border border-primary/40 bg-container px-5 py-4 text-text-secondary">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <p>{item}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(product.whatsappMessage || WHATSAPP_MESSAGES.productDefault)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-button text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:shadow-lg"
+            >
+              Konsultasi Produk
+            </a>
+            <a
+              href="/portfolio/"
+              class="inline-flex items-center justify-center border-2 border-primary text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:text-background"
+            >
+              Lihat Portfolio
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-6 bg-button/10 blur-3xl rounded-full"></div>
+          <div class="relative overflow-hidden rounded-3xl border border-primary/40 shadow-2xl">
+            <OptimizedImage
+              src={product.image}
+              alt={product.name}
+              className="w-full h-[520px] object-cover"
+              loading="eager"
+              width={960}
+              height={1200}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-container cv-auto">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-text-main mb-6">Cocok Untuk</h2>
+          <ul class="space-y-4">
+            {product.idealFor.map((item) => (
+              <li class="flex items-start text-text-secondary">
+                <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-text-main mb-6">Pilihan Material</h2>
+          <ul class="space-y-4">
+            {product.materials.map((item) => (
+              <li class="flex items-start text-text-secondary">
+                <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 class="text-xl font-bold text-text-main mt-8 mb-4">Finishing yang Umum Dipakai</h3>
+          <ul class="space-y-4">
+            {product.finishOptions.map((item) => (
+              <li class="flex items-start text-text-secondary">
+                <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background cv-auto">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="heading-lg text-text-main mb-6">Alur Kerja untuk Produk Custom</h2>
+        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+          Alur berikut kami pakai supaya desain yang menarik juga tetap realistis saat diproduksi, difinishing, dan masuk ke proyek Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        {PRODUCT_WORKFLOW.map((item) => (
+          <article class="rounded-2xl border border-primary/40 bg-container p-8 shadow-lg">
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-button text-lg font-bold text-white">
+              {item.step}
+            </div>
+            <h3 class="text-xl font-bold text-text-main mb-4">{item.title}</h3>
+            <p class="text-text-secondary leading-relaxed">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-container cv-auto">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="heading-lg text-text-main mb-6">Teknologi yang Mendukung Produk Ini</h2>
+        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+          Untuk hasil produk yang rapi, jenis teknologi akan mengikuti material, detail motif, dan kebutuhan finishing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {supportingServices.map((service) => (
+          <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg flex flex-col">
+            <OptimizedImage
+              src={service.image}
+              alt={service.name}
+              className="w-full h-52 rounded-xl object-cover mb-6"
+              loading="lazy"
+              width={640}
+              height={420}
+            />
+            <h3 class="text-xl font-bold text-text-main mb-4">{service.name}</h3>
+            <p class="text-text-secondary leading-relaxed mb-6 flex-grow">{service.description}</p>
+            <a href={`/${service.slug}/`} class="inline-flex items-center font-semibold text-button hover:text-highlight transition-colors duration-300">
+              Pelajari Teknologinya
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background cv-auto">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="heading-lg text-text-main mb-6">Pertanyaan Sebelum Produksi</h2>
+        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+          Beberapa hal berikut paling sering ditanyakan calon klien sebelum produk custom masuk tahap fabrikasi.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-6" data-product-faq-container>
+        {product.faqs.map((faq) => (
+          <div class="bg-container rounded-2xl shadow-lg border border-primary/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+            <button class="flex items-center justify-between w-full text-left p-8 group" data-product-faq-button>
+              <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-button transition-colors duration-300">
+                {faq.question}
+              </h3>
+              <div class="flex-shrink-0 w-10 h-10 bg-background rounded-full flex items-center justify-center group-hover:bg-button transition-colors duration-300">
+                <svg class="w-5 h-5 text-primary group-hover:text-white transition-all duration-300" data-product-faq-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" data-product-faq-answer>
+              <div class="px-8 pb-8">
+                <p class="text-text-secondary leading-relaxed">{faq.answer}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {relatedProducts.length > 0 && (
+    <section class="section-padding bg-container cv-auto">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="heading-lg text-text-main mb-6">Lihat Produk Prioritas Lain</h2>
+          <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            Jika kebutuhan Anda bukan produk ini, mungkin lebih cocok ke salah satu aplikasi custom berikut.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {relatedProducts.map((item) => (
+            <a href={item.href} class="group rounded-2xl overflow-hidden border border-primary/40 bg-background shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <OptimizedImage
+                src={item.image}
+                alt={item.name}
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                width={720}
+                height={420}
+              />
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-button transition-colors duration-300">{item.name}</h3>
+                <p class="text-text-secondary leading-relaxed">{item.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CTA
+    title={`Diskusikan ${product.name} untuk Proyek Anda`}
+    description="Kirim ukuran area, referensi desain, atau brief fungsi produknya. Kami bantu arahkan material, pola, dan pendekatan produksi yang paling masuk akal."
+    secondaryText="Hubungi Tim Kami"
+    secondaryLink="/contact/"
+    variant="gradient"
+    whatsappMessage={product.whatsappMessage || WHATSAPP_MESSAGES.productDefault}
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqContainer = document.querySelector('[data-product-faq-container]');
+    if (!faqContainer) return;
+
+    faqContainer.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      const button = event.target.closest('[data-product-faq-button]');
+      if (!button) return;
+
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('[data-product-faq-icon]');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', String(!isExpanded));
+
+      if (answer && answer instanceof HTMLElement) {
+        answer.style.maxHeight = isExpanded ? '0' : `${answer.scrollHeight}px`;
+      }
+
+      if (icon) {
+        icon.classList.toggle('rotate-180');
+      }
+    });
+  });
+</script>

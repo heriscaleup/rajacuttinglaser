@@ -3,17 +3,17 @@
 
 // ===== KONFIGURASI SITUS =====
 export const SITE_CONFIG = {
-  name: "raja cutting laser",
-  title: "raja cutting laser Profesional & Akurat #1 indonesia - Akrilik, Kayu, Metal",
-  description: "Laser cutting presisi tinggi & pengerjaan cepat di indonesia! Spesialis akrilik, kayu, metal dengan teknologi terdepan. 10+ tahun pengalaman, hasil akurat, garansi kualitas. Melayani Serang, Tangerang, Cilegon.",
-  keywords: "raja cutting laser indonesia, laser cutting serang, laser cutting tangerang, cnc router indonesia, laser fiber cutting, potong akrilik serang, potong kayu tangerang, cutting metal cilegon",
+  name: "Raja Cutting Laser",
+  title: "Produsen Produk Laser Cutting Custom di Tangerang Selatan",
+  description: "Raja Cutting Laser memproduksi pagar laser cutting, railing balkon, partisi ruangan, huruf timbul, mihrab, plafon dekoratif, dan kebutuhan custom lain untuk rumah, kantor, toko, dan proyek komersial di Tangerang Selatan dan sekitarnya.",
+  keywords: "pagar laser cutting tangerang selatan, railing balkon laser cutting, partisi ruangan laser cutting, huruf timbul tangsel, mihrab laser cutting, plafon dekoratif laser cutting, raja cutting laser",
   url: "https://rajacuttinglaser.com",
   phone: "+62 851 6569 3179",
   whatsapp: "6285165693179",
   email: "info@rajacuttinglaser.com",
   address: "Jl. BSD Bintaro. No 1D, Kel. Parigi, Kec. Pondok Aren. Tangerang Selatan ( Samping Persis SD Mentari Internasional School)",
   businessHours: "Senin - Sabtu, 08:00 - 17:00 WIB",
-  author: "raja cutting laser Team",
+  author: "Tim Raja Cutting Laser",
   socialMedia: {
     facebook: "https://www.facebook.com/profile.php?id=100054220779104",
     instagram: "https://www.instagram.com/jasalasercutting.tangsel/",
@@ -29,26 +29,22 @@ export const NAVIGATION = [
     submenu: null
   },
   {
-    name: "Layanan",
-    href: "#services",
+    name: "Produk",
+    href: "/#products",
     submenu: [
-      { name: "CNC Router", href: "/jasa-cnc-router" },
-      { name: "Laser Fiber", href: "/jasa-laser-fiber" },
-      { name: "Laser CO2", href: "/jasa-laser-co2" },
-      { name: "Galvo Engraving", href: "/jasa-galvo-engraving" }
+      { name: "Pagar Laser Cutting", href: "/produk/pagar-laser-cutting/" },
+      { name: "Railing Balkon Laser Cutting", href: "/produk/railing-balkon-laser-cutting/" },
+      { name: "Partisi Ruangan Laser Cutting", href: "/produk/partisi-ruangan-laser-cutting/" }
     ]
   },
   {
-    name: "Material",
-    href: "#materials",
+    name: "Teknologi",
+    href: "/#technology-support",
     submenu: [
-      { name: "Acrylic", href: "/material-acrylic" },
-      { name: "Metal/Stainless", href: "/material-metal" },
-      { name: "MDF", href: "/material-mdf" },
-      { name: "Plywood/Multiplex", href: "/material-ply-wood-multiplex" },
-      { name: "PVC", href: "/material-pvc" },
-      { name: "ACP", href: "/material-acp" },
-      { name: "GRC", href: "/material-grc" }
+      { name: "Laser Fiber", href: "/jasa-laser-fiber/" },
+      { name: "Laser CO2", href: "/jasa-laser-co2/" },
+      { name: "CNC Router", href: "/jasa-cnc-router/" },
+      { name: "Galvo Engraving", href: "/jasa-galvo-engraving/" }
     ]
   },
   {
@@ -263,6 +259,304 @@ export const MATERIALS = [
     thickness: "10-50mm",
     applications: ["Ornamen Bangunan", "Fasad Artistik", "Kolom Dekoratif", "Relief Dinding", "Elemen Arsitektur"],
     advantages: ["Sangat kuat", "Tahan api", "Fleksibel bentuk", "Tahan cuaca", "Lightweight"]
+  }
+];
+
+// ===== PRODUK LASER CUTTING CUSTOM =====
+export const PRODUCT_CATEGORIES = [
+  {
+    id: "pagar-laser-cutting",
+    name: "Pagar Laser Cutting",
+    slug: "pagar-laser-cutting",
+    href: "/produk/pagar-laser-cutting/",
+    image: "/images/stainlesssteel.webp",
+    material: "Stainless steel, plat besi, ACP panel",
+    audience: "Rumah, ruko, kantor, fasad depan",
+    description: "Pagar custom dengan motif laser cutting untuk tampilan fasad yang lebih rapi, modern, dan tetap fungsional."
+  },
+  {
+    id: "railing-balkon-laser-cutting",
+    name: "Railing Balkon Laser Cutting",
+    slug: "railing-balkon-laser-cutting",
+    href: "/produk/railing-balkon-laser-cutting/",
+    image: "/images/furnituremetal.webp",
+    material: "Stainless steel, mild steel, aluminium",
+    audience: "Balkon rumah, void, tangga, rooftop",
+    description: "Railing custom yang mengutamakan keamanan, detail motif, dan finishing yang cocok untuk hunian maupun proyek komersial."
+  },
+  {
+    id: "partisi-ruangan-laser-cutting",
+    name: "Partisi Ruangan Laser Cutting",
+    slug: "partisi-ruangan-laser-cutting",
+    href: "/produk/partisi-ruangan-laser-cutting/",
+    image: "/images/displyacrylic.webp",
+    material: "Acrylic, MDF, plywood, metal",
+    audience: "Interior rumah, kantor, retail, cafe",
+    description: "Partisi dekoratif untuk membagi ruang tanpa membuat area terasa sempit, tersedia untuk kebutuhan interior dan semi-outdoor."
+  },
+  {
+    id: "huruf-timbul",
+    name: "Huruf Timbul",
+    slug: "huruf-timbul",
+    href: "/contact/",
+    image: "/images/engraving.webp",
+    material: "Stainless, galvanis, acrylic, kuningan",
+    audience: "Toko, kantor, showroom, signage brand",
+    description: "Pembuatan huruf timbul custom untuk identitas brand, signage facade, lobby, dan kebutuhan display komersial."
+  },
+  {
+    id: "mihrab-laser-cutting",
+    name: "Mihrab Laser Cutting",
+    slug: "mihrab-laser-cutting",
+    href: "/contact/",
+    image: "/images/mdf.webp",
+    material: "MDF, multipleks, ACP, metal decorative",
+    audience: "Masjid, mushola, ruang ibadah",
+    description: "Panel mihrab dan elemen dekoratif custom dengan motif islami untuk proyek interior rumah ibadah."
+  },
+  {
+    id: "plafon-laser-cutting",
+    name: "Plafon Dekoratif Laser Cutting",
+    slug: "plafon-laser-cutting",
+    href: "/contact/",
+    image: "/images/acp.webp",
+    material: "ACP, MDF, plywood, GRC",
+    audience: "Lobby, rumah, cafe, area komersial",
+    description: "Panel plafon dekoratif dengan pola custom untuk memberi aksen visual pada interior dan area publik."
+  }
+];
+
+export const PRODUCT_DETAIL_PAGES = [
+  {
+    slug: "pagar-laser-cutting",
+    name: "Pagar Laser Cutting",
+    metaTitle: "Pagar Laser Cutting Custom di Tangerang Selatan",
+    metaDescription: "Jasa pembuatan pagar laser cutting custom untuk rumah, ruko, kantor, dan fasad proyek di Tangerang Selatan. Motif bisa custom, material menyesuaikan fungsi dan lokasi pemasangan.",
+    keywords: "pagar laser cutting tangerang selatan, pagar laser cutting custom, pagar motif laser cutting, pagar plat laser cutting, pagar cutting metal",
+    image: "/images/stainlesssteel.webp",
+    kicker: "Produk Custom Outdoor",
+    summary: "Kami memproduksi pagar laser cutting custom untuk kebutuhan rumah tinggal, ruko, kantor, dan proyek komersial dengan pendekatan desain, fabrikasi, dan finishing yang disesuaikan lokasi pemasangan.",
+    idealFor: [
+      "Fasad rumah baru atau renovasi yang ingin tampil lebih rapi dan modern.",
+      "Ruko, kantor, dan bangunan komersial yang membutuhkan pagar representatif.",
+      "Panel pagar motif custom untuk mengikuti tema arsitektur proyek.",
+      "Pemilik proyek yang ingin diskusi dari desain, produksi, sampai estimasi pemasangan."
+    ],
+    materials: [
+      "Stainless steel untuk tampilan bersih dan perawatan yang lebih mudah.",
+      "Mild steel / plat besi untuk kebutuhan struktur dengan finishing cat atau powder coating.",
+      "ACP atau panel dekoratif sebagai kombinasi visual pada bidang pagar tertentu."
+    ],
+    finishOptions: [
+      "Powder coating untuk tampilan rapi dan ketahanan area outdoor.",
+      "Cat duco atau finishing custom sesuai warna fasad bangunan.",
+      "Hairline atau polish untuk aplikasi stainless tertentu."
+    ],
+    highlights: [
+      "Motif bisa menyesuaikan referensi desain atau dibuatkan ulang dari nol.",
+      "Bisa disesuaikan untuk bukaan sliding, swing, atau panel permanen.",
+      "Produksi memperhatikan ukuran modul agar lebih efisien saat fabrikasi dan instalasi.",
+      "Cocok untuk kombinasi fungsi keamanan dan nilai estetika fasad."
+    ],
+    faqs: [
+      {
+        question: "Apakah desain pagar harus sudah jadi?",
+        answer: "Tidak harus. Jika Anda baru punya referensi foto atau motif dasar, tim kami bisa bantu mengarahkan desain produksi yang lebih realistis untuk material dan ukuran lapangan."
+      },
+      {
+        question: "Material apa yang paling cocok untuk pagar laser cutting?",
+        answer: "Pemilihannya tergantung lokasi, kebutuhan struktur, dan target tampilan. Stainless cocok untuk tampilan bersih, sementara mild steel umum dipakai untuk pagar custom dengan finishing cat atau powder coating."
+      },
+      {
+        question: "Apakah bisa dibuat per panel saja?",
+        answer: "Bisa. Kami bisa kerjakan per panel, per daun pagar, atau satu set lengkap sesuai kebutuhan proyek Anda."
+      },
+      {
+        question: "Apakah Raja Cutting Laser juga menangani fabrikasi dan pemasangan?",
+        answer: "Untuk beberapa proyek, kami bisa bantu sampai tahap fabrikasi produk jadi dan koordinasi pemasangan. Detailnya disesuaikan lokasi dan lingkup pekerjaan."
+      }
+    ],
+    supportServiceIds: ["laser-fiber", "cnc-router", "laser-co2"],
+    whatsappMessage: "Halo, saya ingin konsultasi pembuatan pagar laser cutting custom. Bisa dibantu?"
+  },
+  {
+    slug: "railing-balkon-laser-cutting",
+    name: "Railing Balkon Laser Cutting",
+    metaTitle: "Railing Balkon Laser Cutting Custom Tangsel",
+    metaDescription: "Pembuatan railing balkon laser cutting custom untuk rumah, tangga, mezzanine, dan rooftop di Tangerang Selatan. Fokus pada keamanan, proporsi desain, dan finishing.",
+    keywords: "railing balkon laser cutting, railing tangga laser cutting, railing balkon tangsel, railing motif custom, railing stainless custom",
+    image: "/images/furnituremetal.webp",
+    kicker: "Produk Custom Arsitektural",
+    summary: "Railing balkon laser cutting cocok untuk proyek hunian dan komersial yang membutuhkan pagar pengaman dengan tampilan lebih presisi, serasi dengan fasad, dan tetap nyaman dilihat dari dekat.",
+    idealFor: [
+      "Balkon rumah tinggal, tangga dalam rumah, dan area void.",
+      "Rooftop cafe, kantor, dan bangunan komersial yang perlu tampilan lebih representatif.",
+      "Proyek yang ingin motif custom tetapi tetap mempertimbangkan keamanan dan jarak antar elemen.",
+      "Arsitek atau kontraktor yang membutuhkan vendor fabrikasi detail panel railing."
+    ],
+    materials: [
+      "Stainless steel untuk tampilan modern dengan perawatan lebih ringkas.",
+      "Mild steel untuk kebutuhan struktur dengan finishing cat custom.",
+      "Panel kombinasi metal dan kaca untuk proyek dengan tampilan lebih ringan."
+    ],
+    finishOptions: [
+      "Powder coating matte atau gloss sesuai tema bangunan.",
+      "Finishing stainless hairline untuk proyek modern minimalis.",
+      "Kombinasi panel motif dan handrail dengan spesifikasi terpisah."
+    ],
+    highlights: [
+      "Desain mempertimbangkan keamanan, ritme motif, dan kenyamanan visual.",
+      "Bisa dikembangkan untuk balkon, tangga, mezzanine, hingga pagar void.",
+      "Ukuran panel dan sambungan diperhitungkan agar lebih realistis saat produksi.",
+      "Cocok untuk proyek baru maupun penggantian railing lama."
+    ],
+    faqs: [
+      {
+        question: "Apakah motif railing bisa disesuaikan dengan fasad bangunan?",
+        answer: "Bisa. Kami bisa menyesuaikan motif agar sejalan dengan pagar, kanopi, partisi, atau elemen dekoratif lain di proyek yang sama."
+      },
+      {
+        question: "Apakah railing laser cutting tetap aman untuk rumah tinggal?",
+        answer: "Ya, selama desain panel, material, dan struktur pendukung disesuaikan dengan fungsi area. Karena itu kami selalu menyarankan diskusi ukuran dan lokasi pemasangan di awal."
+      },
+      {
+        question: "Apakah bisa dibuat untuk tangga indoor juga?",
+        answer: "Bisa. Banyak desain laser cutting yang justru menarik untuk railing tangga indoor atau area void karena tampil dekoratif tanpa terasa terlalu berat."
+      },
+      {
+        question: "Apakah bisa produksi berdasarkan gambar kerja arsitek?",
+        answer: "Bisa. Jika Anda sudah punya gambar kerja atau detail panel, kami bisa review kesiapan file untuk proses fabrikasi."
+      }
+    ],
+    supportServiceIds: ["laser-fiber", "cnc-router"],
+    whatsappMessage: "Halo, saya ingin konsultasi railing balkon laser cutting custom. Bisa dibantu?"
+  },
+  {
+    slug: "partisi-ruangan-laser-cutting",
+    name: "Partisi Ruangan Laser Cutting",
+    metaTitle: "Partisi Ruangan Laser Cutting Custom di Tangerang Selatan",
+    metaDescription: "Pembuatan partisi ruangan laser cutting untuk rumah, kantor, cafe, retail, dan ruang komersial. Tersedia opsi acrylic, MDF, plywood, dan metal sesuai konsep ruang.",
+    keywords: "partisi ruangan laser cutting, partisi dekoratif custom, partisi acrylic laser cutting, partisi mdf laser cutting, partisi kantor custom",
+    image: "/images/displyacrylic.webp",
+    kicker: "Produk Custom Interior",
+    summary: "Partisi ruangan laser cutting membantu membagi area tanpa menutup ruang sepenuhnya. Produk ini cocok untuk kebutuhan interior yang ingin tetap terasa terbuka tetapi punya batas visual yang jelas.",
+    idealFor: [
+      "Ruang tamu, ruang makan, dan area transisi di rumah tinggal.",
+      "Kantor, retail, cafe, dan ruang tunggu yang membutuhkan zoning visual.",
+      "Proyek interior dengan kebutuhan panel dekoratif custom sesuai konsep desain.",
+      "Area semi-outdoor yang butuh pembatas ringan namun tetap punya nilai estetika."
+    ],
+    materials: [
+      "Acrylic untuk tampilan ringan dan modern dengan permainan transparansi.",
+      "MDF atau plywood untuk interior bernuansa hangat dan lebih ekonomis.",
+      "Metal untuk partisi yang lebih tegas, tahan lama, dan cocok untuk area semi-outdoor."
+    ],
+    finishOptions: [
+      "Cat duco atau HPL untuk partisi berbasis MDF / plywood.",
+      "Powder coating untuk panel metal custom.",
+      "Acrylic bening, susu, atau warna tertentu sesuai kebutuhan interior."
+    ],
+    highlights: [
+      "Bisa dibuat per panel modular agar lebih mudah saat pengiriman dan pemasangan.",
+      "Motif dapat disederhanakan atau diperdetail sesuai jarak pandang pengguna.",
+      "Cocok untuk interior yang membutuhkan privasi sebagian tanpa membuat ruang terasa sesak.",
+      "Sering dipakai untuk divider ruang, panel backdrop, dan aksen dinding berlubang."
+    ],
+    faqs: [
+      {
+        question: "Material apa yang paling cocok untuk partisi indoor?",
+        answer: "Tergantung konsep ruang dan kebutuhan fungsinya. Acrylic cocok untuk tampilan ringan, MDF atau plywood cocok untuk interior dekoratif, sedangkan metal cocok jika butuh struktur lebih tegas atau area semi-outdoor."
+      },
+      {
+        question: "Apakah partisi bisa dibuat bongkar-pasang?",
+        answer: "Bisa. Banyak proyek partisi dikerjakan dalam bentuk modul panel agar lebih mudah saat transportasi, instalasi, maupun perawatan."
+      },
+      {
+        question: "Apakah motif kecil aman untuk partisi laser cutting?",
+        answer: "Motif kecil perlu disesuaikan dengan material, ketebalan, dan ukuran panel. Kami biasanya review desain lebih dulu agar hasilnya tetap kuat dan rapi setelah diproduksi."
+      },
+      {
+        question: "Apakah Raja Cutting Laser bisa bantu dari ide desain awal?",
+        answer: "Bisa. Anda bisa datang dengan referensi, foto, atau ukuran area, lalu kami bantu arahkan desain yang lebih siap untuk produksi."
+      }
+    ],
+    supportServiceIds: ["laser-co2", "cnc-router", "laser-fiber"],
+    whatsappMessage: "Halo, saya ingin konsultasi partisi ruangan laser cutting custom. Bisa dibantu?"
+  }
+];
+
+export const PRODUCT_REASONS = [
+  {
+    title: "Bisa Mulai dari Referensi",
+    description: "Anda tidak harus datang dengan file kerja final. Referensi foto, inspirasi motif, atau ukuran kasar sudah cukup untuk memulai diskusi."
+  },
+  {
+    title: "Fokus ke Produk Jadi",
+    description: "Arah kerja kami bukan hanya memotong material, tetapi membantu mewujudkan panel, elemen dekoratif, dan komponen produk yang siap dipakai di proyek."
+  },
+  {
+    title: "Material Menyesuaikan Aplikasi",
+    description: "Pemilihan acrylic, MDF, plywood, stainless, mild steel, ACP, atau GRC disesuaikan dengan fungsi, lokasi, dan target tampilan."
+  },
+  {
+    title: "Cocok untuk Hunian dan Komersial",
+    description: "Mulai dari rumah tinggal sampai kantor, retail, cafe, dan rumah ibadah, semuanya butuh pendekatan desain dan finishing yang berbeda."
+  }
+];
+
+export const PRODUCT_WORKFLOW = [
+  {
+    step: "01",
+    title: "Brief kebutuhan produk",
+    description: "Kami pelajari fungsi produk, ukuran area, referensi desain, dan preferensi material sebelum masuk tahap produksi."
+  },
+  {
+    step: "02",
+    title: "Review desain dan material",
+    description: "Motif, ketebalan material, ukuran panel, dan metode produksi disesuaikan agar realistis saat difabrikasi."
+  },
+  {
+    step: "03",
+    title: "Produksi panel custom",
+    description: "Panel diproses dengan teknologi laser cutting, CNC router, atau kombinasi keduanya sesuai jenis material dan detail desain."
+  },
+  {
+    step: "04",
+    title: "Finishing dan serah terima",
+    description: "Produk dicek kembali, masuk tahap finishing bila diperlukan, lalu disiapkan untuk pengiriman atau koordinasi pemasangan."
+  }
+];
+
+export const PRODUCT_FAQ = [
+  {
+    id: 1,
+    question: "Apakah Raja Cutting Laser hanya melayani cutting, atau bisa sampai produk jadi?",
+    answer: "Untuk kebutuhan tertentu kami tidak berhenti di proses cutting saja. Kami juga membantu arah pembuatan produk custom seperti pagar, railing, partisi, huruf timbul, panel dekoratif, dan elemen lain yang menggunakan laser cutting dalam proses produksinya."
+  },
+  {
+    id: 2,
+    question: "Kalau saya belum punya gambar kerja, apakah tetap bisa konsultasi?",
+    answer: "Bisa. Banyak proyek justru dimulai dari referensi foto, ukuran area, dan kebutuhan fungsi. Dari situ kami bantu arahkan material, motif, dan pendekatan produksi yang lebih siap dikerjakan."
+  },
+  {
+    id: 3,
+    question: "Material apa saja yang biasa dipakai untuk produk laser cutting?",
+    answer: "Untuk produk custom kami biasa menyesuaikan material dengan kebutuhan aplikasi, misalnya stainless steel, plat besi, acrylic, MDF, plywood, ACP, dan GRC. Setiap material punya karakter tampilan dan kebutuhan finishing yang berbeda."
+  },
+  {
+    id: 4,
+    question: "Apakah bisa untuk proyek rumah tinggal dan proyek komersial?",
+    answer: "Bisa. Kami menangani kebutuhan rumah tinggal, kantor, retail, cafe, hingga proyek komersial lain selama brief produk dan lingkup pekerjaannya jelas."
+  },
+  {
+    id: 5,
+    question: "Apakah motif bisa custom mengikuti desain arsitek atau referensi Pinterest?",
+    answer: "Bisa, selama desain tersebut disesuaikan lagi dengan material, ukuran panel, dan kekuatan produk akhirnya. Biasanya kami bantu review supaya hasilnya tetap bagus saat diproduksi."
+  },
+  {
+    id: 6,
+    question: "Bagaimana cara memulai permintaan penawaran?",
+    answer: "Anda bisa kirim foto referensi, ukuran area, lokasi proyek, dan target produk melalui WhatsApp atau email. Setelah itu kami bantu arahkan langkah berikutnya untuk estimasi awal."
   }
 ];
 
@@ -569,11 +863,18 @@ export const FAQ = [
 
 // ===== PESAN WHATSAPP =====
 export const WHATSAPP_MESSAGES = {
-  default: "Halo, saya tertarik dengan raja cutting laser. Bisa konsultasi gratis?",
+  default: "Halo, saya ingin konsultasi produk atau jasa laser cutting. Bisa dibantu?",
+  productDefault: "Halo, saya ingin konsultasi produk laser cutting custom untuk proyek saya. Bisa dibantu?",
   cnc: "Halo, saya butuh jasa CNC Router untuk material kayu/MDF. Bisa konsultasi?",
   fiber: "Halo, saya perlu laser fiber untuk cutting metal. Bisa diskusi project saya?",
   co2: "Halo, saya tertarik laser CO2 untuk cutting acrylic/kayu. Bisa konsultasi?",
   engraving: "Halo, saya butuh jasa galvo engraving untuk marking produk. Bisa bantuan?",
+  pagar: "Halo, saya ingin konsultasi pembuatan pagar laser cutting custom. Bisa dibantu?",
+  railing: "Halo, saya ingin konsultasi railing balkon laser cutting custom. Bisa dibantu?",
+  partisi: "Halo, saya ingin konsultasi partisi ruangan laser cutting custom. Bisa dibantu?",
+  hurufTimbul: "Halo, saya ingin konsultasi huruf timbul custom untuk signage. Bisa dibantu?",
+  mihrab: "Halo, saya ingin konsultasi pembuatan mihrab laser cutting. Bisa dibantu?",
+  plafon: "Halo, saya ingin konsultasi plafon dekoratif laser cutting. Bisa dibantu?",
   quote: "Halo, saya mau request quote untuk project laser cutting. Bisa dibantu?",
   material: "Halo, saya mau tanya tentang material yang bisa di-cutting. Bisa info?",
   portfolio: "Halo, saya sudah lihat portfolio Anda. Bisa diskusi project serupa?",

@@ -1,43 +1,32 @@
 ---
-import { Image } from 'astro:assets';
-
 interface Props {
   src: string;
   alt: string;
   className?: string;
   width?: number;
   height?: number;
-  loading?: "eager" | "lazy";
-  fetchpriority?: "high" | "low" | "auto";
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const { src, alt, className, width, height, loading = "lazy", fetchpriority } = Astro.props;
-
-// Glob all images from src/assets/images
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.{jpeg,jpg,png,gif,webp}');
-
-// Resolve the image path
-// Input src usually comes from constants.js as "/images/filename.webp"
-// We need to convert it to "/src/assets/images/filename.webp"
-const cleanPath = src.startsWith('/images/') ? src.replace('/images/', '') : src.replace('images/', '');
-const globPath = `/src/assets/images/${cleanPath}`;
-
-let imageAsset;
-if (images[globPath]) {
-  imageAsset = (await images[globPath]()).default;
-}
+const {
+  src,
+  alt,
+  className,
+  width,
+  height,
+  loading = 'lazy',
+  fetchpriority
+} = Astro.props;
 ---
 
-{imageAsset ? (
-  <Image 
-    src={imageAsset} 
-    alt={alt} 
-    class={className} 
-    width={width || imageAsset.width} 
-    height={height || imageAsset.height}
-    loading={loading}
-    fetchpriority={fetchpriority}
-  />
-) : (
-  <img src={src} alt={alt} class={className} width={width} height={height} loading={loading} />
-)}
+<img
+  src={src}
+  alt={alt}
+  class={className}
+  width={width}
+  height={height}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  decoding="async"
+/>

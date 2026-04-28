@@ -377,7 +377,7 @@ export const PRODUCT_DETAIL_PAGES = [
       }
     ],
     supportServiceIds: ["laser-fiber", "cnc-router", "laser-co2"],
-    whatsappMessage: "Halo, saya ingin konsultasi pembuatan pagar laser cutting custom. Bisa dibantu?"
+    whatsappMessage: "Halo raja cutting laser, saya ingin konsultasi dong tentang pembuatan pagar laser cutting custom. Bisa dibantu?"
   },
   {
     slug: "railing-balkon-laser-cutting",
@@ -429,7 +429,7 @@ export const PRODUCT_DETAIL_PAGES = [
       }
     ],
     supportServiceIds: ["laser-fiber", "cnc-router"],
-    whatsappMessage: "Halo, saya ingin konsultasi railing balkon laser cutting custom. Bisa dibantu?"
+    whatsappMessage: "Halo raja cutting laser, saya ingin konsultasi dong tentang railing balkon laser cutting custom. Bisa dibantu?"
   },
   {
     slug: "partisi-ruangan-laser-cutting",
@@ -481,7 +481,7 @@ export const PRODUCT_DETAIL_PAGES = [
       }
     ],
     supportServiceIds: ["laser-co2", "cnc-router", "laser-fiber"],
-    whatsappMessage: "Halo, saya ingin konsultasi partisi ruangan laser cutting custom. Bisa dibantu?"
+    whatsappMessage: "Halo raja cutting laser, saya ingin konsultasi dong tentang partisi ruangan laser cutting custom. Bisa dibantu?"
   }
 ];
 
@@ -863,22 +863,22 @@ export const FAQ = [
 
 // ===== PESAN WHATSAPP =====
 export const WHATSAPP_MESSAGES = {
-  default: "Halo, saya ingin konsultasi produk atau jasa laser cutting. Bisa dibantu?",
-  productDefault: "Halo, saya ingin konsultasi produk laser cutting custom untuk proyek saya. Bisa dibantu?",
-  cnc: "Halo, saya butuh jasa CNC Router untuk material kayu/MDF. Bisa konsultasi?",
-  fiber: "Halo, saya perlu laser fiber untuk cutting metal. Bisa diskusi project saya?",
-  co2: "Halo, saya tertarik laser CO2 untuk cutting acrylic/kayu. Bisa konsultasi?",
-  engraving: "Halo, saya butuh jasa galvo engraving untuk marking produk. Bisa bantuan?",
-  pagar: "Halo, saya ingin konsultasi pembuatan pagar laser cutting custom. Bisa dibantu?",
-  railing: "Halo, saya ingin konsultasi railing balkon laser cutting custom. Bisa dibantu?",
-  partisi: "Halo, saya ingin konsultasi partisi ruangan laser cutting custom. Bisa dibantu?",
-  hurufTimbul: "Halo, saya ingin konsultasi huruf timbul custom untuk signage. Bisa dibantu?",
-  mihrab: "Halo, saya ingin konsultasi pembuatan mihrab laser cutting. Bisa dibantu?",
-  plafon: "Halo, saya ingin konsultasi plafon dekoratif laser cutting. Bisa dibantu?",
-  quote: "Halo, saya mau request quote untuk project laser cutting. Bisa dibantu?",
-  material: "Halo, saya mau tanya tentang material yang bisa di-cutting. Bisa info?",
-  portfolio: "Halo, saya sudah lihat portfolio Anda. Bisa diskusi project serupa?",
-  urgent: "Halo, saya ada project urgent laser cutting. Bisa dibantu segera?"
+  default: "Halo raja cutting laser, saya ingin konsultasi dong tentang produk atau jasa laser cutting. Bisa dibantu?",
+  productDefault: "Halo raja cutting laser, saya ingin konsultasi dong tentang produk laser cutting custom untuk proyek saya. Bisa dibantu?",
+  cnc: "Halo raja cutting laser, saya ingin konsultasi dong tentang jasa CNC Router untuk material kayu/MDF. Bisa konsultasi?",
+  fiber: "Halo raja cutting laser, saya ingin konsultasi dong tentang laser fiber untuk cutting metal. Bisa diskusi project saya?",
+  co2: "Halo raja cutting laser, saya ingin konsultasi dong tentang laser CO2 untuk cutting acrylic/kayu. Bisa konsultasi?",
+  engraving: "Halo raja cutting laser, saya ingin konsultasi dong tentang jasa galvo engraving untuk marking produk. Bisa bantuan?",
+  pagar: "Halo raja cutting laser, saya ingin konsultasi dong tentang pembuatan pagar laser cutting custom. Bisa dibantu?",
+  railing: "Halo raja cutting laser, saya ingin konsultasi dong tentang railing balkon laser cutting custom. Bisa dibantu?",
+  partisi: "Halo raja cutting laser, saya ingin konsultasi dong tentang partisi ruangan laser cutting custom. Bisa dibantu?",
+  hurufTimbul: "Halo raja cutting laser, saya ingin konsultasi dong tentang huruf timbul custom untuk signage. Bisa dibantu?",
+  mihrab: "Halo raja cutting laser, saya ingin konsultasi dong tentang pembuatan mihrab laser cutting. Bisa dibantu?",
+  plafon: "Halo raja cutting laser, saya ingin konsultasi dong tentang plafon dekoratif laser cutting. Bisa dibantu?",
+  quote: "Halo raja cutting laser, saya ingin konsultasi dong untuk request quote untuk project laser cutting. Bisa dibantu?",
+  material: "Halo raja cutting laser, saya ingin konsultasi dong tentang material yang bisa di-cutting. Bisa info?",
+  portfolio: "Halo raja cutting laser, saya ingin konsultasi dong tentang portfolio Anda. Bisa diskusi project serupa?",
+  urgent: "Halo raja cutting laser, saya ingin konsultasi dong tentang project urgent laser cutting. Bisa dibantu segera?"
 };
 
 // ===== DATA BLOG POSTS =====
@@ -897,7 +897,7 @@ export const BLOG_POSTS = [
     content: `
       <h2>Mengapa Pemilihan Material Penting?</h2>
       <p>Pemilihan material yang tepat adalah kunci sukses dalam project laser cutting. Setiap material memiliki karakteristik unik yang mempengaruhi hasil akhir, waktu pengerjaan, dan biaya produksi.</p>
-      
+
       <h3>Faktor-Faktor yang Perlu Dipertimbangkan</h3>
       <ul>
         <li><strong>Ketebalan Material:</strong> Sesuaikan dengan kemampuan mesin dan kebutuhan aplikasi</li>
@@ -905,20 +905,20 @@ export const BLOG_POSTS = [
         <li><strong>Budget:</strong> Seimbangkan antara kualitas dan biaya</li>
         <li><strong>Finishing:</strong> Apakah perlu finishing tambahan atau tidak</li>
       </ul>
-      
+
       <h3>Material Populer dan Aplikasinya</h3>
       <h4>1. Acrylic</h4>
       <p>Ideal untuk display, signage, dan dekorasi interior. Memberikan hasil cutting yang sangat halus dengan tepi yang jernih.</p>
-      
+
       <h4>2. Stainless Steel</h4>
       <p>Cocok untuk aplikasi industri, kitchen set, dan komponen yang membutuhkan ketahanan korosi tinggi.</p>
-      
+
       <h4>3. MDF</h4>
       <p>Pilihan ekonomis untuk furniture, prototype, dan aplikasi interior yang akan difinishing dengan cat atau laminate.</p>
-      
+
       <h3>Tips Optimasi Design</h3>
       <p>Untuk mendapatkan hasil terbaik, pastikan design Anda sudah dioptimasi untuk laser cutting. Hindari detail yang terlalu kecil dan pastikan gap antar elemen cukup untuk proses cutting.</p>
-      
+
       <h3>Konsultasi dengan Ahli</h3>
       <p>Jika masih ragu dalam memilih material, jangan hesitate untuk berkonsultasi dengan tim ahli kami. Kami akan membantu Anda memilih material yang paling sesuai dengan kebutuhan dan budget project Anda.</p>
     `,
@@ -943,22 +943,22 @@ export const BLOG_POSTS = [
     content: `
       <h2>Revolusi Teknologi Laser Fiber</h2>
       <p>Teknologi laser fiber telah merevolusi industri metal cutting dengan memberikan solusi yang lebih cepat, presisi, dan efisien dibandingkan metode konvensional.</p>
-      
+
       <h3>1. Kecepatan Cutting yang Luar Biasa</h3>
       <p>Laser fiber mampu memotong material metal dengan kecepatan hingga 3x lebih cepat dibandingkan laser CO2. Hal ini sangat menguntungkan untuk production volume tinggi.</p>
-      
+
       <h3>2. Presisi Tinggi hingga 0.05mm</h3>
       <p>Toleransi yang sangat ketat memungkinkan pembuatan komponen presisi untuk industri otomotif, elektronik, dan aerospace.</p>
-      
+
       <h3>3. Efisiensi Energi Superior</h3>
       <p>Konsumsi listrik laser fiber 50% lebih hemat dibandingkan teknologi laser lainnya, menghasilkan biaya operasional yang lebih rendah.</p>
-      
+
       <h3>4. Minimal Heat Affected Zone (HAZ)</h3>
       <p>Area yang terkena panas sangat minimal, sehingga tidak mengubah struktur material dan menghasilkan potongan yang bersih.</p>
-      
+
       <h3>5. Maintenance Rendah</h3>
       <p>Teknologi solid-state membuat laser fiber membutuhkan maintenance minimal dan memiliki lifetime yang lebih panjang.</p>
-      
+
       <h3>Aplikasi Industri</h3>
       <p>Laser fiber sangat cocok untuk industri otomotif, elektronik, aerospace, dan manufacturing yang membutuhkan presisi tinggi dan volume produksi besar.</p>
     `,
@@ -983,7 +983,7 @@ export const BLOG_POSTS = [
     content: `
       <h2>Persiapan File Design yang Benar</h2>
       <p>File design yang baik adalah 50% dari kesuksesan project laser cutting. Persiapan yang tepat akan menghemat waktu, biaya, dan menghasilkan kualitas terbaik.</p>
-      
+
       <h3>Format File yang Direkomendasikan</h3>
       <ul>
         <li><strong>.DXF:</strong> Format terbaik untuk laser cutting, preserve vector data</li>
@@ -991,28 +991,28 @@ export const BLOG_POSTS = [
         <li><strong>.PDF:</strong> Pastikan dalam format vector, bukan raster</li>
         <li><strong>.DWG:</strong> AutoCAD format, cocok untuk design teknis</li>
       </ul>
-      
+
       <h3>Aturan Design yang Harus Diperhatikan</h3>
       <h4>1. Ketebalan Garis (Stroke)</h4>
       <p>Gunakan stroke 0.1mm atau hairline untuk cutting line. Garis yang terlalu tebal akan mempengaruhi akurasi cutting.</p>
-      
+
       <h4>2. Warna Coding</h4>
       <ul>
         <li>Merah: Cutting line</li>
         <li>Biru: Engraving line</li>
         <li>Hitam: Marking/etching</li>
       </ul>
-      
+
       <h4>3. Minimum Gap dan Detail</h4>
       <p>Pastikan jarak minimum antar elemen minimal 1mm. Detail yang terlalu kecil mungkin tidak bisa di-cutting dengan baik.</p>
-      
+
       <h3>Optimasi untuk Efisiensi Biaya</h3>
       <h4>Nesting Layout</h4>
       <p>Atur layout design untuk memaksimalkan penggunaan material dan meminimalkan waste. Ini akan mengurangi biaya material secara signifikan.</p>
-      
+
       <h4>Kerf Compensation</h4>
       <p>Pertimbangkan kerf (lebar potongan laser) dalam design, terutama untuk part yang harus fit dengan presisi tinggi.</p>
-      
+
       <h3>Common Mistakes yang Harus Dihindari</h3>
       <ul>
         <li>File dalam format raster/bitmap</li>
@@ -1021,7 +1021,7 @@ export const BLOG_POSTS = [
         <li>Scale yang tidak sesuai (pastikan dalam mm)</li>
         <li>Layer yang tidak terorganisir</li>
       </ul>
-      
+
       <h3>Quality Check Sebelum Produksi</h3>
       <p>Sebelum memulai cutting, tim kami akan melakukan quality check pada file design dan memberikan feedback jika ada yang perlu diperbaiki.</p>
     `,
@@ -1046,7 +1046,7 @@ export const BLOG_POSTS = [
     content: `
       <h2>CNC Router vs Laser Cutting: Mana yang Tepat?</h2>
       <p>Kedua teknologi ini memiliki kelebihan masing-masing untuk pengerjaan material kayu. Pemilihan yang tepat tergantung pada kebutuhan spesifik project Anda.</p>
-      
+
       <h3>CNC Router untuk Kayu</h3>
       <h4>Kelebihan:</h4>
       <ul>
@@ -1056,14 +1056,14 @@ export const BLOG_POSTS = [
         <li>Biaya operasional lebih rendah untuk volume besar</li>
         <li>Bisa menggunakan berbagai jenis bit untuk hasil berbeda</li>
       </ul>
-      
+
       <h4>Kekurangan:</h4>
       <ul>
         <li>Kecepatan lebih lambat untuk detail kompleks</li>
         <li>Membutuhkan clamping yang kuat</li>
         <li>Menghasilkan debu kayu</li>
       </ul>
-      
+
       <h3>Laser Cutting untuk Kayu</h3>
       <h4>Kelebihan:</h4>
       <ul>
@@ -1073,14 +1073,14 @@ export const BLOG_POSTS = [
         <li>Bisa engraving dengan gradasi</li>
         <li>Minimal waste material</li>
       </ul>
-      
+
       <h4>Kekurangan:</h4>
       <ul>
         <li>Keterbatasan ketebalan (maksimal 25mm)</li>
         <li>Sedikit burning effect pada tepi</li>
         <li>Biaya operasional lebih tinggi</li>
       </ul>
-      
+
       <h3>Rekomendasi Penggunaan</h3>
       <h4>Pilih CNC Router jika:</h4>
       <ul>
@@ -1089,7 +1089,7 @@ export const BLOG_POSTS = [
         <li>Volume produksi besar</li>
         <li>Budget terbatas</li>
       </ul>
-      
+
       <h4>Pilih Laser Cutting jika:</h4>
       <ul>
         <li>Detail sangat kompleks</li>
@@ -1097,7 +1097,7 @@ export const BLOG_POSTS = [
         <li>Material tipis-sedang (<25mm)</li>
         <li>Prototype atau small batch</li>
       </ul>
-      
+
       <h3>Kombinasi Kedua Teknologi</h3>
       <p>Untuk project tertentu, kombinasi kedua teknologi bisa memberikan hasil optimal. Misalnya rough cutting dengan CNC Router dan detail finishing dengan laser.</p>
     `,
@@ -1122,17 +1122,17 @@ export const BLOG_POSTS = [
     content: `
       <h2>Laser Cutting Merevolusi Industri Fashion</h2>
       <p>Industri fashion semakin memanfaatkan teknologi laser cutting untuk menciptakan design yang unik, presisi, dan efisien dalam produksi.</p>
-      
+
       <h3>Aplikasi Laser Cutting di Fashion</h3>
       <h4>1. Cutting Fabric Presisi</h4>
       <p>Laser CO2 mampu memotong berbagai jenis kain dengan presisi tinggi tanpa fraying, menghasilkan tepi yang rapi dan profesional.</p>
-      
+
       <h4>2. Pattern Making</h4>
       <p>Pembuatan pattern yang kompleks dan detail menjadi lebih mudah dan akurat dengan laser cutting.</p>
-      
+
       <h4>3. Decorative Elements</h4>
       <p>Laser engraving pada kulit, denim, dan material lainnya untuk menciptakan elemen dekoratif yang unik.</p>
-      
+
       <h3>Material Fashion yang Bisa Di-Laser</h3>
       <ul>
         <li><strong>Katun:</strong> Cutting bersih tanpa fraying</li>
@@ -1141,27 +1141,27 @@ export const BLOG_POSTS = [
         <li><strong>Felt:</strong> Cutting presisi untuk aksesoris</li>
         <li><strong>Synthetic Fabric:</strong> Sealing edge otomatis</li>
       </ul>
-      
+
       <h3>Keunggulan untuk Designer</h3>
       <h4>Prototyping Cepat</h4>
       <p>Designer bisa membuat prototype dengan cepat untuk testing fit dan design sebelum produksi massal.</p>
-      
+
       <h4>Customization</h4>
       <p>Memungkinkan personalisasi dan customization dalam skala kecil dengan biaya yang reasonable.</p>
-      
+
       <h4>Complex Geometry</h4>
       <p>Bisa membuat bentuk-bentuk kompleks yang sulit atau tidak mungkin dibuat dengan metode konvensional.</p>
-      
+
       <h3>Trend Terkini</h3>
       <h4>1. Sustainable Fashion</h4>
       <p>Laser cutting membantu mengurangi waste material hingga 15-20% dibandingkan cutting konvensional.</p>
-      
+
       <h4>2. On-Demand Production</h4>
       <p>Produksi sesuai permintaan tanpa perlu minimum order quantity yang besar.</p>
-      
+
       <h4>3. Artistic Collaboration</h4>
       <p>Kolaborasi antara fashion designer dan laser cutting artist menghasilkan karya yang unik dan inovatif.</p>
-      
+
       <h3>Tips untuk Fashion Designer</h3>
       <ul>
         <li>Test cutting pada sample material terlebih dahulu</li>
@@ -1191,9 +1191,9 @@ export const BLOG_POSTS = [
     content: `
       <h2>Merawat Produk Laser Cutting untuk Durabilitas Maksimal</h2>
       <p>Produk hasil laser cutting yang berkualitas tinggi membutuhkan perawatan yang tepat untuk mempertahankan penampilan dan fungsinya dalam jangka panjang.</p>
-      
+
       <h3>Perawatan Berdasarkan Material</h3>
-      
+
       <h4>Acrylic</h4>
       <ul>
         <li><strong>Pembersihan:</strong> Gunakan air sabun lembut dan kain microfiber</li>
@@ -1201,7 +1201,7 @@ export const BLOG_POSTS = [
         <li><strong>Penyimpanan:</strong> Jauhkan dari sumber panas langsung</li>
         <li><strong>Polishing:</strong> Gunakan acrylic polish untuk mengembalikan kilap</li>
       </ul>
-      
+
       <h4>Stainless Steel</h4>
       <ul>
         <li><strong>Pembersihan:</strong> Air hangat dengan detergen mild</li>
@@ -1209,7 +1209,7 @@ export const BLOG_POSTS = [
         <li><strong>Polishing:</strong> Searah dengan grain stainless steel</li>
         <li><strong>Pencegahan karat:</strong> Keringkan segera setelah terkena air</li>
       </ul>
-      
+
       <h4>Kayu (MDF, Plywood)</h4>
       <ul>
         <li><strong>Finishing:</strong> Aplikasikan sealer atau varnish</li>
@@ -1217,27 +1217,27 @@ export const BLOG_POSTS = [
         <li><strong>Penyimpanan:</strong> Tempat kering dengan ventilasi baik</li>
         <li><strong>Perlindungan:</strong> Hindari sinar UV langsung</li>
       </ul>
-      
+
       <h3>Perawatan Khusus untuk Aplikasi Outdoor</h3>
       <h4>Signage Outdoor</h4>
       <p>Untuk signage yang terpapar cuaca, lakukan inspeksi rutin setiap 3-6 bulan dan aplikasikan protective coating sesuai kebutuhan.</p>
-      
+
       <h4>Architectural Elements</h4>
       <p>Elemen arsitektur membutuhkan maintenance schedule yang teratur, terutama untuk material metal yang terpapar hujan dan polusi.</p>
-      
+
       <h3>Troubleshooting Common Issues</h3>
       <h4>Acrylic Cloudy/Buram</h4>
       <p><strong>Penyebab:</strong> Goresan mikro atau residue pembersih<br>
       <strong>Solusi:</strong> Polish dengan acrylic compound dan kain microfiber</p>
-      
+
       <h4>Stainless Steel Water Spots</h4>
       <p><strong>Penyebab:</strong> Mineral deposit dari air<br>
       <strong>Solusi:</strong> Bersihkan dengan cuka putih, bilas, dan keringkan</p>
-      
+
       <h4>Kayu Cracking</h4>
       <p><strong>Penyebab:</strong> Perubahan kelembaban<br>
       <strong>Solusi:</strong> Aplikasikan wood conditioner dan sealer</p>
-      
+
       <h3>Schedule Maintenance Recommended</h3>
       <table>
         <tr><th>Material</th><th>Daily</th><th>Weekly</th><th>Monthly</th><th>Yearly</th></tr>
@@ -1245,7 +1245,7 @@ export const BLOG_POSTS = [
         <tr><td>Stainless</td><td>Wipe dry</td><td>Cleaning</td><td>Polish</td><td>Inspection</td></tr>
         <tr><td>Kayu</td><td>Dust removal</td><td>Cleaning</td><td>Condition check</td><td>Re-finish</td></tr>
       </table>
-      
+
       <h3>Professional Maintenance Service</h3>
       <p>Untuk produk dengan nilai tinggi atau aplikasi kritis, pertimbangkan menggunakan jasa maintenance profesional untuk memastikan longevity optimal.</p>
     `,
@@ -1581,7 +1581,7 @@ export const PARTNERSHIPS = [
   {
     id: 2,
     name: "Coherent",
-    type: "Technology Partner", 
+    type: "Technology Partner",
     description: "Certified partner untuk laser CO2 systems",
     logo: "/images/partners/coherent.webp",
     website: "https://coherent.com"
@@ -1732,12 +1732,12 @@ export const UTILS = {
   formatWhatsAppNumber: (number) => {
     return number.replace(/\D/g, '').replace(/^0/, '62');
   },
-  
+
   // Generate WhatsApp URL
   generateWhatsAppURL: (message = WHATSAPP_MESSAGES.default) => {
     return `https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(message)}`;
   },
-  
+
   // Format currency
   formatCurrency: (amount) => {
     return new Intl.NumberFormat('id-ID', {
@@ -1746,7 +1746,7 @@ export const UTILS = {
       minimumFractionDigits: 0
     }).format(amount);
   },
-  
+
   // Calculate reading time
   calculateReadingTime: (text) => {
     const wordsPerMinute = 200;
@@ -1754,7 +1754,7 @@ export const UTILS = {
     const minutes = Math.ceil(words / wordsPerMinute);
     return `${minutes} menit baca`;
   },
-  
+
   // Slugify text
   slugify: (text) => {
     return text

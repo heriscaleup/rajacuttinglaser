@@ -338,7 +338,7 @@ export function generateLocalBusinessSchema(city: string = 'Jakarta'): object {
     address: {
       '@type': 'PostalAddress',
       addressLocality: city,
-      addressRegion: city === 'Jakarta' ? 'DKI Jakarta' : 'Jawa Barat',
+      addressRegion: city === 'Jakarta' ? 'DKI Jakarta' : city === 'Tangerang' ? 'Banten' : 'Jawa Barat',
       addressCountry: 'ID'
     },
     geo: {
@@ -386,50 +386,6 @@ export function generateLocalBusinessSchema(city: string = 'Jakarta'): object {
   };
 }
 
-interface SitemapURL {
-  url: string;
-  priority: number;
-  changefreq: string;
-}
-
-/**
- * Generate sitemap URLs for Jabodetabek
- */
-export function generateSitemapUrls(): SitemapURL[] {
-  const baseUrls: SitemapURL[] = [
-    { url: '/', priority: 1.0, changefreq: 'weekly' },
-    { url: '/about', priority: 0.8, changefreq: 'monthly' },
-    { url: '/contact', priority: 0.8, changefreq: 'monthly' },
-    { url: '/blog', priority: 0.7, changefreq: 'weekly' }
-  ];
-
-  const serviceUrls = [
-    '/jasa-cnc-router',
-    '/jasa-laser-fiber', 
-    '/jasa-laser-co2',
-    '/jasa-galvo-engraving'
-  ].map(url => ({ url, priority: 0.9, changefreq: 'monthly' }));
-
-  const materialUrls = [
-    '/material-acp',
-    '/material-pvc',
-    '/material-metal',
-    '/material-acrylic',
-    '/material-mdf',
-    '/material-ply-wood-multiplex',
-    '/material-grc'
-  ].map(url => ({ url, priority: 0.8, changefreq: 'monthly' }));
-
-  const locationUrls = [
-    '/laser-cutting-jakarta',
-    '/laser-cutting-bogor',
-    '/laser-cutting-depok', 
-    '/laser-cutting-tangerang',
-    '/laser-cutting-bekasi'
-  ].map(url => ({ url, priority: 0.7, changefreq: 'monthly' }));
-
-  return [...baseUrls, ...serviceUrls, ...materialUrls, ...locationUrls];
-}
 
 /**
  * Generate robots.txt content
@@ -438,23 +394,18 @@ export function generateRobotsTxt(): string {
   return `User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: ${SITE_CONFIG.url}/sitemap.xml
+Sitemap: ${SITE_CONFIG.url}/sitemap-index.xml
 
-# Crawl-delay
-Crawl-delay: 1
-
-# Disallow admin areas (if any)
 Disallow: /admin/
-Disallow: /_astro/
 Disallow: /api/
 
-# Allow important pages
+# AI crawler hints
+User-agent: GPTBot
 Allow: /
-Allow: /jasa-*
-Allow: /material-*
-Allow: /laser-cutting-*
-Allow: /blog*
-Allow: /about
-Allow: /contact`;
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot-Extended
+Allow: /`;
 }

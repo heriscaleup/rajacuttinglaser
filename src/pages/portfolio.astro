@@ -6,16 +6,23 @@ import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 import { SITE_CONFIG, PORTFOLIO_PROJECTS } from '../utils/constants.js';
+import { generateMetaTags, generateBreadcrumbSchema } from '../utils/seo.ts';
 
 const portfolioProjects = PORTFOLIO_PROJECTS;
 
-// Meta tags untuk SEO
-const metaTags = {
-  title: "Portfolio Laser Cutting & CNC Router - 1000+ Proyek Selesai | Raja Cutting Laser",
+const metaTags = generateMetaTags({
+  title: "Portfolio Laser Cutting & CNC Router - 1000+ Proyek Selesai",
   description: "Lihat portfolio proyek laser cutting, CNC router, dan engraving dari Raja Cutting Laser. Lebih dari 1000 proyek selesai untuk berbagai industri di seluruh Indonesia.",
   keywords: "portfolio laser cutting, hasil kerja laser cutting, proyek cnc router, galeri laser engraving, contoh hasil cutting, showcase laser cutting",
-  canonical: new URL('/portfolio/', Astro.site).href
-};
+  url: '/portfolio/',
+  type: 'website',
+  image: '/images/stainlesssteel.webp'
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Beranda', url: '/' },
+  { name: 'Portfolio', url: '/portfolio/' }
+]);
 
 // Define color classes for categories
 const categoryColors: { [key: string]: string } = {
@@ -26,11 +33,7 @@ const categoryColors: { [key: string]: string } = {
 };
 ---
 
-<BaseLayout 
-  title={metaTags.title}
-  description={metaTags.description}
-  url={metaTags.canonical}
->
+<BaseLayout metaTags={metaTags} jsonLd={[breadcrumbSchema]}>
   <Header slot="header" />
   
   <main>

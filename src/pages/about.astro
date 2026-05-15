@@ -5,19 +5,18 @@ import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 import { SITE_CONFIG } from '../utils/constants.js';
+import { generateMetaTags } from '../utils/seo.ts';
 
-const metaTags = {
+const metaTags = generateMetaTags({
   title: "Tentang Raja Cutting Laser - 10+ Tahun Jasa Laser Cutting Profesional",
   description: "Raja Cutting Laser berdiri sejak 2014 di Tangerang Selatan. Lebih dari 10 tahun pengalaman, 1000+ proyek selesai. Tim profesional bersertifikasi. Melayani seluruh Jabodetabek.",
-  canonical: new URL('/about/', Astro.site).href
-};
+  url: '/about/',
+  type: 'website',
+  image: '/images/team.webp'
+});
 ---
 
-<BaseLayout 
-  title={metaTags.title}
-  description={metaTags.description}
-  url={metaTags.canonical}
->
+<BaseLayout metaTags={metaTags}>
   <Header slot="header" />
   
   <!-- Hero Section -->

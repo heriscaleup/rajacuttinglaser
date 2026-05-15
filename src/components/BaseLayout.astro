@@ -186,7 +186,7 @@ const siteUrl = new URL(Astro.site);
         try{
           let cls=0; new PerformanceObserver(list=>{for (const e of list.getEntries()){if(!(e as any).hadRecentInput){cls += (e as any).value}}}).observe({type:'layout-shift', buffered:true});
           new PerformanceObserver(list=>{const e=list.getEntries().pop(); if(e){console.log('[CWV] LCP', (e as any).renderTime||(e as any).loadTime)}}).observe({type:'largest-contentful-paint', buffered:true});
-          new PerformanceObserver(list=>{const e=list.getEntries().pop(); if(e){console.log('[CWV] FID', (e as any).processingStart - (e as any).startTime)}}).observe({type:'first-input', buffered:true});
+          new PerformanceObserver(list=>{const e=list.getEntries().pop(); if(e){console.log('[CWV] INP', (e as any).processingStart - (e as any).startTime)}}).observe({type:'event', buffered:true, durationThreshold: 40});
           window.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden'){ console.log('[CWV] CLS', cls.toFixed(3)); }});
         }catch(err){}
       })();

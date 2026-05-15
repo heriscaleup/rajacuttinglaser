@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import OptimizedImage from '../../components/OptimizedImage.astro';
-import { generateBlogPostSchema, generateBreadcrumbSchema } from '../../utils/seo';
+import { generateBlogPostSchema, generateBreadcrumbSchema, generateMetaTags } from '../../utils/seo';
 import { getCollection } from 'astro:content';
 
 /**
@@ -80,16 +80,21 @@ const breadcrumbs = [
   { name: postView.title, url: `/blog/${postView.slug}/` }
 ];
 const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+const metaTags = generateMetaTags({
+  title: `${postView.title} | Blog`,
+  description: postView.excerpt,
+  keywords: `${postView.title.toLowerCase()}, laser cutting, cnc router, ${postView.category ? postView.category.toLowerCase() : ''}`,
+  image: postView.image,
+  url: `/blog/${postView.slug}/`,
+  type: 'article',
+  publishedTime: (postView.publishDate instanceof Date) ? postView.publishDate.toISOString() : String(postView.publishDate),
+  modifiedTime: (postView.publishDate instanceof Date) ? postView.publishDate.toISOString() : String(postView.publishDate),
+  author: postView.author
+});
 ---
 
-<BaseLayout 
-  title={`${postView.title} | Blog raja cutting laser`}
-  description={postView.excerpt}
-  keywords={`${postView.title.toLowerCase()}, laser cutting, cnc router, ${postView.category ? postView.category.toLowerCase() : ''}`}
-  image={postView.image}
-  type="article"
-  jsonLd={[jsonLd, breadcrumbSchema]}
->
+<BaseLayout metaTags={metaTags} jsonLd={[jsonLd, breadcrumbSchema]}>
   <Header slot="header" />
   
   <!-- Article Header -->

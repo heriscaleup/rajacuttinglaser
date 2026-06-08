@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   phone: "+62 851 6569 3179",
   whatsapp: "6285165693179",
   email: "info@rajacuttinglaser.com",
-  address: "Jl. BSD Bintaro. No 1D, Kel. Parigi, Kec. Pondok Aren. Tangerang Selatan ( Samping Persis SD Mentari Internasional School)",
+  address: "Jl. BSD Bintaro No.1, Parigi, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15228",
   businessHours: "Senin - Sabtu, 08:00 - 17:00 WIB",
   author: "Tim Raja Cutting Laser",
   socialMedia: {

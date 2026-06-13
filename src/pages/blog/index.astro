@@ -48,12 +48,12 @@ const jsonLd = {
     <section class="border-b border-black/10 bg-[#fbfaf7]">
       <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div class="max-w-3xl">
-          <a href="/" class="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-neutral-800 transition hover:text-neutral-950">← Kembali ke Beranda</a>
+          <a href="/" class="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition hover:text-neutral-950">← Kembali ke Beranda</a>
           <p class={`mb-4 text-xs font-black uppercase tracking-[0.24em] ${accent}`}>Insight & Panduan</p>
           <h1 class="max-w-4xl text-5xl font-black leading-[0.98] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl">
             Blog {siteName}
           </h1>
-          <p class="mt-7 max-w-2xl text-lg leading-8 text-neutral-800 sm:text-xl">
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-neutral-950 sm:text-xl">
             {'Panduan teknis, estimasi, dan insight manufaktur untuk laser fiber, laser CO2, CNC router, serta fabrikasi logam presisi.'}
           </p>
         </div>
@@ -74,7 +74,7 @@ const jsonLd = {
               />
             </div>
             <div>
-              <div class="mb-5 flex flex-wrap items-center gap-3 text-sm text-neutral-700">
+              <div class="mb-5 flex flex-wrap items-center gap-3 text-sm text-neutral-900">
                 <span class={`font-black uppercase tracking-[0.18em] ${accent}`}>{featuredPost.data.category}</span>
                 <span>•</span>
                 <time>{new Date(featuredPost.data.pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -82,7 +82,7 @@ const jsonLd = {
                 <span>{featuredPost.data.readTime}</span>
               </div>
               <h2 class="text-3xl font-black leading-tight tracking-[-0.035em] text-neutral-950 sm:text-5xl">{featuredPost.data.title}</h2>
-              <p class="mt-5 text-lg leading-8 text-neutral-800">{featuredPost.data.description}</p>
+              <p class="mt-5 text-lg leading-8 text-neutral-950">{featuredPost.data.description}</p>
               <span class="mt-8 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-bold text-neutral-900 transition group-hover:border-neutral-950">Baca artikel utama →</span>
             </div>
           </a>
@@ -94,10 +94,10 @@ const jsonLd = {
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8 flex items-end justify-between gap-6 border-b border-black/10 pb-5">
           <div>
-            <p class="text-sm font-semibold text-neutral-700">Semua artikel</p>
+            <p class="text-sm font-semibold text-neutral-900">Semua artikel</p>
             <h2 class="text-2xl font-black tracking-[-0.03em] text-neutral-950">Terbaru dari blog</h2>
           </div>
-          <p class="hidden text-sm text-neutral-700 sm:block">{sortedPosts.length} artikel tersedia</p>
+          <p class="hidden text-sm text-neutral-900 sm:block">{sortedPosts.length} artikel tersedia</p>
         </div>
         <div class="grid gap-x-7 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {otherPosts.map((post) => (
@@ -112,15 +112,15 @@ const jsonLd = {
                 />
               </a>
               <div class="pt-5">
-                <div class="mb-3 flex flex-wrap items-center gap-2 text-xs text-neutral-700">
+                <div class="mb-3 flex flex-wrap items-center gap-2 text-xs text-neutral-900">
                   <span class={`font-black uppercase tracking-[0.16em] ${accent}`}>{post.data.category}</span>
                   <span>•</span>
                   <time>{new Date(post.data.pubDate).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</time>
                 </div>
                 <h3 class="text-xl font-black leading-tight tracking-[-0.025em] text-neutral-950">
-                  <a href={`/blog/${post.slug}/`} class="transition group-hover:text-neutral-800">{post.data.title}</a>
+                  <a href={`/blog/${post.slug}/`} class="transition group-hover:text-neutral-950">{post.data.title}</a>
                 </h3>
-                <p class="mt-3 line-clamp-3 text-[15px] leading-7 text-neutral-800">{post.data.description}</p>
+                <p class="mt-3 line-clamp-3 text-[15px] leading-7 text-neutral-950">{post.data.description}</p>
                 <a href={`/blog/${post.slug}/`} class="mt-5 inline-flex text-sm font-bold text-neutral-950 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-950">Baca selengkapnya</a>
               </div>
             </article>

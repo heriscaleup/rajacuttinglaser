@@ -10,9 +10,19 @@ author: "Tim Raja Cutting Laser"
 draft: false
 ---
 
-Laser cutting stainless steel dengan ketebalan 1mm hingga 20mm memerlukan pemahaman teknis yang solid tentang hubungan antara daya laser, kecepatan potong, dan jenis gas yang digunakan. Salah setting, hasilnya bisa berupa edge yang kasar, dross berlebih, atau bahkan kegagalan tembus pada material tebal.
+Laser cutting stainless steel tidak cukup hanya memilih mesin berdaya besar. Hasil potongan ditentukan oleh kombinasi ketebalan material, daya laser, kecepatan potong, fokus beam, kondisi nozzle, dan gas assist. Salah satu parameter meleset, hasilnya bisa berupa dross berlebih, edge menghitam, distorsi panas, atau potongan tidak tembus.
 
-Panduan ini ditujukan untuk profesional industri, engineer produksi, dan pelaku manufaktur yang ingin memahami parameter teknis laser cutting stainless steel secara lebih mendalam.
+Panduan ini ditulis untuk engineer produksi, purchasing manufaktur, dan pemilik proyek yang ingin memahami standar teknis sebelum memesan jasa laser cutting stainless steel. Fokusnya bukan teori kosong, tetapi parameter yang membantu kamu menilai kualitas hasil dan berdiskusi lebih jelas dengan vendor.
+
+## Ringkasan Cepat Parameter Stainless Steel
+
+- **1–3 mm:** butuh kecepatan tinggi, fokus dekat permukaan, risiko distorsi harus dijaga.
+- **4–8 mm:** mulai membutuhkan daya lebih besar dan tekanan nitrogen stabil.
+- **10 mm ke atas:** kualitas optik, nozzle, dan gas pressure sangat menentukan kemampuan tembus.
+- **Nitrogen:** pilihan utama untuk edge bersih dan minim oksidasi.
+- **Oksigen:** bisa membantu kecepatan, tetapi edge biasanya perlu pembersihan lanjutan.
+
+Gunakan tabel di bawah sebagai titik awal diskusi, bukan angka absolut untuk semua mesin.
 
 ## Mengapa Stainless Steel Menantang untuk Dipotong dengan Laser?
 
@@ -115,3 +125,17 @@ Membutuhkan hasil laser cutting stainless steel yang presisi dengan edge bersih 
 Kami melayani cutting stainless steel, mild steel, dan aluminium dengan ketebalan hingga 25mm. Konsultasikan kebutuhan proyekmu dengan tim teknis kami.
 
 **Hubungi kami via WhatsApp** untuk diskusi teknis, estimasi biaya, dan penjadwalan produksi. Proyek presisi kamu ada di tangan yang tepat.
+
+## FAQ Laser Cutting Stainless Steel
+
+### Apakah stainless steel tebal selalu butuh laser watt besar?
+
+Ya, tetapi watt besar saja tidak cukup. Untuk stainless tebal, kualitas beam, tekanan gas, kondisi lensa, dan stabilitas mesin sama pentingnya dengan daya laser.
+
+### Gas apa yang paling bagus untuk hasil premium?
+
+Nitrogen biasanya paling aman untuk hasil premium karena menghasilkan edge lebih bersih dan minim oksidasi. Untuk kebutuhan tertentu, oksigen bisa dipilih jika kecepatan lebih penting daripada tampilan edge.
+
+### Kenapa hasil potong bisa banyak dross?
+
+Penyebab umum dross adalah kecepatan terlalu rendah/tinggi, tekanan gas tidak cukup, nozzle tidak center, fokus tidak tepat, atau permukaan material kurang bersih.

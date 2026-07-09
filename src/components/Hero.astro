@@ -31,20 +31,20 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={["relative min-h-screen flex items-center justify-center overflow-hidden grid-bg", bgClass]}>
-  <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+<section class:list={["relative min-h-screen flex items-center justify-center overflow-hidden metal-grain", bgClass]}>
+  <div class="absolute inset-0 heat-haze pointer-events-none" aria-hidden="true"></div>
 
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-gradient-to-br from-background via-surface/50 to-background"></div>
-    <div class="absolute top-0 left-1/4 w-[700px] h-[700px] bg-accent/8 rounded-full blur-[140px]"></div>
-    <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-accent-blue/8 rounded-full blur-[120px]"></div>
+    <div class="absolute top-0 left-1/4 w-[700px] h-[700px] bg-accent/10 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-accent-orange/8 rounded-full blur-[120px]"></div>
   </div>
 
   <div class="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-    <div class="absolute top-1/4 left-10 w-2 h-2 bg-accent/70 rounded-full animate-pulse"></div>
-    <div class="absolute top-1/3 right-20 w-3 h-3 bg-accent-blue/50 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-    <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-accent-orange/60 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-    <div class="absolute top-1/2 right-1/3 w-1 h-1 bg-white/70 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+    <div class="absolute top-1/4 left-10 w-2 h-2 bg-accent/80 rounded-full animate-pulse"></div>
+    <div class="absolute top-1/3 right-20 w-3 h-3 bg-accent-orange/70 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-accent/60 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 right-1/3 w-1 h-1 bg-white/60 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
     <div class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-accent/50 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
   </div>
 
@@ -57,7 +57,7 @@ const {
         Terpercaya Sejak 2014
       </div>
 
-      <h1 class="display-xl text-glow mb-8 animate-slide-up">
+      <h1 class="display-xl mb-8 animate-slide-up">
         {title}
       </h1>
 
@@ -74,9 +74,9 @@ const {
           href={primaryCTALink}
           target={primaryCTALink.startsWith('http') ? '_blank' : '_self'}
           rel={primaryCTALink.startsWith('http') ? 'noopener noreferrer' : ''}
-          class="group btn-primary text-lg px-10 py-5 w-full sm:w-auto shadow-neon relative overflow-hidden"
+          class="group btn-primary text-lg px-10 py-5 w-full sm:w-auto relative overflow-hidden"
         >
-          <div class="absolute inset-0 bg-gradient-to-r from-accent to-accent-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-accent to-accent-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div class="relative flex items-center justify-center">
             <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -87,7 +87,7 @@ const {
 
         <a
           href={secondaryCTALink}
-          class="group btn-secondary text-lg px-10 py-5 w-full sm:w-auto shadow-xl hover:shadow-2xl border-2 border-accent text-accent hover:bg-accent hover:text-background relative overflow-hidden"
+          class="group btn-secondary text-lg px-10 py-5 w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-background relative overflow-hidden"
         >
           <div class="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           <div class="relative flex items-center justify-center">
@@ -102,7 +102,7 @@ const {
       {showTrustSignals && (
         <div class="animate-slide-up" style="animation-delay: 0.8s;">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div class="corner-brackets group text-center p-8 bg-surface/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border hover:border-accent/50">
+            <div class="group text-center p-8 bg-surface/70 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border hover:border-accent/50">
               <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors duration-300">
                 <svg class="w-10 h-10 text-accent group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -112,7 +112,7 @@ const {
               <p class="text-text-secondary font-medium">Tahun Pengalaman</p>
             </div>
 
-            <div class="corner-brackets group text-center p-8 bg-surface/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border hover:border-accent/50">
+            <div class="group text-center p-8 bg-surface/70 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border hover:border-accent/50">
               <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors duration-300">
                 <svg class="w-10 h-10 text-accent group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
@@ -122,7 +122,7 @@ const {
               <p class="text-text-secondary font-medium">Proyek Selesai</p>
             </div>
 
-            <div class="corner-brackets group text-center p-8 bg-surface/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border hover:border-accent/50 md:col-span-1">
+            <div class="group text-center p-8 bg-surface/70 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border hover:border-accent/50 md:col-span-1">
               <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors duration-300">
                 <svg class="w-10 h-10 text-accent group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>

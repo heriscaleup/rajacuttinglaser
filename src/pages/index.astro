@@ -48,10 +48,8 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     whatsappMessage={WHATSAPP_MESSAGES.productDefault}
   />
 
-  <section id="products" class="section-padding bg-background cv-auto relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
-    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
-    <div class="container-custom relative">
+  <section id="products" class="section-padding bg-background cv-auto">
+    <div class="container-custom">
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +57,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
           </svg>
           Produk Prioritas
         </div>
-        <h2 class="display-lg text-glow text-text-main mb-8">Produk Laser Cutting yang Paling Sering Diminta</h2>
+        <h2 class="display-lg text-text-main mb-8">Produk Laser Cutting yang Paling Sering Diminta</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Website ini kami arahkan khusus untuk kebutuhan produk jadi dan aplikasi laser cutting. Cocok untuk Anda yang mencari solusi pagar, railing, partisi, huruf timbul, atau panel dekoratif custom.
         </p>
@@ -69,7 +67,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
         {PRODUCT_CATEGORIES.map((product) => {
           const isDetailPage = product.href.startsWith('/produk/');
           return (
-            <article class="group bg-container/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-border hover:border-accent/50 flex flex-col corner-brackets">
+            <article class="group bg-surface/80 rounded-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-border hover:border-accent/50 flex flex-col">
               <div class="relative overflow-hidden">
                 <OptimizedImage
                   src={product.image}
@@ -102,7 +100,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
                 <a
                   href={product.href}
-                  class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-blue text-background font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:shadow-glow"
+                  class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-orange text-background font-semibold px-6 py-4 rounded-xl transition-all duration-300"
                 >
                   <span class="flex items-center justify-center">
                     {isDetailPage ? 'Lihat Detail Produk' : 'Konsultasi Produk'}
@@ -119,10 +117,8 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     </div>
   </section>
 
-  <section id="why-us" class="section-padding bg-container cv-auto relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
-    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
-    <div class="container-custom relative">
+  <section id="why-us" class="section-padding bg-container cv-auto">
+    <div class="container-custom">
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,7 +126,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
           </svg>
           Pendekatan Kerja
         </div>
-        <h2 class="display-lg text-glow text-text-main mb-8">Kenapa Website Ini Difokuskan ke Produk Jadi</h2>
+        <h2 class="display-lg text-text-main mb-8">Kenapa Website Ini Difokuskan ke Produk Jadi</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Banyak calon klien tidak sedang mencari proses laser cutting mentah. Mereka mencari hasil akhirnya: panel pagar, railing, partisi, huruf timbul, atau elemen dekoratif yang siap masuk ke proyek.
         </p>
@@ -138,7 +134,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {PRODUCT_REASONS.map((reason) => (
-          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-1 corner-brackets">
+          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1">
             <h3 class="text-xl font-bold text-text-main mb-4">{reason.title}</h3>
             <p class="text-text-secondary leading-relaxed">{reason.description}</p>
           </article>
@@ -147,9 +143,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     </div>
   </section>
 
-  <section id="workflow" class="section-padding bg-background cv-auto relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
-    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+  <section id="workflow" class="section-padding bg-background cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
@@ -158,7 +152,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
           </svg>
           Alur Pengerjaan
         </div>
-        <h2 class="display-lg text-glow text-text-main mb-8">Dari Brief Sampai Produk Custom Siap Diproses</h2>
+        <h2 class="display-lg text-text-main mb-8">Dari Brief Sampai Produk Custom Siap Diproses</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Alur ini kami pakai untuk memastikan desain, material, ukuran panel, dan hasil akhir tetap realistis saat diproduksi, bukan hanya bagus di referensi visual.
         </p>
@@ -166,7 +160,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {PRODUCT_WORKFLOW.map((item) => (
-          <article class="relative rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg hover:shadow-glow transition-all duration-300">
+          <article class="relative rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg transition-all duration-300">
             <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg font-bold text-background">
               {item.step}
             </div>
@@ -178,9 +172,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     </div>
   </section>
 
-  <section id="technology-support" class="section-padding bg-container cv-auto relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
-    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+  <section id="technology-support" class="section-padding bg-container cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
@@ -189,7 +181,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
           </svg>
           Teknologi Produksi
         </div>
-        <h2 class="display-lg text-glow text-text-main mb-8">Produk Kami Dibuat dengan Teknologi yang Menyesuaikan Material</h2>
+        <h2 class="display-lg text-text-main mb-8">Produk Kami Dibuat dengan Teknologi yang Menyesuaikan Material</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Walau website ini fokus ke produk jadi, proses produksinya tetap penting. Karena itu kami tetap tampilkan teknologi pendukung yang relevan untuk metal, acrylic, kayu, MDF, dan material dekoratif lain.
         </p>
@@ -197,7 +189,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {SERVICES.map((service) => (
-          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-1 flex flex-col corner-brackets">
+          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
             <div class="mb-6">
               <OptimizedImage
                 src={service.image}
@@ -212,7 +204,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
             <p class="text-text-secondary leading-relaxed mb-6 flex-grow">{service.description}</p>
             <a
               href={`/${service.slug}/`}
-              class="inline-flex items-center font-semibold text-accent hover:text-accent-blue transition-colors duration-300"
+              class="inline-flex items-center font-semibold text-accent hover:text-accent-orange transition-colors duration-300"
             >
               Pelajari Teknologinya
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,9 +217,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     </div>
   </section>
 
-  <section id="portfolio" class="section-padding bg-background cv-auto relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
-    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+  <section id="portfolio" class="section-padding bg-background cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
@@ -236,7 +226,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
           </svg>
           Referensi Pengerjaan
         </div>
-        <h2 class="display-lg text-glow text-text-main mb-8">Contoh Pengerjaan Material dan Panel Custom</h2>
+        <h2 class="display-lg text-text-main mb-8">Contoh Pengerjaan Material dan Panel Custom</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Sebagian proyek berangkat dari kebutuhan cutting material, sebagian lagi berkembang menjadi panel custom dan elemen produk. Referensi ini membantu calon klien melihat arah kualitas dan jenis aplikasi yang bisa kami kerjakan.
         </p>
@@ -244,7 +234,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
         {featuredPortfolio.map((project) => (
-          <a href="/portfolio/" class="group rounded-2xl overflow-hidden border border-accent/20 bg-surface/60 shadow-lg hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
+          <a href="/portfolio/" class="group rounded-2xl overflow-hidden border border-accent/20 bg-surface/60 shadow-lg transition-all duration-500 hover:-translate-y-2">
             <div class="relative overflow-hidden">
               <OptimizedImage
                 src={project.image}
@@ -271,9 +261,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     </div>
   </section>
 
-  <section id="faq" class="section-padding bg-container cv-auto relative overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
-    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+  <section id="faq" class="section-padding bg-container cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
@@ -282,7 +270,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
           </svg>
           FAQ Produk
         </div>
-        <h2 class="display-lg text-glow text-text-main mb-8">Pertanyaan yang Paling Sering Muncul Sebelum Produksi</h2>
+        <h2 class="display-lg text-text-main mb-8">Pertanyaan yang Paling Sering Muncul Sebelum Produksi</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Kalau Anda masih ada di tahap cari referensi, bagian ini akan membantu membedakan kapan kebutuhan Anda masuk kategori jasa cutting biasa dan kapan lebih cocok masuk jalur produk custom.
         </p>
@@ -290,7 +278,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="max-w-4xl mx-auto space-y-6" data-faq-container>
         {PRODUCT_FAQ.map((faq) => (
-          <div class="bg-surface/60 rounded-2xl shadow-lg border border-accent/20 overflow-hidden hover:shadow-glow transition-all duration-300">
+          <div class="bg-surface/60 rounded-2xl shadow-lg border border-accent/20 overflow-hidden transition-all duration-300">
             <button class="flex items-center justify-between w-full text-left p-8 group" data-faq-button>
               <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-accent transition-colors duration-300">
                 {faq.question}
@@ -311,23 +299,6 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
       </div>
     </div>
   </section>
-
-    <div class="marquee border-y border-accent/20 bg-container/80 backdrop-blur-sm py-4" aria-hidden="true">
-      <div class="marquee-inner">
-        <span class="marquee-item">◆ Laser Fiber</span>
-        <span class="marquee-item">◆ Laser CO2</span>
-        <span class="marquee-item">◆ CNC Router</span>
-        <span class="marquee-item">◆ Fabrikasi Logam</span>
-        <span class="marquee-item">◆ Engraving Presisi</span>
-        <span class="marquee-item">◆ Cutting Laser</span>
-        <span class="marquee-item">◆ Laser Fiber</span>
-        <span class="marquee-item">◆ Laser CO2</span>
-        <span class="marquee-item">◆ CNC Router</span>
-        <span class="marquee-item">◆ Fabrikasi Logam</span>
-        <span class="marquee-item">◆ Engraving Presisi</span>
-        <span class="marquee-item">◆ Cutting Laser</span>
-      </div>
-    </div>
 
     <CTA
     title="Butuh Produk Laser Cutting Custom untuk Proyek Anda?"

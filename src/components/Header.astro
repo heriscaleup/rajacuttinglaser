@@ -9,7 +9,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak").map
 }));
 ---
 
-<header class="fixed top-0 left-0 right-0 z-40 bg-background/85 backdrop-blur-xl border-b border-accent/15" id="main-header">
+<header class="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-xl border-b border-accent/20" id="main-header">
   <div class="container-custom">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
@@ -66,7 +66,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak").map
       <div class="hidden lg:flex items-center space-x-4">
         <WhatsAppButton
           message="Halo raja cutting laser, saya ingin konsultasi dong tentang produk laser cutting custom untuk proyek saya."
-          className="bg-accent hover:bg-accent-blue text-background text-sm px-4 py-2 shadow-glow"
+          className="bg-accent hover:bg-accent-orange text-background text-sm px-4 py-2"
           source="header"
         />
         <a
@@ -91,33 +91,13 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak").map
       </button>
     </div>
   </div>
-  <div class="border-b border-accent/10 bg-background/60">
-    <div class="marquee">
-      <div class="marquee-inner">
-        <span class="marquee-item">Laser Fiber</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Laser CO2</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">CNC Router</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Galvo Engraving</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Stainless Steel</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Acrylic</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">MDF</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Custom Metal</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Laser Fiber</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Laser CO2</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">CNC Router</span>
-        <span class="marquee-item">•</span>
-        <span class="marquee-item">Galvo Engraving</span>
-        <span class="marquee-item">•</span>
+  <div class="border-b border-accent/15 bg-surface/60">
+    <div class="container-custom py-3">
+      <div class="flex items-center justify-center gap-6 text-xs font-semibold uppercase tracking-widest text-text-secondary">
+        <span class="text-accent">◆ Laser Fiber</span>
+        <span class="text-accent">◆ Laser CO2</span>
+        <span class="text-accent">◆ CNC Router</span>
+        <span class="text-accent">◆ Galvo Engraving</span>
       </div>
     </div>
   </div>
@@ -429,7 +409,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak").map
 
   button:focus-visible,
   a:focus-visible {
-    outline: 2px solid #00FF88;
+    outline: 2px solid #FF6B00;
     outline-offset: 2px;
     border-radius: 4px;
   }

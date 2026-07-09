@@ -20,10 +20,12 @@ const metaTags = generateMetaTags({
   <Header slot="header" />
   
   <!-- Hero Section -->
-  <section class="bg-accent text-white py-20 mt-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h1 class="text-4xl font-bold mb-6">Tentang Raja Cutting Laser</h1>
-      <p class="text-xl max-w-3xl mx-auto text-white">
+  <section class="bg-accent text-white py-20 mt-16 relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 text-center relative">
+      <h1 class="display-xl text-glow mb-6">Tentang Raja Cutting Laser</h1>
+      <p class="text-xl max-w-3xl mx-auto text-white/90">
         Lebih dari 10 tahun menghadirkan solusi laser cutting terdepan
       </p>
     </div>
@@ -41,11 +43,13 @@ const metaTags = generateMetaTags({
   </section>
   
   <!-- Siapa Kami -->
-  <section class="py-16 bg-background">
-    <div class="max-w-7xl mx-auto px-4">
+  <section class="py-16 bg-background relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 relative">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold mb-6 text-text-main">Siapa Kami</h2>
+          <h2 class="display-lg text-glow mb-6 text-text-main">Siapa Kami</h2>
           <p class="text-lg text-text-secondary mb-6">
             raja cutting laser adalah perusahaan terdepan dalam industri laser cutting di Jabodetabek 
             yang telah berpengalaman lebih dari 10 tahun.
@@ -57,11 +61,11 @@ const metaTags = generateMetaTags({
           
           <!-- Stats -->
           <div class="grid grid-cols-2 gap-6">
-            <div class="text-center p-4 bg-surface/60 rounded-lg">
+            <div class="text-center p-4 bg-surface/60 rounded-lg corner-brackets border border-border">
               <div class="text-3xl font-bold text-accent">10+</div>
               <div class="text-sm text-text-secondary">Tahun Pengalaman</div>
             </div>
-            <div class="text-center p-4 bg-surface/60 rounded-lg">
+            <div class="text-center p-4 bg-surface/60 rounded-lg corner-brackets border border-border">
               <div class="text-3xl font-bold text-accent">1000+</div>
               <div class="text-sm text-text-secondary">Proyek Selesai</div>
             </div>
@@ -69,23 +73,28 @@ const metaTags = generateMetaTags({
         </div>
         
         <!-- Main Image -->
-        <div>
-          <OptimizedImage 
-            src="/images/team.webp"
-            alt="Workshop raja cutting laser"
-            className="w-full rounded-xl shadow-lg"
-            loading="lazy"
-          />
+        <div class="relative">
+          <div class="absolute -inset-6 bg-accent/10 blur-3xl rounded-full"></div>
+          <div class="relative overflow-hidden rounded-3xl border border-accent/20 shadow-2xl corner-brackets">
+            <OptimizedImage 
+              src="/images/team.webp"
+              alt="Workshop raja cutting laser"
+              className="w-full rounded-xl shadow-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
   
   <!-- Tim Ahli -->
-  <section class="py-16 bg-surface/60">
-    <div class="max-w-7xl mx-auto px-4">
+  <section class="py-16 bg-surface/60 relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 relative">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-text-main">Tim Ahli Kami</h2>
+        <h2 class="display-lg text-glow text-text-main mb-4">Tim Ahli Kami</h2>
         <p class="text-xl text-text-secondary">
           Tim profesional berpengalaman yang siap memberikan solusi terbaik
         </p>
@@ -93,7 +102,7 @@ const metaTags = generateMetaTags({
       
       <!-- Team Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-background rounded-xl p-6 text-center shadow-lg">
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <OptimizedImage 
             src="/images/budisantoso.webp"
             alt="Budi Santoso - Direktur"
@@ -107,7 +116,7 @@ const metaTags = generateMetaTags({
           </p>
         </div>
         
-        <div class="bg-background rounded-xl p-6 text-center shadow-lg">
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <OptimizedImage 
             src="/images/Ahmad Rizki.webp"
             alt="Ahmad Rizki - Technical Manager"
@@ -121,7 +130,7 @@ const metaTags = generateMetaTags({
           </p>
         </div>
         
-        <div class="bg-background rounded-xl p-6 text-center shadow-lg">
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <OptimizedImage 
             src="/images/Sari Dewi.webp"
             alt="Sari Dewi - Design Specialist"
@@ -139,62 +148,64 @@ const metaTags = generateMetaTags({
   </section>
 
   <!-- Gallery Test Gambar -->
-  <section class="py-16 bg-background">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-text-main">Galeri Workshop & Peralatan</h2>
+  <section class="py-16 bg-background relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 relative">
+      <h2 class="display-lg text-glow text-center mb-12 text-text-main">Galeri Workshop & Peralatan</h2>
       
       <!-- Gallery Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/laserfiber.webp" alt="Laser Fiber" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">Laser Fiber</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/cncrouter.webp" alt="CNC Router" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">CNC Router</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/galvo.webp" alt="Galvo Engraving" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">Galvo Engraving</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/Acrylic.webp" alt="Material Acrylic" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">Acrylic</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/acp.webp" alt="Material ACP" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">ACP</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/pvc.webp" alt="Material PVC" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">PVC</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/grc.webp" alt="Material GRC" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">GRC</p>
           </div>
         </div>
         
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="relative overflow-hidden rounded-lg corner-brackets border border-border">
           <OptimizedImage src="/images/prototype.webp" alt="Prototype Project" className="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
             <p class="text-white font-medium">Prototype</p>
@@ -205,7 +216,20 @@ const metaTags = generateMetaTags({
   </section>
 
   <!-- CTA -->
-  <CTA 
+    <div class="marquee border-y border-accent/20 bg-container/80 backdrop-blur-sm py-4" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">◆ 10+ Tahun</span>
+        <span class="marquee-item">◆ 1000+ Proyek</span>
+        <span class="marquee-item">◆ Jabodetabek</span>
+        <span class="marquee-item">◆ Tim Profesional</span>
+        <span class="marquee-item">◆ 10+ Tahun</span>
+        <span class="marquee-item">◆ 1000+ Proyek</span>
+        <span class="marquee-item">◆ Jabodetabek</span>
+        <span class="marquee-item">◆ Tim Profesional</span>
+      </div>
+    </div>
+
+    <CTA
     title="Siap Berkolaborasi dengan Kami?"
     description="Mari wujudkan project laser cutting Anda bersama tim ahli raja cutting laser."
     secondaryText="Lihat Portfolio"
@@ -224,19 +248,4 @@ const metaTags = generateMetaTags({
     };
   });
 </script>
-
-<style>
-  /* Basic hover effects */
-  .hover\:opacity-100:hover {
-    opacity: 1;
-  }
-  
-  .transition-opacity {
-    transition: opacity 0.3s ease;
-  }
-  
-  .shadow-lg:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  }
-</style>
 

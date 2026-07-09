@@ -51,6 +51,9 @@ const sizeClasses = getSizeClasses();
 ---
 
 <section class={`${variantClasses} ${sizeClasses} relative overflow-hidden`}>
+  <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+  <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+
   {variant === 'image' && backgroundImage && (
     <div class="absolute inset-0 z-0">
       <img src={backgroundImage} alt="Background" class="w-full h-full object-cover" loading="lazy"/>
@@ -69,8 +72,8 @@ const sizeClasses = getSizeClasses();
     </div>
   )}
 
-  <div class="relative z-20 container-custom text-center">
-    <h2 class="heading-lg mb-6 fade-in-up text-text-main">{title}</h2>
+  <div class="relative z-20 container-custom text-center corner-brackets">
+    <h2 class="display-lg text-glow mb-6 fade-in-up text-text-main">{title}</h2>
     <p class={`mb-8 max-w-2xl mx-auto leading-relaxed fade-in-up ${variant==='minimal'?'text-text-secondary':'text-white/95'}`} style="animation-delay:0.2s;">
       {description}
     </p>
@@ -125,6 +128,19 @@ const sizeClasses = getSizeClasses();
       <div class="absolute bottom-20 right-1/4 w-1.5 h-1.5 bg-accent/30 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
     </div>
   )}
+
+  <div class="marquee border-t border-accent/20 bg-background/40 backdrop-blur-sm py-3 relative z-30" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item">◆ Konsultasi Gratis</span>
+      <span class="marquee-item">◆ Quote Instan</span>
+      <span class="marquee-item">◆ Presisi Tinggi</span>
+      <span class="marquee-item">◆ Jabodetabek</span>
+      <span class="marquee-item">◆ Konsultasi Gratis</span>
+      <span class="marquee-item">◆ Quote Instan</span>
+      <span class="marquee-item">◆ Presisi Tinggi</span>
+      <span class="marquee-item">◆ Jabodetabek</span>
+    </div>
+  </div>
 </section>
 
 <style>

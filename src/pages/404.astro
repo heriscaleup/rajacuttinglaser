@@ -10,22 +10,66 @@ const siteName = 'Raja Cutting Laser';
   title={`Halaman Tidak Ditemukan | ${siteName}`}
   description="Halaman yang Anda cari tidak ditemukan."
   keywords="404, halaman tidak ditemukan"
+  url="/404"
+  type="website"
+  image="/images/logo.webp"
+  canonical="/404"
+  metaTags={{
+    title: `Halaman Tidak Ditemukan | ${siteName}`,
+    description: "Halaman yang Anda cari tidak ditemukan.",
+    keywords: "404, halaman tidak ditemukan",
+    canonical: "/404",
+    url: "/404",
+    type: "website",
+    openGraph: {
+      title: `Halaman Tidak Ditemukan | ${siteName}`,
+      description: "Halaman yang Anda cari tidak ditemukan.",
+      url: "/404",
+      image: "/images/logo.webp",
+      type: "website",
+      siteName: siteName,
+      locale: "id_ID"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Halaman Tidak Ditemukan | ${siteName}`,
+      description: "Halaman yang Anda cari tidak ditemukan.",
+      image: "/images/logo.webp"
+    }
+  }}
   jsonLd={[]}
 >
   <Header slot="header" />
 
-  <main class="bg-background text-text-main flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
-    <h1 class="text-5xl font-black tracking-tight text-text-main sm:text-6xl">404</h1>
-    <p class="mt-4 max-w-md text-lg text-text-secondary">
-      Maaf, halaman yang Anda cari tidak ada.
-    </p>
-    <a
-      href="/"
-      class="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-black text-black transition hover:bg-accent/80"
-    >
-      Kembali ke Beranda
-    </a>
+  <main class="bg-background text-text-main flex min-h-[60vh] flex-col items-center justify-center px-4 text-center relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="relative">
+      <h1 class="display-xl text-glow mb-4">404</h1>
+      <p class="mt-4 max-w-md text-lg text-text-secondary">
+        Maaf, halaman yang Anda cari tidak ada.
+      </p>
+      <a
+        href="/"
+        class="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-black text-background transition hover:bg-accent-blue shadow-glow"
+      >
+        Kembali ke Beranda
+      </a>
+    </div>
   </main>
 
-  <Footer slot="footer" />
+    <div class="marquee border-y border-accent/20 bg-surface/60 backdrop-blur-sm py-3" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">◆ Laser Fiber</span>
+        <span class="marquee-item">◆ Laser CO2</span>
+        <span class="marquee-item">◆ CNC Router</span>
+        <span class="marquee-item">◆ Cutting Laser</span>
+        <span class="marquee-item">◆ Laser Fiber</span>
+        <span class="marquee-item">◆ Laser CO2</span>
+        <span class="marquee-item">◆ CNC Router</span>
+        <span class="marquee-item">◆ Cutting Laser</span>
+      </div>
+    </div>
+
+    <Footer slot="footer" />
 </BaseLayout>

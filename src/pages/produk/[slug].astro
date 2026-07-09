@@ -58,6 +58,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
   <Header slot="header" />
 
   <section class="relative overflow-hidden bg-background pt-32 pb-20">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
     <div class="absolute inset-0 opacity-5" aria-hidden="true">
       <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0); background-size: 24px 24px;"></div>
     </div>
@@ -73,10 +75,10 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
       <div class="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         <div>
-          <div class="inline-flex items-center px-5 py-2 bg-accent/10 border border-button/20 rounded-full text-accent font-semibold text-sm mb-6">
+          <div class="inline-flex items-center px-5 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
             {product.kicker}
           </div>
-          <h1 class="heading-xl text-text-main mb-8">{product.name}</h1>
+          <h1 class="display-xl text-glow text-text-main mb-8">{product.name}</h1>
           <p class="text-xl text-text-secondary leading-relaxed mb-10 max-w-3xl">
             {product.summary}
           </p>
@@ -99,13 +101,13 @@ const breadcrumbSchema = generateBreadcrumbSchema([
               href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(product.whatsappMessage || WHATSAPP_MESSAGES.productDefault)}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-accent text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:shadow-lg"
+              class="inline-flex items-center justify-center bg-accent text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-accent-blue shadow-glow"
             >
               Konsultasi Produk
             </a>
             <a
               href="/portfolio/"
-              class="inline-flex items-center justify-center border-2 border-primary text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:text-background"
+              class="inline-flex items-center justify-center border-2 border-accent text-accent font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-accent hover:text-background"
             >
               Lihat Portfolio
             </a>
@@ -129,11 +131,13 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  <section class="section-padding bg-surface/60 cv-auto">
+  <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
-        <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg">
-          <h2 class="text-3xl font-bold text-text-main mb-6">Cocok Untuk</h2>
+        <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg corner-brackets">
+          <h2 class="display-lg text-glow text-text-main mb-6">Cocok Untuk</h2>
           <ul class="space-y-4">
             {product.idealFor.map((item) => (
               <li class="flex items-start text-text-secondary">
@@ -146,8 +150,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg">
-          <h2 class="text-3xl font-bold text-text-main mb-6">Pilihan Material</h2>
+        <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg corner-brackets">
+          <h2 class="display-lg text-glow text-text-main mb-6">Pilihan Material</h2>
           <ul class="space-y-4">
             {product.materials.map((item) => (
               <li class="flex items-start text-text-secondary">
@@ -176,10 +180,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  <section class="section-padding bg-background cv-auto">
+  <section class="section-padding bg-background cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-6">Alur Kerja untuk Produk Custom</h2>
+        <h2 class="display-lg text-glow text-text-main mb-6">Alur Kerja untuk Produk Custom</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Alur berikut kami pakai supaya desain yang menarik juga tetap realistis saat diproduksi, difinishing, dan masuk ke proyek Anda.
         </p>
@@ -199,10 +205,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  <section class="section-padding bg-surface/60 cv-auto">
+  <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-6">Teknologi yang Mendukung Produk Ini</h2>
+        <h2 class="display-lg text-glow text-text-main mb-6">Teknologi yang Mendukung Produk Ini</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Untuk hasil produk yang rapi, jenis teknologi akan mengikuti material, detail motif, dan kebutuhan finishing.
         </p>
@@ -210,7 +218,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {supportingServices.map((service) => (
-          <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg flex flex-col">
+          <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg flex flex-col corner-brackets">
             <OptimizedImage
               src={service.image}
               alt={service.name}
@@ -233,10 +241,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  <section class="section-padding bg-background cv-auto">
+  <section class="section-padding bg-background cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-6">Pertanyaan Sebelum Produksi</h2>
+        <h2 class="display-lg text-glow text-text-main mb-6">Pertanyaan Sebelum Produksi</h2>
         <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
           Beberapa hal berikut paling sering ditanyakan calon klien sebelum produk custom masuk tahap fabrikasi.
         </p>
@@ -266,11 +276,26 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  {relatedProducts.length > 0 && (
-    <section class="section-padding bg-surface/60 cv-auto">
-      <div class="container-custom">
-        <div class="text-center mb-16">
-          <h2 class="heading-lg text-text-main mb-6">Lihat Produk Prioritas Lain</h2>
+    <div class="marquee border-y border-accent/20 bg-surface/60 backdrop-blur-sm py-4" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">◆ Produk Custom</span>
+        <span class="marquee-item">◆ Presisi Tinggi</span>
+        <span class="marquee-item">◆ Material Premium</span>
+        <span class="marquee-item">◆ Jabodetabek</span>
+        <span class="marquee-item">◆ Produk Custom</span>
+        <span class="marquee-item">◆ Presisi Tinggi</span>
+        <span class="marquee-item">◆ Material Premium</span>
+        <span class="marquee-item">◆ Jabodetabek</span>
+      </div>
+    </div>
+
+    {relatedProducts.length > 0 && (
+     <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden">
+       <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+       <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+       <div class="container-custom">
+         <div class="text-center mb-16">
+           <h2 class="display-lg text-glow text-text-main mb-6">Lihat Produk Prioritas Lain</h2>
           <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Jika kebutuhan Anda bukan produk ini, mungkin lebih cocok ke salah satu aplikasi custom berikut.
           </p>

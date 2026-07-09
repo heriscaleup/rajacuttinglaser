@@ -38,8 +38,10 @@ const categoryColors: { [key: string]: string } = {
   
   <main>
     <!-- Portfolio Hero Section -->
-    <section class="section-padding bg-accent text-white">
-      <div class="container-custom">
+    <section class="section-padding bg-accent text-white relative overflow-hidden">
+      <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+      <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+      <div class="container-custom relative">
         <div class="text-center">
           <div class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-semibold text-sm mb-6">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +49,7 @@ const categoryColors: { [key: string]: string } = {
             </svg>
             Hasil Karya Terbaik
           </div>
-          <h1 class="heading-xl mb-8 text-white">Portfolio Proyek Laser Cutting & CNC Router - Hasil Kerja Terbaik Kami</h1>
+          <h1 class="display-xl text-glow mb-8 text-white">Portfolio Proyek Laser Cutting & CNC Router - Hasil Kerja Terbaik Kami</h1>
           <p class="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
             Lihat berbagai proyek laser cutting, CNC router, dan engraving yang telah kami selesaikan dengan kualitas tinggi dan presisi sempurna untuk klien di seluruh Indonesia.
           </p>
@@ -85,32 +87,32 @@ const categoryColors: { [key: string]: string } = {
     <section class="py-8 bg-background">
       <div class="container-custom">
         <div class="flex flex-wrap justify-center gap-4" id="portfolio-filters">
-          <button class="filter-btn active inline-flex items-center px-6 py-3 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-xl shadow-lg hover:from-primary hover:to-accent hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="all">
+          <button class="filter-btn active inline-flex items-center px-6 py-3 bg-gradient-to-r from-accent to-accent-blue text-white font-semibold rounded-xl shadow-lg hover:from-accent-blue hover:to-accent hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="all">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
             </svg>
             Semua Proyek
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-accent hover:to-primary hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-fiber">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-accent/20 hover:bg-gradient-to-r hover:from-accent hover:to-accent-blue hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-fiber">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
             Laser Fiber
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-co2">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-accent/20 hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-co2">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
             </svg>
             Laser CO2
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="cnc-router">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-accent/20 hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="cnc-router">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
             CNC Router
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-orange-600 hover:to-orange-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="galvo-engraving">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-accent/20 hover:bg-gradient-to-r hover:from-orange-600 hover:to-orange-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="galvo-engraving">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
             </svg>
@@ -121,8 +123,10 @@ const categoryColors: { [key: string]: string } = {
     </section>
 
     <!-- Portfolio Grid -->
-    <section class="section-padding bg-background">
-      <div class="container-custom">
+    <section class="section-padding bg-background relative overflow-hidden">
+      <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+      <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+      <div class="container-custom relative">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
           {portfolioProjects.map((project) => (
             <article class="portfolio-item group bg-surface/60 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 flex flex-col overflow-hidden border border-accent/20" data-category={project.category.toLowerCase().replace(' ', '-')}>
@@ -182,7 +186,7 @@ const categoryColors: { [key: string]: string } = {
                 
                 <!-- Action Button -->
                 <div class="mt-auto">
-                  <button class="view-detail-btn group/btn inline-flex items-center justify-center w-full bg-gradient-to-r from-accent to-primary text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:from-primary hover:to-accent hover:shadow-lg transform hover:scale-105" data-project-id={project.id}>
+                  <button class="view-detail-btn group/btn inline-flex items-center justify-center w-full bg-gradient-to-r from-accent to-accent-blue text-background font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:from-accent-blue hover:to-accent hover:shadow-glow transform hover:scale-105" data-project-id={project.id}>
                     <span class="flex items-center justify-center">
                       Lihat Detail Proyek
                       <svg class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,6 +203,23 @@ const categoryColors: { [key: string]: string } = {
     </section>
 
     <!-- CTA Section -->
+    <div class="marquee border-y border-accent/20 bg-surface/60 backdrop-blur-sm py-4" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">◆ Laser Fiber</span>
+        <span class="marquee-item">◆ Laser CO2</span>
+        <span class="marquee-item">◆ CNC Router</span>
+        <span class="marquee-item">◆ Galvo Engraving</span>
+        <span class="marquee-item">◆ Fabrikasi Logam</span>
+        <span class="marquee-item">◆ Cutting Laser</span>
+        <span class="marquee-item">◆ Laser Fiber</span>
+        <span class="marquee-item">◆ Laser CO2</span>
+        <span class="marquee-item">◆ CNC Router</span>
+        <span class="marquee-item">◆ Galvo Engraving</span>
+        <span class="marquee-item">◆ Fabrikasi Logam</span>
+        <span class="marquee-item">◆ Cutting Laser</span>
+      </div>
+    </div>
+
     <CTA 
       title="Siap Mulai Proyek Anda?"
       description="Konsultasikan kebutuhan laser cutting Anda dengan tim ahli kami. Dapatkan penawaran terbaik dan hasil berkualitas tinggi."
@@ -212,13 +233,13 @@ const categoryColors: { [key: string]: string } = {
   <Footer slot="footer" />
 
   <!-- Portfolio Detail Modal -->
-  <div id="portfolio-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 overflow-y-auto">
+  <div id="portfolio-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 overflow-y-auto">
     <div class="flex items-center justify-center min-h-screen p-4">
-      <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
+      <div class="bg-surface rounded-2xl shadow-2xl max-w-4xl w-full max-h-screen overflow-y-auto border border-border">
         <!-- Modal Header -->
-        <div class="flex justify-between items-center p-8 border-b border-gray-200">
-          <h2 id="modal-title" class="text-2xl font-bold text-gray-900"></h2>
-          <button id="close-modal" class="text-gray-800 hover:text-gray-800 transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div class="flex justify-between items-center p-8 border-b border-border">
+          <h2 id="modal-title" class="text-2xl font-bold text-text-main"></h2>
+          <button id="close-modal" class="text-text-main hover:text-accent transition-colors p-2 hover:bg-surface/60 rounded-full">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -226,19 +247,19 @@ const categoryColors: { [key: string]: string } = {
         </div>
         
         <!-- Modal Content -->
-        <div class="p-8">
-          <!-- Image Gallery -->
-          <div class="mb-8">
-            <div class="relative">
-              <img id="modal-main-image" src="" alt="" class="w-full h-80 object-cover rounded-xl shadow-lg">
-              <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all duration-300 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100">
-                <button id="expand-image" class="bg-white bg-opacity-90 p-3 rounded-full hover:bg-opacity-100 transition-all shadow-lg">
-                  <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
+            <div class="p-8">
+              <!-- Image Gallery -->
+              <div class="mb-8">
+                <div class="relative">
+                  <img id="modal-main-image" src="" alt="" class="w-full h-80 object-cover rounded-xl shadow-lg">
+                  <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all duration-300 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100">
+                    <button id="expand-image" class="bg-surface/90 backdrop-blur-sm p-3 rounded-full hover:bg-opacity-100 transition-all shadow-lg border border-border">
+                      <svg class="w-6 h-6 text-text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
             
             <!-- Thumbnail Gallery -->
             <div id="thumbnail-gallery" class="flex gap-3 mt-6 overflow-x-auto pb-2">
@@ -249,44 +270,44 @@ const categoryColors: { [key: string]: string } = {
           <!-- Project Details -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Detail Proyek</h3>
+              <h3 class="text-lg font-semibold text-text-main mb-4">Detail Proyek</h3>
               <div class="space-y-4">
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                  <span class="text-gray-800 font-medium">Client:</span>
-                  <span id="modal-client" class="font-bold text-gray-900"></span>
+                <div class="flex justify-between items-center p-4 bg-background rounded-xl border border-border">
+                  <span class="text-text-secondary font-medium">Client:</span>
+                  <span id="modal-client" class="font-bold text-text-main"></span>
                 </div>
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                  <span class="text-gray-800 font-medium">Material:</span>
-                  <span id="modal-material" class="font-bold text-gray-900"></span>
+                <div class="flex justify-between items-center p-4 bg-background rounded-xl border border-border">
+                  <span class="text-text-secondary font-medium">Material:</span>
+                  <span id="modal-material" class="font-bold text-text-main"></span>
                 </div>
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                  <span class="text-gray-800 font-medium">Teknik:</span>
-                  <span id="modal-technique" class="font-bold text-gray-900"></span>
+                <div class="flex justify-between items-center p-4 bg-background rounded-xl border border-border">
+                  <span class="text-text-secondary font-medium">Teknik:</span>
+                  <span id="modal-technique" class="font-bold text-text-main"></span>
                 </div>
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                  <span class="text-gray-800 font-medium">Kategori:</span>
-                  <span id="modal-category" class="font-bold text-blue-600"></span>
+                <div class="flex justify-between items-center p-4 bg-background rounded-xl border border-border">
+                  <span class="text-text-secondary font-medium">Kategori:</span>
+                  <span id="modal-category" class="font-bold text-accent"></span>
                 </div>
               </div>
             </div>
             
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Deskripsi</h3>
-              <p id="modal-description" class="text-gray-800 leading-relaxed bg-gray-50 p-4 rounded-xl"></p>
+              <h3 class="text-lg font-semibold text-text-main mb-4">Deskripsi</h3>
+              <p id="modal-description" class="text-text-secondary leading-relaxed bg-background p-4 rounded-xl border border-border"></p>
             </div>
           </div>
           
           <!-- Contact CTA -->
-          <div class="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border border-green-200">
+          <div class="mt-8 p-6 bg-gradient-to-r from-accent/10 to-accent-blue/10 rounded-2xl border border-accent/20">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <h4 class="font-bold text-gray-900 text-lg">Tertarik dengan proyek serupa?</h4>
-                <p class="text-gray-800">Konsultasikan kebutuhan Anda dengan tim ahli kami</p>
+                <h4 class="font-bold text-text-main text-lg">Tertarik dengan proyek serupa?</h4>
+                <p class="text-text-secondary">Konsultasikan kebutuhan Anda dengan tim ahli kami</p>
               </div>
               <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=Halo%20raja%20cutting%20laser,%20saya%20ingin%20konsultasi%20dong%20tentang%20proyek%20laser%20cutting%20serupa.`}
                  target="_blank" 
                  rel="noopener noreferrer"
-                 class="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:from-green-700 hover:to-green-800 hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                 class="inline-flex items-center justify-center bg-gradient-to-r from-accent to-accent-blue text-background font-semibold px-8 py-3 rounded-xl shadow-glow hover:shadow-glow-lg transform hover:scale-105 transition-all duration-300">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                 </svg>
@@ -300,10 +321,10 @@ const categoryColors: { [key: string]: string } = {
   </div>
 
   <!-- Image Lightbox Modal -->
-  <div id="image-lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-60">
+  <div id="image-lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden z-60">
     <div class="relative max-w-screen-lg max-h-screen p-4 flex items-center justify-center">
-      <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
-      <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors p-2 hover:bg-white/10 rounded-full">
+      <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg border border-border">
+      <button id="close-lightbox" class="absolute top-4 right-4 text-text-main hover:text-accent transition-colors p-2 hover:bg-surface/60 rounded-full border border-border">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -325,13 +346,13 @@ document.addEventListener('DOMContentLoaded', function() {
       filterBtns.forEach(b => {
         b.classList.remove('active');
         b.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-700', 'text-white');
-        b.classList.add('bg-white', 'text-gray-800', 'border', 'border-gray-200');
+        b.classList.add('bg-surface/60', 'text-text-secondary', 'border', 'border-accent/20');
       });
       
       // Add active class to clicked button
       btn.classList.add('active');
-      btn.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-700', 'text-white');
-      btn.classList.remove('bg-white', 'text-gray-800', 'border', 'border-gray-200');
+      btn.classList.add('bg-gradient-to-r', 'from-accent', 'to-accent-blue', 'text-white');
+      btn.classList.remove('bg-surface/60', 'text-text-secondary', 'border', 'border-accent/20');
 
       const filterValue = btn.getAttribute('data-filter');
 

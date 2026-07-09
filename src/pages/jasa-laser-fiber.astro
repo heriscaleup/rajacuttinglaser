@@ -51,11 +51,13 @@ const faqSchema = generateFAQSchema(faqItems);
   />
 
   <!-- Service Overview -->
-  <section class="section-padding bg-background cv-auto">
-    <div class="container-custom">
+  <section class="section-padding bg-background cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="container-custom relative">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="heading-lg text-text-main mb-6">Solusi Cutting & Marking Logam Terdepan</h2>
+          <h2 class="display-lg text-glow text-text-main mb-6">Solusi Cutting & Marking Logam Terdepan</h2>
           <p class="text-xl text-text-secondary mb-8">
             Laser Fiber kami menggunakan teknologi berkekuatan tinggi untuk memberikan hasil cutting dan marking yang sangat presisi pada berbagai material logam. Dengan kecepatan tinggi dan efisiensi biaya, kami menjadi pilihan utama industri manufaktur dan otomotif di Jabodetabek.
           </p>
@@ -118,33 +120,35 @@ const faqSchema = generateFAQSchema(faqItems);
   </section>
 
   <!-- Process Steps -->
-  <section class="section-padding bg-surface/60 cv-auto">
-    <div class="container-custom">
+  <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="container-custom relative">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-4">Proses Pengerjaan Laser Fiber</h2>
+        <h2 class="display-lg text-glow text-text-main mb-4">Proses Pengerjaan Laser Fiber</h2>
         <p class="text-xl text-text-secondary max-w-3xl mx-auto">
           Alur kerja profesional untuk memastikan hasil cutting metal yang presisi dan tepat waktu
         </p>
       </div>
       
       <div class="grid md:grid-cols-4 gap-8">
-        <div class="bg-background rounded-xl p-6 text-center shadow-md relative">
-          <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-md relative border border-accent/20">
+          <div class="w-12 h-12 bg-accent text-background rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
           <h3 class="text-lg font-bold text-text-main mb-2">Desain & File</h3>
           <p class="text-text-secondary text-sm">Verifikasi file CAD (.dxf, .dwg) dan optimasi nesting.</p>
         </div>
-        <div class="bg-background rounded-xl p-6 text-center shadow-md relative">
-          <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-md relative border border-accent/20">
+          <div class="w-12 h-12 bg-accent text-background rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
           <h3 class="text-lg font-bold text-text-main mb-2">Setup Mesin</h3>
           <p class="text-text-secondary text-sm">Pengaturan parameter laser sesuai jenis dan ketebalan logam.</p>
         </div>
-        <div class="bg-background rounded-xl p-6 text-center shadow-md relative">
-          <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-md relative border border-accent/20">
+          <div class="w-12 h-12 bg-accent text-background rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
           <h3 class="text-lg font-bold text-text-main mb-2">Eksekusi Laser</h3>
           <p class="text-text-secondary text-sm">Proses pemotongan otomatis dengan kecepatan tinggi.</p>
         </div>
-        <div class="bg-background rounded-xl p-6 text-center shadow-md relative">
-          <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+        <div class="bg-background corner-brackets rounded-xl p-6 text-center shadow-md relative border border-accent/20">
+          <div class="w-12 h-12 bg-accent text-background rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
           <h3 class="text-lg font-bold text-text-main mb-2">QC & Delivery</h3>
           <p class="text-text-secondary text-sm">Pemeriksaan dimensi dan finishing sebelum pengiriman.</p>
         </div>
@@ -153,37 +157,39 @@ const faqSchema = generateFAQSchema(faqItems);
   </section>
 
   <!-- Material Capabilities -->
-  <section class="section-padding bg-background cv-auto">
-    <div class="container-custom">
+  <section class="section-padding bg-background cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="container-custom relative">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-4">Material Logam yang Diproses</h2>
+        <h2 class="display-lg text-glow text-text-main mb-4">Material Logam yang Diproses</h2>
         <p class="text-xl text-text-secondary max-w-3xl mx-auto">
           Kemampuan mesin kami mencakup berbagai jenis logam industri
         </p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-surface/60 p-6 rounded-lg border border-accent/20">
+        <div class="bg-surface/60 corner-brackets p-6 rounded-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <h3 class="text-xl font-bold text-text-main mb-2">Stainless Steel</h3>
           <p class="text-text-secondary">SS304, SS316, SS201, SS430. Hingga ketebalan 20mm.</p>
         </div>
-        <div class="bg-surface/60 p-6 rounded-lg border border-accent/20">
+        <div class="bg-surface/60 corner-brackets p-6 rounded-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <h3 class="text-xl font-bold text-text-main mb-2">Carbon Steel / Mild Steel</h3>
           <p class="text-text-secondary">Plat besi hitam, SPHC, SPCC. Hingga ketebalan 25mm.</p>
         </div>
-        <div class="bg-surface/60 p-6 rounded-lg border border-accent/20">
+        <div class="bg-surface/60 corner-brackets p-6 rounded-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <h3 class="text-xl font-bold text-text-main mb-2">Aluminium</h3>
           <p class="text-text-secondary">Series 1xxx, 3xxx, 5xxx. Hingga ketebalan 15mm.</p>
         </div>
-        <div class="bg-surface/60 p-6 rounded-lg border border-accent/20">
+        <div class="bg-surface/60 corner-brackets p-6 rounded-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <h3 class="text-xl font-bold text-text-main mb-2">Tembaga / Copper</h3>
           <p class="text-text-secondary">Plat tembaga murni. Hingga ketebalan 8mm.</p>
         </div>
-        <div class="bg-surface/60 p-6 rounded-lg border border-accent/20">
+        <div class="bg-surface/60 corner-brackets p-6 rounded-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <h3 class="text-xl font-bold text-text-main mb-2">Kuningan / Brass</h3>
           <p class="text-text-secondary">Plat kuningan untuk dekoratif. Hingga ketebalan 8mm.</p>
         </div>
-        <div class="bg-surface/60 p-6 rounded-lg border border-accent/20">
+        <div class="bg-surface/60 corner-brackets p-6 rounded-lg border border-accent/20 hover:shadow-glow transition-all duration-300">
           <h3 class="text-xl font-bold text-text-main mb-2">Galvanized Steel</h3>
           <p class="text-text-secondary">Plat galvanis tahan karat. Hingga ketebalan 6mm.</p>
         </div>
@@ -192,10 +198,12 @@ const faqSchema = generateFAQSchema(faqItems);
   </section>
 
   <!-- Service Features -->
-  <section class="section-padding bg-surface/60 cv-auto">
-    <div class="container-custom">
+  <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="container-custom relative">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-4">Keunggulan Layanan Kami</h2>
+        <h2 class="display-lg text-glow text-text-main mb-4">Keunggulan Layanan Kami</h2>
         <p class="text-xl text-text-secondary max-w-3xl mx-auto">
           Mengapa memilih layanan Laser Fiber dari Raja Cutting Laser
         </p>
@@ -203,7 +211,7 @@ const faqSchema = generateFAQSchema(faqItems);
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {service.features.map((feature, index) => (
-          <div class="bg-background rounded-xl shadow-lg p-6 flex items-start space-x-4 hover:shadow-xl transition-shadow duration-300">
+          <div class="bg-background corner-brackets hover:shadow-xl transition-shadow duration-300 border border-accent/20 p-6">
             <div class="w-10 h-10 bg-accent/20 text-accent rounded-full flex items-center justify-center flex-shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
             </div>
@@ -218,10 +226,12 @@ const faqSchema = generateFAQSchema(faqItems);
   </section>
 
   <!-- Applications -->
-  <section class="section-padding bg-background cv-auto">
-    <div class="container-custom">
+  <section class="section-padding bg-background cv-auto relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true"></div>
+    <div class="absolute inset-0 noise-overlay pointer-events-none" aria-hidden="true"></div>
+    <div class="container-custom relative">
       <div class="text-center mb-16">
-        <h2 class="heading-lg text-text-main mb-4">Aplikasi Industri</h2>
+        <h2 class="display-lg text-glow text-text-main mb-4">Aplikasi Industri</h2>
         <p class="text-xl text-text-secondary max-w-3xl mx-auto">
           Solusi laser cutting untuk berbagai sektor industri
         </p>
@@ -229,7 +239,7 @@ const faqSchema = generateFAQSchema(faqItems);
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {service.applications.map((application, index) => (
-          <div class="bg-gradient-to-br from-container to-background rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-accent/10">
+          <div class="bg-gradient-to-br from-container to-background corner-brackets rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-accent/10">
             <div class="text-4xl font-bold text-accent/60 mb-2">0{index + 1}</div>
             <h3 class="text-lg font-bold text-text-main mb-2">{application}</h3>
             <p class="text-text-secondary text-sm">Penerapan teknologi laser fiber untuk kebutuhan {application.toLowerCase()}.</p>
@@ -239,7 +249,19 @@ const faqSchema = generateFAQSchema(faqItems);
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <div class="marquee border-y border-accent/20 bg-surface/60 backdrop-blur-sm py-4" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item">◆ Laser Fiber</span>
+      <span class="marquee-item">◆ Presisi 0.05mm</span>
+      <span class="marquee-item">◆ Cutting Metal</span>
+      <span class="marquee-item">◆ Jabodetabek</span>
+      <span class="marquee-item">◆ Laser Fiber</span>
+      <span class="marquee-item">◆ Presisi 0.05mm</span>
+      <span class="marquee-item">◆ Cutting Metal</span>
+      <span class="marquee-item">◆ Jabodetabek</span>
+    </div>
+  </div>
+
   <CTA 
     title="Butuh Jasa Laser Cutting Metal?"
     description="Konsultasikan kebutuhan cutting metal Anda. Dapatkan penawaran harga terbaik dan hasil presisi tinggi."

@@ -65,13 +65,13 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
               href={`https://api.whatsapp.com/send?phone=6285165693179&text=Halo%20raja%20cutting%20laser,%20saya%20ingin%20konsultasi%20dong%20tentang%20jasa%20laser%20cutting%20${material.name}.%20Bisa%20konsultasi?`}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-button hover:bg-highlight text-white hover:text-button px-8 py-3 rounded-lg font-semibold transition-colors"
+              class="bg-accent hover:bg-highlight text-white hover:text-accent px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               Konsultasi Gratis
             </a>
             <a 
               href="contact" 
-              class="border-2 border-button text-button hover:bg-button hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              class="border-2 border-button text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               Request Quote
             </a>
@@ -90,7 +90,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
   </section>
 
   <!-- Material Characteristics -->
-  <section class="py-16 bg-container">
+  <section class="py-16 bg-surface/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-text-main mb-4">
@@ -103,8 +103,8 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-background p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-container rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-button" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 bg-surface/60 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
@@ -113,8 +113,8 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
         </div>
 
         <div class="bg-background p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-container rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-button" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 bg-surface/60 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
@@ -123,8 +123,8 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
         </div>
 
         <div class="bg-background p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-container rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-button" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 bg-surface/60 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
             </svg>
           </div>
@@ -166,7 +166,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
             </div>
           </div>
         </div>
-        <div class="bg-container p-8 rounded-lg">
+        <div class="bg-surface/60 p-8 rounded-lg">
           <h3 class="text-2xl font-bold text-text-main mb-6">Contoh Aplikasi</h3>
           <div class="grid grid-cols-2 gap-4">
             <OptimizedImage src="/images/stainlesssteel (1).webp" alt="Contoh Aplikasi 1" className="w-full h-40 object-cover rounded-lg shadow-md" />
@@ -180,7 +180,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
   </section>
 
   <!-- Recommended Service -->
-  <section class="py-16 bg-container">
+  <section class="py-16 bg-surface/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-text-main mb-4">
@@ -203,7 +203,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
             <div class="space-y-3">
               {recommendedService.features.map((feature) => (
                 <div class="flex items-center space-x-3">
-                  <svg class="w-5 h-5 text-button" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   <span class="text-text-secondary">{feature}</span>
@@ -211,7 +211,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
               ))}
             </div>
             <div class="mt-6">
-              <span class="text-2xl font-bold text-button">Hubungi untuk harga</span>
+              <span class="text-2xl font-bold text-accent">Hubungi untuk harga</span>
             </div>
           </div>
           <div>

@@ -22,7 +22,7 @@ const relatedPosts = allPosts
   .slice(0, 3);
 
 const siteName = 'Raja Cutting Laser';
-const accent = 'text-blue-700';
+const accent = 'text-accent';
 const fallbackImage = '/images/metal.webp';
 function resolveImage(image) {
   if (!image) return fallbackImage;
@@ -49,35 +49,35 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 >
   <Header slot="header" />
 
-  <main class="bg-[#fbfaf7] text-[#171717]">
+  <main class="bg-background text-text-main">
     <article class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1fr)_300px] lg:px-8 lg:py-20">
       <div class="min-w-0">
-        <nav class="mb-10 text-sm text-neutral-900" aria-label="Breadcrumb">
-          <a href="/" class="font-semibold hover:text-neutral-950">Beranda</a>
+        <nav class="mb-10 text-sm text-text-main" aria-label="Breadcrumb">
+          <a href="/" class="font-semibold hover:text-text-main">Beranda</a>
           <span class="mx-2">/</span>
-          <a href="/blog/" class="font-semibold hover:text-neutral-950">Blog</a>
+          <a href="/blog/" class="font-semibold hover:text-text-main">Blog</a>
         </nav>
 
-        <header class="border-b border-black/10 pb-8">
-          <div class="mb-5 flex flex-wrap items-center gap-3 text-sm text-neutral-900">
+        <header class="border-b border-border pb-8">
+          <div class="mb-5 flex flex-wrap items-center gap-3 text-sm text-text-main">
             <span class={`font-black uppercase tracking-[0.18em] ${accent}`}>{post.data.category}</span>
             <span>•</span>
             <time>{new Date(post.data.pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
             <span>•</span>
             <span>{post.data.readTime}</span>
           </div>
-          <h1 class="max-w-4xl text-4xl font-black leading-[1.02] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl">{post.data.title}</h1>
-          <p class="mt-6 max-w-3xl text-lg leading-8 text-neutral-950 sm:text-xl">{post.data.description}</p>
+          <h1 class="max-w-4xl text-4xl font-black leading-[1.02] tracking-[-0.055em] text-text-main sm:text-6xl lg:text-7xl">{post.data.title}</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-text-main sm:text-xl">{post.data.description}</p>
           <div class="mt-7 flex items-center gap-3">
-            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-lg font-black text-neutral-900">{siteName.charAt(0)}</div>
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface/60 text-lg font-black text-text-main">{siteName.charAt(0)}</div>
             <div>
-              <p class="text-sm font-bold text-neutral-950">{post.data.author || siteName}</p>
-              <p class="text-xs text-neutral-900">Tim editorial {siteName}</p>
+              <p class="text-sm font-bold text-text-main">{post.data.author || siteName}</p>
+              <p class="text-xs text-text-main">Tim editorial {siteName}</p>
             </div>
           </div>
         </header>
 
-        <figure class="my-10 overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-100">
+        <figure class="my-10 overflow-hidden rounded-[2rem] border border-border bg-container">
           <img
             src={resolveImage(post.data.image)}
             alt={post.data.title}
@@ -88,15 +88,15 @@ const breadcrumbSchema = generateBreadcrumbSchema([
         </figure>
 
         {toc.length > 0 && (
-          <details class="mb-10 rounded-3xl border border-black/10 bg-white p-5 lg:hidden">
-            <summary class="cursor-pointer text-sm font-black text-neutral-950">Daftar Isi</summary>
-            <ol class="mt-4 space-y-3 text-sm text-neutral-950">
-              {toc.map((heading) => <li class={heading.depth === 3 ? 'ml-4' : ''}><a href={`#${heading.slug}`} class="hover:text-neutral-950">{heading.text}</a></li>)}
+          <details class="mb-10 rounded-3xl border border-border bg-surface/60 p-5 lg:hidden">
+            <summary class="cursor-pointer text-sm font-black text-text-main">Daftar Isi</summary>
+            <ol class="mt-4 space-y-3 text-sm text-text-main">
+              {toc.map((heading) => <li class={heading.depth === 3 ? 'ml-4' : ''}><a href={`#${heading.slug}`} class="hover:text-text-main">{heading.text}</a></li>)}
             </ol>
           </details>
         )}
 
-        <div class="article-prose prose prose-lg max-w-none rounded-[2rem] border border-black/10 bg-white px-5 py-8 shadow-sm sm:px-8 lg:px-10 prose-headings:font-black prose-headings:tracking-[-0.035em] prose-headings:text-neutral-950 prose-p:text-[17px] prose-p:leading-8 prose-p:text-neutral-950 prose-a:font-bold prose-a:text-blue-950 prose-a:underline prose-a:decoration-blue-200 prose-a:underline-offset-4 prose-a:transition hover:prose-a:decoration-blue-800 prose-strong:font-black prose-strong:text-neutral-950 prose-li:text-[17px] prose-li:leading-8 prose-li:text-neutral-950 prose-table:text-sm prose-th:bg-neutral-950 prose-th:text-white prose-td:text-neutral-950">
+        <div class="article-prose prose prose-lg max-w-none rounded-[2rem] border border-border bg-surface/60 px-5 py-8 shadow-sm sm:px-8 lg:px-10 prose-headings:font-black prose-headings:tracking-[-0.035em] prose-headings:text-text-main prose-p:text-[17px] prose-p:leading-8 prose-p:text-text-main prose-a:font-bold prose-a:text-accent prose-a:underline prose-a:decoration-accent/30 prose-a:underline-offset-4 prose-a:transition hover:prose-a:decoration-accent prose-strong:font-black prose-strong:text-text-main prose-li:text-[17px] prose-li:leading-8 prose-li:text-text-main prose-table:text-sm prose-th:bg-surface-alt prose-th:text-white prose-td:text-text-main">
           <Content />
         </div>
       </div>
@@ -104,16 +104,16 @@ const breadcrumbSchema = generateBreadcrumbSchema([
       <aside class="hidden lg:block">
         <div class="sticky top-24 space-y-6">
           {toc.length > 0 && (
-            <div class="rounded-3xl border border-black/10 bg-white/80 p-6 backdrop-blur">
-              <h2 class="mb-4 text-lg font-black text-neutral-950">Daftar Isi</h2>
-              <ol class="space-y-3 text-sm leading-6 text-neutral-950">
-                {toc.map((heading) => <li class={heading.depth === 3 ? 'ml-4' : ''}><a href={`#${heading.slug}`} class="hover:text-neutral-950">{heading.text}</a></li>)}
+            <div class="rounded-3xl border border-border bg-surface/60 p-6 backdrop-blur">
+              <h2 class="mb-4 text-lg font-black text-text-main">Daftar Isi</h2>
+              <ol class="space-y-3 text-sm leading-6 text-text-main">
+                {toc.map((heading) => <li class={heading.depth === 3 ? 'ml-4' : ''}><a href={`#${heading.slug}`} class="hover:text-text-main">{heading.text}</a></li>)}
               </ol>
             </div>
           )}
-          <div class="rounded-3xl border border-black/10 bg-white p-6">
-            <h2 class="text-lg font-black text-neutral-950">Butuh Konsultasi?</h2>
-            <p class="mt-3 text-sm leading-6 text-neutral-950">Diskusikan kebutuhan material, desain, estimasi biaya, dan produksi dengan tim kami.</p>
+          <div class="rounded-3xl border border-border bg-surface/60 p-6">
+            <h2 class="text-lg font-black text-text-main">Butuh Konsultasi?</h2>
+            <p class="mt-3 text-sm leading-6 text-text-main">Diskusikan kebutuhan material, desain, estimasi biaya, dan produksi dengan tim kami.</p>
             <a href={'https://api.whatsapp.com/send?phone=6285165693179&text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20ingin%20konsultasi'} target="_blank" rel="noopener noreferrer" class={`mt-5 inline-flex w-full justify-center rounded-full px-5 py-3 text-sm font-black text-white ${'bg-blue-700 hover:bg-blue-800'}`}>Konsultasi Sekarang</a>
           </div>
         </div>
@@ -121,20 +121,20 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </article>
 
     {relatedPosts.length > 0 && (
-      <section class="border-t border-black/10 py-14">
+      <section class="border-t border-border py-14">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="mb-8 flex items-end justify-between border-b border-black/10 pb-5">
-            <h2 class="text-2xl font-black tracking-[-0.03em] text-neutral-950">Artikel Terkait</h2>
-            <a href="/blog/" class="text-sm font-bold text-neutral-950 hover:text-neutral-950">Lihat semua →</a>
+          <div class="mb-8 flex items-end justify-between border-b border-border pb-5">
+            <h2 class="text-2xl font-black tracking-[-0.03em] text-text-main">Artikel Terkait</h2>
+            <a href="/blog/" class="text-sm font-bold text-text-main hover:text-text-main">Lihat semua →</a>
           </div>
           <div class="grid gap-7 md:grid-cols-3">
             {relatedPosts.map((relatedPost) => (
-              <article class="group border-b border-black/10 pb-7">
-                <a href={`/blog/${relatedPost.slug}/`} class="block overflow-hidden rounded-3xl border border-black/10 bg-neutral-100">
+              <article class="group border-b border-border pb-7">
+                <a href={`/blog/${relatedPost.slug}/`} class="block overflow-hidden rounded-3xl border border-border bg-container">
                   <img src={resolveImage(relatedPost.data.image)} alt={relatedPost.data.title} class="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.04]" loading="lazy" onerror={`this.onerror=null;this.src='${fallbackImage}';`} />
                 </a>
                 <p class={`mt-5 text-xs font-black uppercase tracking-[0.16em] ${accent}`}>{relatedPost.data.category}</p>
-                <h3 class="mt-2 text-lg font-black leading-tight text-neutral-950"><a href={`/blog/${relatedPost.slug}/`} class="group-hover:text-neutral-950">{relatedPost.data.title}</a></h3>
+                <h3 class="mt-2 text-lg font-black leading-tight text-text-main"><a href={`/blog/${relatedPost.slug}/`} class="group-hover:text-text-main">{relatedPost.data.title}</a></h3>
               </article>
             ))}
           </div>
@@ -148,15 +148,14 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
 
 <style>
-  
-  /* No pale text in Raja blog articles: body copy stays near-black. */
+  /* No pale text in Raja blog articles: body copy stays near-white. */
   .article-prose,
   .article-prose :global(p),
   .article-prose :global(li),
   .article-prose :global(td),
   .article-prose :global(figcaption),
   .article-prose :global(span) {
-    color: #020617;
+    color: #9CA3AF;
   }
 
   .article-prose :global(p),
@@ -168,19 +167,19 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
   .article-prose :global(strong),
   .article-prose :global(b) {
-    color: #000000;
+    color: #FFFFFF;
     font-weight: 900;
   }
 
   .article-prose :global(a) {
-    color: #172554;
+    color: #0066FF;
     font-weight: 800;
   }
 
-.article-prose :global(h2) {
+  .article-prose :global(h2) {
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     line-height: 1.12;
   }
@@ -210,17 +209,17 @@ const breadcrumbSchema = generateBreadcrumbSchema([
   }
 
   .article-prose :global(li::marker) {
-    color: #1d4ed8;
+    color: #00FF88;
     font-weight: 900;
   }
 
   .article-prose :global(blockquote) {
     margin: 2rem 0;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #00FF88;
     border-radius: 0 1.25rem 1.25rem 0;
-    background: #eff6ff;
+    background: #1E1E2A;
     padding: 1.25rem 1.5rem;
-    color: #172554;
+    color: #9CA3AF;
     font-weight: 650;
   }
 
@@ -230,28 +229,28 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     overflow-x: auto;
     border-collapse: separate;
     border-spacing: 0;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #2A2A3A;
     border-radius: 1rem;
-    background: white;
+    background: #1E1E2A;
   }
 
   .article-prose :global(th),
   .article-prose :global(td) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    border-bottom: 1px solid #2A2A3A;
     padding: 0.85rem 1rem;
     vertical-align: top;
     white-space: nowrap;
   }
 
   .article-prose :global(tbody tr:nth-child(even) td) {
-    background: #f8fafc;
+    background: #1E1E2A;
   }
 
   .article-prose :global(code) {
     border-radius: 0.45rem;
-    background: #f1f5f9;
+    background: #1E1E2A;
     padding: 0.15rem 0.35rem;
-    color: #0f172a;
+    color: #FFFFFF;
     font-weight: 700;
   }
 

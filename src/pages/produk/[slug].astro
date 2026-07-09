@@ -65,7 +65,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     <div class="container-custom relative z-10">
       <nav class="mb-8 text-sm text-text-secondary" aria-label="Breadcrumb">
         <ol class="flex flex-wrap items-center gap-2">
-          <li><a href="/" class="hover:text-button transition-colors duration-300">Beranda</a></li>
+          <li><a href="/" class="hover:text-accent transition-colors duration-300">Beranda</a></li>
           <li>/</li>
           <li class="text-text-main">{product.name}</li>
         </ol>
@@ -73,7 +73,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
       <div class="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         <div>
-          <div class="inline-flex items-center px-5 py-2 bg-button/10 border border-button/20 rounded-full text-button font-semibold text-sm mb-6">
+          <div class="inline-flex items-center px-5 py-2 bg-accent/10 border border-button/20 rounded-full text-accent font-semibold text-sm mb-6">
             {product.kicker}
           </div>
           <h1 class="heading-xl text-text-main mb-8">{product.name}</h1>
@@ -83,9 +83,9 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             {product.highlights.map((item) => (
-              <div class="rounded-2xl border border-primary/40 bg-container px-5 py-4 text-text-secondary">
+              <div class="rounded-2xl border border-accent/20 bg-surface/60 px-5 py-4 text-text-secondary">
                 <div class="flex items-start">
-                  <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   <p>{item}</p>
@@ -99,7 +99,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
               href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(product.whatsappMessage || WHATSAPP_MESSAGES.productDefault)}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-button text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:shadow-lg"
+              class="inline-flex items-center justify-center bg-accent text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:shadow-lg"
             >
               Konsultasi Produk
             </a>
@@ -113,8 +113,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
         </div>
 
         <div class="relative">
-          <div class="absolute -inset-6 bg-button/10 blur-3xl rounded-full"></div>
-          <div class="relative overflow-hidden rounded-3xl border border-primary/40 shadow-2xl">
+          <div class="absolute -inset-6 bg-accent/10 blur-3xl rounded-full"></div>
+          <div class="relative overflow-hidden rounded-3xl border border-accent/20 shadow-2xl">
             <OptimizedImage
               src={product.image}
               alt={product.name}
@@ -129,15 +129,15 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  <section class="section-padding bg-container cv-auto">
+  <section class="section-padding bg-surface/60 cv-auto">
     <div class="container-custom">
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
-        <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg">
+        <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg">
           <h2 class="text-3xl font-bold text-text-main mb-6">Cocok Untuk</h2>
           <ul class="space-y-4">
             {product.idealFor.map((item) => (
               <li class="flex items-start text-text-secondary">
-                <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <span>{item}</span>
@@ -146,12 +146,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
           </ul>
         </article>
 
-        <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg">
+        <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg">
           <h2 class="text-3xl font-bold text-text-main mb-6">Pilihan Material</h2>
           <ul class="space-y-4">
             {product.materials.map((item) => (
               <li class="flex items-start text-text-secondary">
-                <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <span>{item}</span>
@@ -163,7 +163,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
           <ul class="space-y-4">
             {product.finishOptions.map((item) => (
               <li class="flex items-start text-text-secondary">
-                <svg class="w-5 h-5 text-button mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
@@ -187,8 +187,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {PRODUCT_WORKFLOW.map((item) => (
-          <article class="rounded-2xl border border-primary/40 bg-container p-8 shadow-lg">
-            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-button text-lg font-bold text-white">
+          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg">
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg font-bold text-white">
               {item.step}
             </div>
             <h3 class="text-xl font-bold text-text-main mb-4">{item.title}</h3>
@@ -199,7 +199,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     </div>
   </section>
 
-  <section class="section-padding bg-container cv-auto">
+  <section class="section-padding bg-surface/60 cv-auto">
     <div class="container-custom">
       <div class="text-center mb-16">
         <h2 class="heading-lg text-text-main mb-6">Teknologi yang Mendukung Produk Ini</h2>
@@ -210,7 +210,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {supportingServices.map((service) => (
-          <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg flex flex-col">
+          <article class="rounded-2xl border border-accent/20 bg-background p-8 shadow-lg flex flex-col">
             <OptimizedImage
               src={service.image}
               alt={service.name}
@@ -221,7 +221,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
             />
             <h3 class="text-xl font-bold text-text-main mb-4">{service.name}</h3>
             <p class="text-text-secondary leading-relaxed mb-6 flex-grow">{service.description}</p>
-            <a href={`/${service.slug}/`} class="inline-flex items-center font-semibold text-button hover:text-highlight transition-colors duration-300">
+            <a href={`/${service.slug}/`} class="inline-flex items-center font-semibold text-accent hover:text-highlight transition-colors duration-300">
               Pelajari Teknologinya
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -244,12 +244,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
       <div class="max-w-4xl mx-auto space-y-6" data-product-faq-container>
         {product.faqs.map((faq) => (
-          <div class="bg-container rounded-2xl shadow-lg border border-primary/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="bg-surface/60 rounded-2xl shadow-lg border border-accent/20 overflow-hidden hover:shadow-xl transition-all duration-300">
             <button class="flex items-center justify-between w-full text-left p-8 group" data-product-faq-button>
-              <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-button transition-colors duration-300">
+              <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-accent transition-colors duration-300">
                 {faq.question}
               </h3>
-              <div class="flex-shrink-0 w-10 h-10 bg-background rounded-full flex items-center justify-center group-hover:bg-button transition-colors duration-300">
+              <div class="flex-shrink-0 w-10 h-10 bg-background rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
                 <svg class="w-5 h-5 text-primary group-hover:text-white transition-all duration-300" data-product-faq-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -267,7 +267,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
   </section>
 
   {relatedProducts.length > 0 && (
-    <section class="section-padding bg-container cv-auto">
+    <section class="section-padding bg-surface/60 cv-auto">
       <div class="container-custom">
         <div class="text-center mb-16">
           <h2 class="heading-lg text-text-main mb-6">Lihat Produk Prioritas Lain</h2>
@@ -278,7 +278,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {relatedProducts.map((item) => (
-            <a href={item.href} class="group rounded-2xl overflow-hidden border border-primary/40 bg-background shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <a href={item.href} class="group rounded-2xl overflow-hidden border border-accent/20 bg-background shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <OptimizedImage
                 src={item.image}
                 alt={item.name}
@@ -288,7 +288,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
                 height={420}
               />
               <div class="p-8">
-                <h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-button transition-colors duration-300">{item.name}</h3>
+                <h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-accent transition-colors duration-300">{item.name}</h3>
                 <p class="text-text-secondary leading-relaxed">{item.description}</p>
               </div>
             </a>

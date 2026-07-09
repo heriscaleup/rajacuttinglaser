@@ -1,53 +1,31 @@
 ---
-// src/pages/404.astro
+import BaseLayout from '../components/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const siteName = 'Raja Cutting Laser';
 ---
 
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Halaman Tidak Ditemukan | Raja Cutting Laser</title>
-    <meta name="robots" content="noindex, nofollow" />
-    <style>
-      body {
-        margin: 0;
-        font-family: system-ui, sans-serif;
-        background-color: #f8fafc;
-        color: #1e293b;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        text-align: center;
-        padding: 1rem;
-      }
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-      }
-      p {
-        margin-bottom: 1.5rem;
-        color: #334155;
-      }
-      a {
-        display: inline-block;
-        background-color: #2563eb;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: 500;
-        transition: background-color 0.2s;
-      }
-      a:hover {
-        background-color: #1d4ed8;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>404 - Halaman Tidak Ditemukan</h1>
-    <p>Maaf, halaman yang Anda cari tidak ada.</p>
-    <a href="/">Kembali ke Beranda</a>
-  </body>
-</html>
+<BaseLayout
+  title={`Halaman Tidak Ditemukan | ${siteName}`}
+  description="Halaman yang Anda cari tidak ditemukan."
+  keywords="404, halaman tidak ditemukan"
+  jsonLd={[]}
+>
+  <Header slot="header" />
+
+  <main class="bg-background text-text-main flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
+    <h1 class="text-5xl font-black tracking-tight text-text-main sm:text-6xl">404</h1>
+    <p class="mt-4 max-w-md text-lg text-text-secondary">
+      Maaf, halaman yang Anda cari tidak ada.
+    </p>
+    <a
+      href="/"
+      class="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-black text-black transition hover:bg-accent/80"
+    >
+      Kembali ke Beranda
+    </a>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>

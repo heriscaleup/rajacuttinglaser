@@ -38,7 +38,7 @@ const categoryColors: { [key: string]: string } = {
   
   <main>
     <!-- Portfolio Hero Section -->
-    <section class="section-padding bg-button text-white">
+    <section class="section-padding bg-accent text-white">
       <div class="container-custom">
         <div class="text-center">
           <div class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-semibold text-sm mb-6">
@@ -56,7 +56,7 @@ const categoryColors: { [key: string]: string } = {
     </section>
 
     <!-- Breadcrumb -->
-    <section class="py-4 bg-container">
+    <section class="py-4 bg-surface/60">
       <div class="container-custom">
         <nav class="flex" aria-label="Breadcrumb">
           <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -85,32 +85,32 @@ const categoryColors: { [key: string]: string } = {
     <section class="py-8 bg-background">
       <div class="container-custom">
         <div class="flex flex-wrap justify-center gap-4" id="portfolio-filters">
-          <button class="filter-btn active inline-flex items-center px-6 py-3 bg-gradient-to-r from-button to-primary text-white font-semibold rounded-xl shadow-lg hover:from-primary hover:to-button hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="all">
+          <button class="filter-btn active inline-flex items-center px-6 py-3 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-xl shadow-lg hover:from-primary hover:to-accent hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="all">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
             </svg>
             Semua Proyek
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-container text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-button hover:to-primary hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-fiber">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-accent hover:to-primary hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-fiber">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
             Laser Fiber
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-container text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-co2">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="laser-co2">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
             </svg>
             Laser CO2
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-container text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="cnc-router">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="cnc-router">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
             CNC Router
           </button>
-          <button class="filter-btn inline-flex items-center px-6 py-3 bg-container text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-orange-600 hover:to-orange-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="galvo-engraving">
+          <button class="filter-btn inline-flex items-center px-6 py-3 bg-surface/60 text-text-secondary font-semibold rounded-xl shadow-lg border border-primary hover:bg-gradient-to-r hover:from-orange-600 hover:to-orange-700 hover:text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300" data-filter="galvo-engraving">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
             </svg>
@@ -125,7 +125,7 @@ const categoryColors: { [key: string]: string } = {
       <div class="container-custom">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
           {portfolioProjects.map((project) => (
-            <article class="portfolio-item group bg-container rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 flex flex-col overflow-hidden border border-primary/50" data-category={project.category.toLowerCase().replace(' ', '-')}>
+            <article class="portfolio-item group bg-surface/60 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 flex flex-col overflow-hidden border border-accent/20" data-category={project.category.toLowerCase().replace(' ', '-')}>
               <div class="relative overflow-hidden">
                 <OptimizedImage 
                   src={project.image} 
@@ -157,7 +157,7 @@ const categoryColors: { [key: string]: string } = {
               </div>
               
               <div class="p-8 flex flex-col flex-grow">
-                <h3 class="text-xl font-bold text-text-main mb-3 group-hover:text-button transition-colors duration-300">
+                <h3 class="text-xl font-bold text-text-main mb-3 group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p class="text-text-secondary mb-6 text-sm leading-relaxed flex-grow">
@@ -182,7 +182,7 @@ const categoryColors: { [key: string]: string } = {
                 
                 <!-- Action Button -->
                 <div class="mt-auto">
-                  <button class="view-detail-btn group/btn inline-flex items-center justify-center w-full bg-gradient-to-r from-button to-primary text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:from-primary hover:to-button hover:shadow-lg transform hover:scale-105" data-project-id={project.id}>
+                  <button class="view-detail-btn group/btn inline-flex items-center justify-center w-full bg-gradient-to-r from-accent to-primary text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:from-primary hover:to-accent hover:shadow-lg transform hover:scale-105" data-project-id={project.id}>
                     <span class="flex items-center justify-center">
                       Lihat Detail Proyek
                       <svg class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

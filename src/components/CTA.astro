@@ -31,10 +31,10 @@ const {
 
 const getVariantClasses = () => {
   switch (variant) {
-    case 'gradient': return 'bg-gradient-to-r from-button to-primary text-white';
+    case 'gradient': return 'bg-gradient-to-r from-accent to-accent-blue text-background';
     case 'image': return 'relative text-white';
-    case 'minimal': return 'bg-background text-text-main border border-primary';
-    default: return 'bg-button text-white';
+    case 'minimal': return 'bg-background text-text-main border border-accent';
+    default: return 'bg-accent text-background';
   }
 };
 
@@ -75,14 +75,14 @@ const sizeClasses = getSizeClasses();
       {description}
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 fade-in-up" style="animation-delay:0.4s;">
-      <WhatsAppButton 
+      <WhatsAppButton
         message={whatsappMessage}
-        className={`text-lg px-8 py-4 font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto ${variant==='minimal'?'bg-button hover:bg-highlight text-white hover:text-button':'bg-white hover:bg-gray-50 text-gray-900 hover:text-black shadow-xl border-2 border-white'}`}
+        className={`text-lg px-8 py-4 font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto ${variant==='minimal'?'bg-accent hover:bg-accent-blue text-background shadow-glow':'bg-accent hover:bg-accent-blue text-background shadow-glow'}`}
         source="cta_section"
       />
       <a href={secondaryLink}
          class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg border-2 transition-all duration-300 w-full sm:w-auto
-           ${variant==='minimal'?'border-button text-button hover:bg-button hover:text-white':'border-white text-white hover:bg-white hover:text-button shadow-lg'}">
+           ${variant==='minimal'?'border-accent text-accent hover:bg-accent hover:text-background':'border-accent text-accent hover:bg-accent hover:text-background shadow-lg'}">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6-8h6"/>
         </svg>
@@ -93,19 +93,19 @@ const sizeClasses = getSizeClasses();
     <div class="mt-12 fade-in-up" style="animation-delay:0.6s;">
       <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium ${variant==='minimal'?'text-text-secondary':'text-white/95'}">
         <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 ${variant==='minimal'?'text-button':'text-green-300'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 ${variant==='minimal'?'text-accent':'text-accent'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
           <span>Respon dalam 24 jam</span>
         </div>
         <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 ${variant==='minimal'?'text-button':'text-green-300'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 ${variant==='minimal'?'text-accent':'text-accent'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
           <span>Konsultasi gratis</span>
         </div>
         <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 ${variant==='minimal'?'text-button':'text-green-300'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 ${variant==='minimal'?'text-accent':'text-accent'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
           </svg>
           <span>Tanpa komitmen</span>
@@ -116,14 +116,13 @@ const sizeClasses = getSizeClasses();
 
   {variant!=='minimal' && (
     <div class="absolute inset-0 z-10 pointer-events-none">
-      <div class="absolute top-10 right-10 w-20 h-20 border border-white/20 rounded-full"></div>
-      <div class="absolute bottom-10 left-10 w-16 h-16 border border-white/10 rounded-full"></div>
-      <div class="absolute top-1/2 left-20 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
-      <div class="absolute top-1/3 right-20 w-3 h-3 bg-white/20 rounded-full animate-bounce"></div>
-      
-      <!-- Additional green accent elements -->
-      <div class="absolute top-20 left-1/4 w-1 h-1 bg-green-300/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-20 right-1/4 w-1.5 h-1.5 bg-green-200/30 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+      <div class="absolute top-10 right-10 w-20 h-20 border border-accent/20 rounded-full"></div>
+      <div class="absolute bottom-10 left-10 w-16 h-16 border border-accent/10 rounded-full"></div>
+      <div class="absolute top-1/2 left-20 w-2 h-2 bg-accent/30 rounded-full animate-pulse"></div>
+      <div class="absolute top-1/3 right-20 w-3 h-3 bg-accent/20 rounded-full animate-bounce"></div>
+
+      <div class="absolute top-20 left-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-20 right-1/4 w-1.5 h-1.5 bg-accent/30 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
     </div>
   )}
 </section>

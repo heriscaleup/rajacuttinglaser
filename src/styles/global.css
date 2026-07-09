@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS for optimasi performa dan SEO */
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
-  
+
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #FFFFFF;        /* text-main */
-    background-color: #121212; /* background */
+    color: #FFFFFF;
+    background-color: #0A0A0F;
+    overflow-x: hidden;
   }
-  
-  /* Optimasi font loading */
+
   @font-face {
     font-family: 'Inter';
     font-style: normal;
@@ -23,7 +23,7 @@
     font-display: swap;
     src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
   }
-  
+
   @font-face {
     font-family: 'Inter';
     font-style: normal;
@@ -31,7 +31,7 @@
     font-display: swap;
     src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2') format('woff2');
   }
-  
+
   @font-face {
     font-family: 'Inter';
     font-style: normal;
@@ -42,83 +42,103 @@
 }
 
 @layer components {
-  /* Button Components */
   .btn-primary {
-    @apply bg-button hover:bg-highlight text-white hover:text-button font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-button focus:ring-offset-2 shadow-md;
+    @apply bg-accent hover:bg-accent-blue text-background font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background shadow-glow;
   }
-  
+
   .btn-secondary {
-    @apply border-2 border-button text-button hover:bg-button hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-button focus:ring-offset-2;
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-background font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background;
   }
-  
-  /* Typography */
+
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-text-main;
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.95] tracking-tight text-text-main;
   }
-  
+
   .heading-lg {
-    @apply text-3xl md:text-4xl font-bold leading-tight text-text-main;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-text-main;
   }
-  
+
   .heading-md {
     @apply text-2xl md:text-3xl font-semibold leading-tight text-text-main;
   }
-  
+
   .heading-sm {
     @apply text-xl md:text-2xl font-semibold leading-tight text-text-main;
   }
-  
-  /* Paragraph */
+
+  .display {
+    @apply font-display text-text-main;
+  }
+
   p {
     @apply text-text-secondary;
   }
-  
-  /* Layout */
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-24;
   }
-  
-  /* Animations */
-  .fade-in {
-    animation: fadeIn 0.6s ease-in-out;
+
+  .card {
+    @apply bg-container/80 backdrop-blur-sm rounded-2xl border border-border hover:border-accent/50 shadow-lg hover:shadow-glow transition-all duration-300;
   }
-  
-  .slide-up {
-    animation: slideUp 0.8s ease-out;
+
+  .card-hover {
+    @apply hover:-translate-y-2;
   }
-  
-  .scale-in {
-    animation: scaleIn 0.5s ease-out;
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
   }
 }
 
 @layer utilities {
-  /* Custom utilities */
   .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   }
-  
+
   .bg-gradient-primary {
-    background: linear-gradient(135deg, #E63946 0%, #C0C0C0 100%);
+    background: linear-gradient(135deg, #00FF88 0%, #0066FF 100%);
   }
-  
+
   .bg-gradient-secondary {
-    background: linear-gradient(135deg, #2E2E2E 0%, #121212 100%);
+    background: linear-gradient(135deg, #1E1E2A 0%, #0A0A0F 100%);
+  }
+
+  .clip-corner {
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #00FF88, #0066FF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .glow-border:hover::before {
+    opacity: 1;
   }
 }
 
-/* Keyframes */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -143,7 +163,11 @@
   }
 }
 
-/* Performance optimizations */
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -153,7 +177,6 @@ img {
   height: auto;
 }
 
-/* Accessibility improvements */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -166,8 +189,24 @@ img {
   border: 0;
 }
 
-/* Focus styles */
 .focus-visible {
-  outline: 2px solid #E63946;
+  outline: 2px solid #00FF88;
   outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A3A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF88;
 }

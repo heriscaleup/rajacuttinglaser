@@ -67,7 +67,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
         {PRODUCT_CATEGORIES.map((product) => {
           const isDetailPage = product.href.startsWith('/produk/');
           return (
-            <article class="group bg-container rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-primary/50 flex flex-col">
+            <article class="group bg-container/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-border hover:border-accent/50 flex flex-col">
               <div class="relative overflow-hidden">
                 <OptimizedImage
                   src={product.image}
@@ -78,13 +78,13 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
                   height={400}
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent"></div>
-                <div class="absolute top-4 left-4 rounded-full bg-container/90 px-3 py-1 text-xs font-semibold text-text-main shadow-lg">
+                <div class="absolute top-4 left-4 rounded-full bg-accent/10 border border-accent/20 px-3 py-1 text-xs font-semibold text-accent shadow-lg">
                   {product.audience}
                 </div>
               </div>
 
               <div class="p-8 flex flex-col flex-grow">
-                <h3 class="text-2xl font-bold text-text-main mb-4 group-hover:text-button transition-colors duration-300">
+                <h3 class="text-2xl font-bold text-text-main mb-4 group-hover:text-accent transition-colors duration-300">
                   {product.name}
                 </h3>
                 <p class="text-text-secondary leading-relaxed mb-6 flex-grow">
@@ -92,7 +92,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
                 </p>
 
                 <div class="mb-6 space-y-3">
-                  <div class="rounded-xl bg-background border border-primary/40 px-4 py-3">
+                  <div class="rounded-xl bg-surface border border-accent/20 px-4 py-3">
                     <p class="text-xs uppercase tracking-wide text-text-secondary mb-1">Material Umum</p>
                     <p class="text-sm font-medium text-text-main">{product.material}</p>
                   </div>
@@ -100,7 +100,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
                 <a
                   href={product.href}
-                  class="inline-flex items-center justify-center w-full bg-button text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:bg-primary hover:shadow-lg"
+                  class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-blue text-background font-semibold px-6 py-4 rounded-xl transition-all duration-300 hover:shadow-glow"
                 >
                   <span class="flex items-center justify-center">
                     {isDetailPage ? 'Lihat Detail Produk' : 'Konsultasi Produk'}
@@ -120,7 +120,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
   <section id="why-us" class="section-padding bg-container cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold text-sm mb-6">
+        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
@@ -134,7 +134,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {PRODUCT_REASONS.map((reason) => (
-          <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg">
+          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
             <h3 class="text-xl font-bold text-text-main mb-4">{reason.title}</h3>
             <p class="text-text-secondary leading-relaxed">{reason.description}</p>
           </article>
@@ -160,8 +160,8 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {PRODUCT_WORKFLOW.map((item) => (
-          <article class="relative rounded-2xl border border-primary/40 bg-container p-8 shadow-lg">
-            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-button text-lg font-bold text-white">
+          <article class="relative rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg hover:shadow-glow transition-all duration-300">
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg font-bold text-background">
               {item.step}
             </div>
             <h3 class="text-xl font-bold text-text-main mb-4">{item.title}</h3>
@@ -175,7 +175,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
   <section id="technology-support" class="section-padding bg-container cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold text-sm mb-6">
+        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
@@ -189,7 +189,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {SERVICES.map((service) => (
-          <article class="rounded-2xl border border-primary/40 bg-background p-8 shadow-lg flex flex-col">
+          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-1 flex flex-col">
             <div class="mb-6">
               <OptimizedImage
                 src={service.image}
@@ -204,7 +204,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
             <p class="text-text-secondary leading-relaxed mb-6 flex-grow">{service.description}</p>
             <a
               href={`/${service.slug}/`}
-              class="inline-flex items-center font-semibold text-button hover:text-highlight transition-colors duration-300"
+              class="inline-flex items-center font-semibold text-accent hover:text-accent-blue transition-colors duration-300"
             >
               Pelajari Teknologinya
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -220,7 +220,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
   <section id="portfolio" class="section-padding bg-background cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-button/10 border border-button/20 rounded-full text-button font-semibold text-sm mb-6">
+        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"></path>
           </svg>
@@ -234,7 +234,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
         {featuredPortfolio.map((project) => (
-          <a href="/portfolio/" class="group rounded-2xl overflow-hidden border border-primary/40 bg-container shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <a href="/portfolio/" class="group rounded-2xl overflow-hidden border border-accent/20 bg-surface/60 shadow-lg hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
             <div class="relative overflow-hidden">
               <OptimizedImage
                 src={project.image}
@@ -244,12 +244,12 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
                 width={640}
                 height={420}
               />
-              <div class="absolute top-4 left-4 rounded-full bg-button px-3 py-1 text-xs font-semibold text-white">
+              <div class="absolute top-4 left-4 rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold text-background">
                 {project.category}
               </div>
             </div>
             <div class="p-8">
-              <h3 class="text-xl font-bold text-text-main mb-3 group-hover:text-button transition-colors duration-300">
+              <h3 class="text-xl font-bold text-text-main mb-3 group-hover:text-accent transition-colors duration-300">
                 {project.title}
               </h3>
               <p class="text-sm text-text-secondary mb-4">{project.material}</p>
@@ -264,7 +264,7 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
   <section id="faq" class="section-padding bg-container cv-auto">
     <div class="container-custom">
       <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold text-sm mb-6">
+        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01"></path>
           </svg>
@@ -278,13 +278,13 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
 
       <div class="max-w-4xl mx-auto space-y-6" data-faq-container>
         {PRODUCT_FAQ.map((faq) => (
-          <div class="bg-background rounded-2xl shadow-lg border border-primary/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="bg-surface/60 rounded-2xl shadow-lg border border-accent/20 overflow-hidden hover:shadow-glow transition-all duration-300">
             <button class="flex items-center justify-between w-full text-left p-8 group" data-faq-button>
-              <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-button transition-colors duration-300">
+              <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-accent transition-colors duration-300">
                 {faq.question}
               </h3>
-              <div class="flex-shrink-0 w-10 h-10 bg-container rounded-full flex items-center justify-center group-hover:bg-button transition-colors duration-300">
-                <svg class="w-5 h-5 text-primary group-hover:text-white transition-all duration-300" data-faq-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div class="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                <svg class="w-5 h-5 text-accent group-hover:text-background transition-all duration-300" data-faq-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </div>

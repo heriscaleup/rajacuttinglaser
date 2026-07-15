@@ -16,6 +16,7 @@ interface MetaTags {
   title: string;
   description: string;
   keywords: string;
+  image: string;
   canonical: string;
   url: string;
   type: string;
@@ -69,6 +70,7 @@ export function generateMetaTags({
     title: fullTitle,
     description: fullDescription,
     keywords: fullKeywords,
+    image: fullImage,
     url: fullUrl,
     type: type,
     canonical: fullUrl,
@@ -240,31 +242,49 @@ export function generateBreadcrumbSchema(items: Array<{name: string; url: string
 /**
  * Generate Blog Post Schema
  */
-export function generateBlogPostSchema(post: {title: string; excerpt?: string; image?: string; publishDate: string; slug: string}): object {
+export function generateBlogPostSchema(post: {
+  title: string;
+  excerpt: string;
+  image: string;
+  publishDate: string;
+  updatedDate: string;
+  slug: string;
+  author: string;
+  category: string;
+  keywords: string[];
+}): object {
+  const pageUrl = `${SITE_CONFIG.url}/blog/${post.slug}/`;
+  const imageUrl = post.image.startsWith('http') ? post.image : `${SITE_CONFIG.url}${post.image}`;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    image: post.image ? `${SITE_CONFIG.url}${post.image}` : undefined,
+    image: [imageUrl],
     datePublished: post.publishDate,
-    dateModified: post.publishDate,
+    dateModified: post.updatedDate,
+    articleSection: post.category,
+    keywords: post.keywords.join(', '),
+    inLanguage: 'id-ID',
     author: {
       '@type': 'Organization',
-      name: SITE_CONFIG.name
+      name: post.author,
+      url: SITE_CONFIG.url
     },
     publisher: {
       '@type': 'Organization',
       name: SITE_CONFIG.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_CONFIG.url}/logo.webp`
+        url: `${SITE_CONFIG.url}/images/logo.webp`
       }
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_CONFIG.url}/blog/${post.slug}`
-    }
+      '@id': pageUrl
+    },
+    url: pageUrl
   };
 }
 

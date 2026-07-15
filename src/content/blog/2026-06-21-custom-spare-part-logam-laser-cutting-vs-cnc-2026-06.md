@@ -1,76 +1,91 @@
 ---
-title: "Custom Spare Part Logam: Laser Cutting vs CNC?"
-description: "Butuh custom spare part logam? Bandingkan laser cutting fiber vs CNC milling — mana lebih cepat, presisi, dan hemat untuk kebutuhan industri kamu."
-pubDate: 2026-06-21T07:00:00.000Z
-category: "Industri"
-tags: ["custom spare part logam", "laser cutting vs CNC", "fiber laser cutting"]
-image: "/images/blog/custom-spare-part-logam-laser-cutting-vs-cnc-2026-06.jpg"
-readTime: "7 min read"
+title: "QC Spare Part Custom Sebelum Dipasang"
+description: "Spare part perlu diverifikasi identitas, material, dimensi kritis, fit-up, dan jumlah sebelum masuk mesin."
+pubDate: 2026-06-21T07:00:00.000+07:00
+updatedDate: 2026-07-15T09:00:00.000+07:00
+category: "Spare Part"
+tags: ["spare part","laser cutting quality","jasa laser cutting"]
+image: "/acrylic-cutting-presisi-laser-untuk-hasil-sempurna.jpg"
+imageAlt: "Contoh acrylic dan signage untuk QC spare part custom"
+readTime: "4 menit baca"
 author: "Tim Raja Cutting Laser"
+primaryKeyword: "QC spare part custom"
+keyTakeaways: ["Spare part perlu diverifikasi identitas, material, dimensi kritis, fit-up, dan jumlah sebelum masuk mesin","Kode part serta orientasi","Kendalikan risiko utama: part dipasang tanpa dry fit"]
+faq: [{"question":"Apa yang harus disiapkan untuk membahas QC spare part custom?","answer":"Siapkan part contoh dan drawing, checklist ukuran serta fit-up, serta label, jumlah, dan foto sebelum kirim. Vendor dapat memakai data itu untuk memeriksa kelayakan dan menuliskan asumsi penawaran."},{"question":"Apakah QC spare part custom perlu sampel lebih dulu?","answer":"Sampel disarankan bila material, detail, finishing, atau sambungan belum pernah divalidasi. Gunakan bahan dan geometri yang mewakili risiko produksi, lalu setujui kriteria yang memang ingin diuji."},{"question":"Bagaimana membandingkan penawaran untuk QC spare part custom?","answer":"Bandingkan revisi file, spesifikasi material, jumlah, lingkup finishing, jadwal, dan metode pemeriksaan yang sama. Harga tidak sebanding jika asumsi atau tanggung jawab setiap vendor berbeda."}]
+relatedLinks: [{"title":"QC Spare Part Custom Sebelum Dipasang — layanan terkait","href":"/jasa-laser-fiber/"},{"title":"Finishing Aluminium: Anodize, Cat, atau Powder Coat","href":"/blog/2026-06-22-laser-cutting-aluminium-2026-06/"},{"title":"Jumlah Ekonomis Spare Part Custom","href":"/blog/2026-07-12-custom-spare-part-logam-laser-cutting-vs-cnc/"}]
 draft: false
 ---
+Spare part perlu diverifikasi identitas, material, dimensi kritis, fit-up, dan jumlah sebelum masuk mesin. Dalam proyek QC spare part custom, kesalahan paling mahal biasanya terjadi sebelum mesin mulai memotong: brief belum lengkap atau kriteria penerimaan belum disepakati.
 
-Di dunia manufaktur, waktu adalah uang. Ketika mesin produksi berhenti karena spare part rusak dan harus dipesan custom, setiap jam keterlambatan berdampak langsung pada output dan pendapatan. Pertanyaannya: teknologi mana yang lebih tepat untuk membuat custom spare part logam — laser cutting fiber atau CNC milling?
+Istilah “presisi” tidak otomatis berarti hasil akan sesuai kebutuhan. Material, geometri, orientasi permukaan, kuantitas, dan proses setelah cutting perlu dibaca sebagai satu rangkaian. Karena itu, artikel ini membahas apa yang harus diputuskan, bukti apa yang layak diminta, dan risiko apa yang perlu dikendalikan sebelum menyetujui produksi.
 
-Jawabannya tidak sesederhana "yang satu lebih baik dari yang lain." Keduanya punya keunggulan masing-masing, dan pilihan terbaik bergantung pada spesifikasi part yang kamu butuhkan.
+## Definisikan “rapi” dengan cara yang bisa diperiksa
 
-## Memahami Keduanya Secara Singkat
+Kata rapi dan presisi bersifat terlalu luas jika tidak dihubungkan dengan fungsi. Pada **QC spare part custom**, tentukan dimensi kritis, kondisi tepi, orientasi permukaan, jumlah cacat yang dapat diterima, dan cara pengukuran. Toleransi perlu disepakati berdasarkan material, mesin, geometri, serta proses lanjutan—bukan disalin dari angka umum.
 
-**Fiber Laser Cutting** menggunakan sinar laser berenergi tinggi untuk memotong logam dengan presisi tinggi. Prosesnya cepat, non-kontak (tidak ada tekanan mekanis pada material), dan sangat efisien untuk pemotongan 2D.
+Fokus pemeriksaan untuk topik ini:
 
-**CNC Milling** adalah proses subtractive yang menggunakan mata pahat berputar untuk mengikis material. Cocok untuk profil 3D, pocket, thread, dan fitur yang membutuhkan kedalaman.
+- Kode part serta orientasi
+- Dimensi pasangan dan fungsi
+- Material, finishing, serta burr
 
-## Keunggulan Laser Cutting untuk Custom Spare Part
+## Rencana inspeksi sederhana
 
-### 1. Kecepatan Produksi yang Jauh Lebih Tinggi
+| Hal yang diperiksa | Bukti yang perlu diminta |
+|---|---|
+| Kode part serta orientasi | Spesifikasi atau gambar yang menjelaskan kode part serta orientasi |
+| Dimensi pasangan dan fungsi | Sampel, data material, atau catatan proses untuk dimensi pasangan dan fungsi |
+| Material, finishing, serta burr | Kriteria penerimaan tertulis mengenai material, finishing, serta burr |
 
-Untuk spare part berbentuk flat (plat, bracket, flange, gasket logam), laser cutting fiber bisa menyelesaikan pekerjaan **5–10x lebih cepat** dari CNC milling. Tidak ada pergantian mata pahat, tidak ada setup fixture yang rumit — cukup load file, set parameter, dan mesin langsung bekerja.
+Untuk batch, pemeriksaan dapat dibagi menjadi first article, pemeriksaan selama proses, dan pemeriksaan akhir. First article memastikan file, material, dan orientasi sudah benar sebelum seluruh jumlah diproduksi. Frekuensi sampling berikutnya disesuaikan dengan risiko serta konsistensi proses.
 
-### 2. Setup Minimal, Langsung Produksi
+## Alat ukur harus sesuai karakteristik
 
-Laser cutting menggunakan file digital (DXF, DWG) langsung sebagai instruksi. Dari desain ke produksi, waktu setup bisa sesingkat 15–30 menit. Ini sangat krusial saat kamu butuh spare part darurat dengan segera.
+Panjang luar, diameter lubang, kerataan, dan tampilan permukaan membutuhkan cara pemeriksaan berbeda. Pastikan titik referensi dan kondisi pengukuran disepakati. Part tipis yang fleksibel, misalnya, dapat memberikan hasil berbeda bila ditekan saat diukur.
 
-### 3. Presisi Konsisten di Seluruh Batch
+Simpan foto dan catatan hasil pada part yang mewakili. Untuk produk berulang, contoh master yang disetujui dapat membantu penilaian visual, tetapi tetap perlu dilengkapi ukuran atau kriteria tertulis.
 
-Toleransi laser cutting fiber berada di kisaran **±0.05mm hingga ±0.1mm** — cukup untuk sebagian besar aplikasi industri. Dan yang penting, presisi ini konsisten untuk setiap unit dalam batch, entah kamu produksi 1 atau 100 buah.
+## Sumber variasi yang perlu diwaspadai
 
-### 4. Efisien untuk Material Tipis hingga Menengah
+- Part dipasang tanpa dry fit
+- Dimensi aus dipakai sebagai target
+- Kiri dan kanan tertukar
 
-Laser cutting sangat optimal untuk material dengan ketebalan 1mm hingga 20mm (stainless steel), 1mm hingga 25mm (mild steel), dan 1mm hingga 15mm (aluminium). Untuk ketebalan dalam range ini, kecepatan dan kualitas tepi potong laser sulit ditandingi CNC.
+Jika hasil menyimpang, pisahkan masalah file, material, proses potong, handling, dan finishing. Memperbaiki gejala tanpa menemukan sumbernya membuat cacat yang sama mudah muncul pada batch berikutnya.
 
-### 5. Waste Material Lebih Rendah
+## Informasi yang wajib ada pada acceptance criteria
 
-Kerf (lebar garis potong) laser sangat kecil — sekitar 0.2–0.5mm. Dengan nesting software yang baik, utilisasi material bisa mencapai 85–95%, meminimalkan scrap dan biaya material.
+- Part contoh dan drawing
+- Checklist ukuran serta fit-up
+- Label, jumlah, dan foto sebelum kirim
 
-## Kapan CNC Milling Lebih Tepat?
+Acceptance criteria perlu disetujui sebelum produksi, bukan dibuat setelah barang datang. Bila ada karakteristik yang hanya dapat diverifikasi saat dirakit, sepakati sampel pasangan atau fixture pemeriksaan.
 
-CNC milling tetap unggul untuk:
+## Penerapan khusus: QC Spare Part Custom Sebelum Dipasang
 
-- **Fitur 3D kompleks** — pocket dalam, kontur melengkung, atau komponen dengan geometri yang tidak bisa dibuat dari pemotongan 2D saja
-- **Thread dan lubang presisi tinggi** — untuk toleransi di bawah ±0.01mm
-- **Material sangat tebal** — logam di atas 25mm umumnya lebih efisien dikerjakan dengan CNC
-- **Permukaan finishing khusus** — ketika kualitas permukaan Ra yang sangat rendah diperlukan
+### Kode part serta orientasi
 
-## Kombinasi yang Sering Digunakan
+Kode part serta orientasi perlu dibahas bersama pihak produksi dan penerima hasil. Hubungkan keputusan ini dengan kondisi utama proyek: spare part perlu diverifikasi identitas, material, dimensi kritis, fit-up, dan jumlah sebelum masuk mesin. Bukti awal yang layak dipakai adalah spesifikasi atau gambar yang menjelaskan kode part serta orientasi. Jika informasinya belum tersedia, tandai sebagai asumsi dan jangan membiarkannya berubah diam-diam saat produksi berjalan.
 
-Banyak fasilitas manufaktur yang cerdas menggunakan **kombinasi keduanya**: laser cutting untuk bentuk dasar dan profil luar, kemudian CNC milling untuk detail fitur seperti thread, chamfer, atau toleransi super ketat pada lubang tertentu.
+### Dimensi pasangan dan fungsi
 
-Dengan strategi ini, kamu mendapat yang terbaik dari kedua teknologi — kecepatan laser untuk bulk material removal dan presisi CNC untuk fitur kritis.
+Untuk dimensi pasangan dan fungsi, mintalah pembanding yang benar-benar mewakili material, ukuran, atau situasi pemakaian. Sampel, data material, atau catatan proses untuk dimensi pasangan dan fungsi. Catat siapa yang menilai hasil dan bagian mana yang disetujui; foto saja belum selalu cukup untuk menilai warna, tepi, fit-up, atau kualitas permukaan.
 
-## Studi Kasus: Bracket Mounting Custom untuk Industri Otomotif
+### Material, finishing, serta burr
 
-Seorang klien dari industri komponen otomotif menghubungi kami untuk membuat bracket mounting custom dari stainless steel 304 tebal 6mm, sebanyak 50 unit, dengan toleransi lubang ±0.1mm.
+Jadikan material, finishing, serta burr bagian dari kriteria penerimaan, bukan catatan tambahan setelah harga disepakati. Kriteria penerimaan tertulis mengenai material, finishing, serta burr. Keputusan ini membantu tim membedakan cacat, variasi yang masih diterima, dan perubahan desain yang membutuhkan persetujuan baru.
 
-Dengan fiber laser cutting:
-- **Setup time:** 25 menit
-- **Waktu potong per unit:** ~4 menit
-- **Total produksi 50 unit:** 1 hari kerja
-- **Kualitas tepi:** bersih, siap assembly tanpa deburring tambahan
+## Rekam keputusan sebelum file dilepas
 
-Jika dikerjakan dengan CNC milling konvensional, estimasi waktu bisa 3–4 kali lebih lama dengan biaya yang lebih tinggi.
+Gunakan catatan satu halaman yang setidaknya memuat:
+
+- **Input:** Part contoh dan drawing
+- **Kondisi produksi:** Checklist ukuran serta fit-up
+- **Bukti penerimaan:** Label, jumlah, dan foto sebelum kirim
+- **Risiko pertama yang dikendalikan:** Part dipasang tanpa dry fit
+
+Lanjutkan dengan meninjau dimensi aus dipakai sebagai target dan kiri dan kanan tertukar. Jika salah satunya berdampak pada fungsi, keselamatan, tampilan utama, atau jadwal, tetapkan tindakan pencegahan serta pihak yang berwenang menyetujuinya. Rekaman singkat seperti ini membuat pembahasan tetap konsisten ketika proyek berpindah dari desain ke estimasi, produksi, dan serah terima.
 
 ## Kesimpulan
 
-Untuk custom spare part logam dengan profil 2D — bracket, flange, plat dudukan, gasket, cover panel — **fiber laser cutting adalah pilihan superior** dari segi kecepatan, efisiensi, dan konsistensi kualitas. CNC milling tetap relevan untuk komponen 3D kompleks atau toleransi ekstrem.
-
-Butuh custom spare part logam dengan cepat dan presisi? **Hubungi tim Raja Cutting Laser sekarang via WhatsApp.** Kami siap konsultasi desain, estimasi harga, dan produksi dengan turnaround time yang kompetitif — karena kami tahu mesin kamu tidak bisa menunggu.
+Kontrol mutu **QC spare part custom** tidak harus rumit, tetapi harus spesifik. Tentukan apa yang kritis, bagaimana memeriksanya, kapan sampling dilakukan, dan siapa yang menyetujui. Bukti sederhana yang konsisten lebih berguna daripada klaim kualitas tanpa metode.

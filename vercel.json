@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://www.rajacuttinglaser.com/:path*",
+      "destination": "https://rajacuttinglaser.com/:path*",
+      "permanent": true
+    }
+  ]
+}

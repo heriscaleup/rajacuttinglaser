@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { generateBlogPostSchema, generateBreadcrumbSchema } from '../../utils/seo';
+import { generateBlogPostSchema, generateBreadcrumbSchema, generateFAQSchema } from '../../utils/seo';
 
 export async function getStaticPaths() {
  const allPosts = await getCollection('blog');
@@ -17,39 +17,60 @@ const { Content, headings } = await post.render();
 const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
 const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
- .filter(p => p.data.category === post.data.category && p.slug !== post.slug && !p.data.draft)
- .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+ .filter(p => p.slug !== post.slug && !p.data.draft)
+ .map(p => ({
+   post: p,
+   score: (p.data.category === post.data.category ? 3 : 0) +
+     p.data.tags.filter(tag => post.data.tags.includes(tag)).length
+ }))
+ .filter(item => item.score > 0)
+ .sort((a, b) => b.score - a.score || b.post.data.updatedDate.getTime() - a.post.data.updatedDate.getTime())
  .slice(0, 3);
 
 const siteName = 'Raja Cutting Laser';
 const accent = 'text-accent';
 const fallbackImage = '/images/metal.webp';
-function resolveImage(image) {
+function resolveImage(image: string | undefined): string {
  if (!image) return fallbackImage;
  if (image.startsWith('http://') || image.startsWith('https://')) return image;
  const normalized = image.startsWith('/') ? image : `/${image}`;
  return existsSync(join(process.cwd(), 'public', normalized.slice(1))) ? normalized : fallbackImage;
 }
 
-const jsonLd = generateBlogPostSchema({ title: post.data.title, excerpt: post.data.description, image: resolveImage(post.data.image), publishDate: post.data.pubDate.toISOString(), slug: post.slug });
+const jsonLd = generateBlogPostSchema({
+ title: post.data.title,
+ excerpt: post.data.description,
+ image: resolveImage(post.data.image),
+ publishDate: post.data.pubDate.toISOString(),
+ updatedDate: post.data.updatedDate.toISOString(),
+ slug: post.slug,
+ author: post.data.author,
+ category: post.data.category,
+ keywords: [post.data.primaryKeyword, ...post.data.tags]
+});
 const breadcrumbSchema = generateBreadcrumbSchema([
  { name: 'Beranda', url: '/' },
  { name: 'Blog', url: '/blog/' },
  { name: post.data.title, url: `/blog/${post.slug}/` }
 ]);
+const structuredData = [jsonLd, breadcrumbSchema];
+if (post.data.faq.length > 0) structuredData.push(generateFAQSchema(post.data.faq));
 ---
 
 <BaseLayout
- title={`${post.data.title} | Blog ${siteName}`}
+ title={post.data.title}
  description={post.data.description}
- keywords={`${post.data.title.toLowerCase()}, ${post.data.category.toLowerCase()}`}
+ keywords={[post.data.primaryKeyword, ...post.data.tags].join(', ')}
  image={resolveImage(post.data.image)}
  type="article"
- jsonLd={[jsonLd, breadcrumbSchema]}
+ publishedTime={post.data.pubDate.toISOString()}
+ modifiedTime={post.data.updatedDate.toISOString()}
+ author={post.data.author}
+ jsonLd={structuredData}
 >
  <Header slot="header" />
 
- <main class="relative overflow-hidden bg-background text-text-main">
+ <div class="relative overflow-hidden bg-background text-text-main">
  <article class="relative mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1fr)_300px] lg:px-8 lg:py-20">
  <div class="min-w-0">
  <nav class="mb-10 text-sm text-text-main" aria-label="Breadcrumb">
@@ -63,6 +84,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  <span class={`font-black uppercase tracking-[0.18em] ${accent}`}>{post.data.category}</span>
  <span>•</span>
  <time>{new Date(post.data.pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+ <span>•</span>
+ <span>Diperbarui {new Date(post.data.updatedDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
  <span>•</span>
  <span>{post.data.readTime}</span>
  </div>
@@ -81,12 +104,19 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  <figure class=" my-10 overflow-hidden rounded-[2rem] border border-accent/20 bg-surface/60 backdrop-blur-sm shadow-lg transition-all duration-500 hover">
  <img
  src={resolveImage(post.data.image)}
- alt={post.data.title}
+ alt={post.data.imageAlt}
  class="aspect-[16/9] w-full object-cover"
  loading="eager"
  onerror={`this.onerror=null;this.src='${fallbackImage}';`}
  />
  </figure>
+
+ <section class="mb-10 rounded-3xl border border-accent/30 bg-surface/80 p-6" aria-labelledby="ringkasan-artikel">
+ <h2 id="ringkasan-artikel" class="display text-xl font-black text-text-main">Ringkasan keputusan</h2>
+ <ul class="mt-4 space-y-3 text-[15px] leading-7 text-text-secondary">
+ {post.data.keyTakeaways.map(item => <li class="flex gap-3"><span aria-hidden="true" class="font-black text-accent">✓</span><span>{item}</span></li>)}
+ </ul>
+ </section>
 
  {toc.length > 0 && (
  <details class="mb-10 rounded-3xl border border-accent/20 bg-surface/60 p-5 backdrop-blur-sm lg:hidden">
@@ -100,6 +130,24 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  <div class="article-prose prose prose-lg max-w-none rounded-[2rem] border border-accent/20 bg-surface/60 px-5 py-8 shadow-lg backdrop-blur-sm sm:px-8 lg:px-10 prose-headings:font-black prose-headings:tracking-[-0.035em] prose-headings:text-text-main prose-p:text-[17px] prose-p:leading-8 prose-p:text-text-secondary prose-a:font-bold prose-a:text-accent prose-a:underline prose-a:decoration-accent/30 prose-a:underline-offset-4 prose-a:transition hover:prose-a:decoration-accent prose-strong:font-black prose-strong:text-text-main prose-li:text-[17px] prose-li:leading-8 prose-li:text-text-secondary prose-table:text-sm prose-th:bg-surface-alt prose-th:text-text-main prose-td:text-text-secondary">
  <Content />
  </div>
+
+ {post.data.faq.length > 0 && (
+ <section class="mt-12 border-t border-border pt-10" aria-labelledby="faq-artikel">
+ <h2 id="faq-artikel" class="display text-3xl font-black tracking-[-0.035em] text-text-main">Pertanyaan yang sering diajukan</h2>
+ <div class="mt-6 divide-y divide-border rounded-3xl border border-border bg-surface/60 px-6">
+ {post.data.faq.map(item => <details class="group py-5"><summary class="cursor-pointer pr-6 font-black text-text-main">{item.question}</summary><p class="mt-3 leading-7 text-text-secondary">{item.answer}</p></details>)}
+ </div>
+ </section>
+ )}
+
+ {post.data.relatedLinks.length > 0 && (
+ <nav class="mt-10 rounded-3xl border border-border bg-surface/60 p-6" aria-label="Panduan terkait">
+ <h2 class="display text-xl font-black text-text-main">Lanjutkan riset Anda</h2>
+ <ul class="mt-4 space-y-3">
+ {post.data.relatedLinks.map(link => <li><a href={link.href} class="font-bold text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent">{link.title} →</a></li>)}
+ </ul>
+ </nav>
+ )}
  </div>
 
  <aside class="hidden lg:block">
@@ -132,7 +180,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  <a href="/blog/" class="text-sm font-bold text-text-secondary hover:text-text-main">Lihat semua →</a>
  </div>
  <div class="grid gap-7 md:grid-cols-3">
- {relatedPosts.map((relatedPost) => (
+ {relatedPosts.map(({ post: relatedPost }) => (
  <article class=" group rounded-2xl border border-border bg-surface/60 p-4 backdrop-blur-sm shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-accent/50 hover">
  <a href={`/blog/${relatedPost.slug}/`} class="block overflow-hidden rounded-3xl border border-border bg-container">
  <img src={resolveImage(relatedPost.data.image)} alt={relatedPost.data.title} class="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.04]" loading="lazy" onerror={`this.onerror=null;this.src='${fallbackImage}';`} />
@@ -145,7 +193,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  </div>
  </section>
  )}
- </main>
+ </div>
 
  <Footer slot="footer" />
 </BaseLayout>
@@ -266,4 +314,3 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  }
  }
 </style>
-

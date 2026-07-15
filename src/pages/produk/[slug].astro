@@ -17,7 +17,8 @@ import {
 import {
  generateBreadcrumbSchema,
  generateFAQSchema,
- generateMetaTags
+ generateMetaTags,
+ generateServiceSchema
 } from '../../utils/seo.ts';
 
 export function getStaticPaths() {
@@ -28,6 +29,10 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+const isPagar = product.slug === 'pagar-laser-cutting';
+const pagarGallery = product.gallery ?? [];
+const pagarMaterialComparison = product.materialComparison ?? [];
+const pagarPriceFactors = product.priceFactors ?? [];
 
 const supportingServices = SERVICES.filter((service) =>
  product.supportServiceIds.includes(service.id)
@@ -52,9 +57,14 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  { name: 'Beranda', url: '/' },
  { name: product.name, url: `/produk/${product.slug}/` }
 ]);
+const serviceSchema = generateServiceSchema({
+ name: `${product.name} Custom di Tangerang Selatan`,
+ description: product.metaDescription,
+ image: product.image
+});
 ---
 
-<BaseLayout metaTags={metaTags} jsonLd={[faqSchema, breadcrumbSchema]}>
+<BaseLayout metaTags={metaTags} jsonLd={[faqSchema, breadcrumbSchema, serviceSchema]}>
  <Header slot="header" />
 
  <section class="relative overflow-hidden bg-background pt-32 pb-20">
@@ -72,10 +82,13 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  <div class="inline-flex items-center px-5 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
  {product.kicker}
  </div>
- <h1 class="display-xl text-text-main mb-8">{product.name}</h1>
+ <h1 class="display-xl text-text-main mb-8">{isPagar ? 'Pagar Laser Cutting Custom di Tangerang Selatan' : product.name}</h1>
  <p class="text-xl text-text-secondary leading-relaxed mb-10 max-w-3xl">
  {product.summary}
  </p>
+ {isPagar && product.updatedAt && (
+ <p class="mb-8 text-sm text-text-secondary">Ditinjau tim produksi Raja Cutting Laser · Diperbarui {product.updatedAt}</p>
+ )}
 
  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
  {product.highlights.map((item) => (
@@ -97,7 +110,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  rel="noopener noreferrer"
  class="inline-flex items-center justify-center bg-accent text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-accent-orange"
  >
- Konsultasi Produk
+ {isPagar ? 'Kirim Foto & Ukuran' : 'Konsultasi Produk'}
  </a>
  <a
  href="/portfolio/"
@@ -116,14 +129,65 @@ const breadcrumbSchema = generateBreadcrumbSchema([
  alt={product.name}
  className="w-full h-[520px] object-cover"
  loading="eager"
- width={960}
- height={1200}
+ fetchpriority="high"
+ width={768}
+ height={960}
  />
  </div>
  </div>
  </div>
  </div>
  </section>
+
+ {isPagar && (
+ <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden" aria-labelledby="contoh-pagar">
+ <div class="container-custom">
+ <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end mb-12">
+ <div>
+ <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent mb-4">Referensi pengerjaan</p>
+ <h2 id="contoh-pagar" class="display-lg text-text-main">Contoh Pagar Laser Cutting dan Detail Panel</h2>
+ </div>
+ <p class="text-lg text-text-secondary max-w-3xl lg:justify-self-end">Motif yang terlihat bagus di layar tetap perlu disesuaikan dengan ukuran panel, jarak antar-potongan, rangka, serta tingkat privasi yang dibutuhkan di lokasi.</p>
+ </div>
+ <div class="grid gap-6 md:grid-cols-12">
+ {pagarGallery.map((image, index) => (
+ <figure class:list={['group overflow-hidden border border-accent/20 bg-background', index === 0 ? 'md:col-span-7' : 'md:col-span-5']}>
+ <OptimizedImage src={image.src} alt={image.alt} className="h-[380px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" width={900} height={900} />
+ <figcaption class="border-t border-accent/20 p-5 text-sm leading-relaxed text-text-secondary">{image.caption}</figcaption>
+ </figure>
+ ))}
+ </div>
+ </div>
+ </section>
+ )}
+
+ {isPagar && (
+ <section class="section-padding bg-background cv-auto relative overflow-hidden" aria-labelledby="material-pagar">
+ <div class="container-custom">
+ <div class="max-w-4xl mb-12">
+ <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent mb-4">Panduan material</p>
+ <h2 id="material-pagar" class="display-lg text-text-main mb-5">Material Apa yang Cocok untuk Pagar Laser Cutting?</h2>
+ <p class="text-lg text-text-secondary leading-relaxed">Tidak ada satu material yang paling baik untuk semua proyek. Pilihan yang tepat bergantung pada ukuran pagar, konstruksi rangka, paparan cuaca, target tampilan, dan pola perawatan setelah pemasangan.</p>
+ </div>
+ <div class="overflow-x-auto border border-accent/20 bg-surface/60">
+ <table class="w-full min-w-[820px] text-left">
+ <thead class="bg-accent text-background"><tr><th class="p-4 font-bold">Material</th><th class="p-4 font-bold">Karakter</th><th class="p-4 font-bold">Finishing umum</th><th class="p-4 font-bold">Cocok untuk</th></tr></thead>
+ <tbody>
+ {pagarMaterialComparison.map((item) => (
+ <tr class="border-t border-accent/20 align-top"><th scope="row" class="p-4 text-text-main">{item.material}</th><td class="p-4 text-text-secondary">{item.strength}</td><td class="p-4 text-text-secondary">{item.finish}</td><td class="p-4 text-text-secondary">{item.bestFor}</td></tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <div class="mt-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+ <div><p class="text-sm font-bold uppercase tracking-[0.18em] text-accent mb-4">Estimasi transparan</p><h2 class="display-md text-text-main mb-5">Apa yang Menentukan Harga Pagar Laser Cutting?</h2><p class="text-text-secondary leading-relaxed">Harga pagar laser cutting tidak akurat jika dihitung dari luas saja. Estimasi perlu membaca material, struktur, motif, finishing, sistem bukaan, dan pekerjaan di lokasi sebagai satu kesatuan.</p></div>
+ <ol class="divide-y divide-accent/20 border-y border-accent/20">
+ {pagarPriceFactors.map((factor, index) => (<li class="grid grid-cols-[3rem_1fr] gap-4 py-5 text-text-secondary"><span class="font-bold text-accent">0{index + 1}</span><span>{factor}</span></li>))}
+ </ol>
+ </div>
+ </div>
+ </section>
+ )}
 
  <section class="section-padding bg-surface/60 cv-auto relative overflow-hidden">
  <div class="container-custom">

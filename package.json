@@ -19,6 +19,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "migrate:blog": "node scripts/migrate-blog.mjs"
+    "rebuild:blog": "node scripts/rebuild-blog.mjs",
+    "audit:blog": "node scripts/audit-blog.mjs"
   }
 }

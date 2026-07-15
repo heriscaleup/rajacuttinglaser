@@ -14,7 +14,7 @@ const sortedPosts = allPosts
 const siteName = 'Raja Cutting Laser';
 const accent = 'text-accent';
 const fallbackImage = '/images/metal.webp';
-function resolveImage(image) {
+function resolveImage(image: string | undefined): string {
  if (!image) return fallbackImage;
  if (image.startsWith('http://') || image.startsWith('https://')) return image;
  const normalized = image.startsWith('/') ? image : `/${image}`;
@@ -44,7 +44,7 @@ const jsonLd = {
 >
  <Header slot="header" />
 
- <main class="bg-background text-text-main">
+ <div class="bg-background text-text-main">
  <section class="relative overflow-hidden border-b border-border bg-background">
  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
  <div class="max-w-3xl">
@@ -68,7 +68,7 @@ const jsonLd = {
  <div class=" overflow-hidden rounded-[2rem] border border-border bg-surface/60 backdrop-blur-sm transition-all duration-500 group-hover:border-accent/50 group-hover">
  <img
  src={resolveImage(featuredPost.data.image)}
- alt={featuredPost.data.title}
+ alt={featuredPost.data.imageAlt}
  class="aspect-[16/10] h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
  loading="eager"
  onerror={`this.onerror=null;this.src='${fallbackImage}';`}
@@ -106,7 +106,7 @@ const jsonLd = {
  <a href={`/blog/${post.slug}/`} class="block overflow-hidden rounded-3xl border border-border bg-container">
  <img
  src={resolveImage(post.data.image)}
- alt={post.data.title}
+ alt={post.data.imageAlt}
  class="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.04]"
  loading="lazy"
  onerror={`this.onerror=null;this.src='${fallbackImage}';`}
@@ -130,7 +130,7 @@ const jsonLd = {
  </div>
  </section>
 
- </main>
+ </div>
 
  <Footer slot="footer" />
 </BaseLayout>

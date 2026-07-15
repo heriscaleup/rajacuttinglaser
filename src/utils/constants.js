@@ -269,27 +269,27 @@ export const PRODUCT_CATEGORIES = [
     name: "Pagar Laser Cutting",
     slug: "pagar-laser-cutting",
     href: "/produk/pagar-laser-cutting/",
-    image: "/images/stainlesssteel.webp",
+    image: "/images/pagar-laser-cutting/hero-laser-fiber-metal.webp",
     material: "Stainless steel, plat besi, ACP panel",
     audience: "Rumah, ruko, kantor, fasad depan",
     description: "Pagar custom dengan motif laser cutting untuk tampilan fasad yang lebih rapi, modern, dan tetap fungsional."
   },
   {
     id: "railing-balkon-laser-cutting",
-    name: "Railing Balkon Laser Cutting",
+    name: "Railing Balkon Laser Cutting Custom",
     slug: "railing-balkon-laser-cutting",
     href: "/produk/railing-balkon-laser-cutting/",
-    image: "/images/furnituremetal.webp",
+    image: "/images/products/railing-balkon-laser-cutting.webp",
     material: "Stainless steel, mild steel, aluminium",
     audience: "Balkon rumah, void, tangga, rooftop",
     description: "Railing custom yang mengutamakan keamanan, detail motif, dan finishing yang cocok untuk hunian maupun proyek komersial."
   },
   {
     id: "partisi-ruangan-laser-cutting",
-    name: "Partisi Ruangan Laser Cutting",
+    name: "Partisi Ruangan Laser Cutting Custom",
     slug: "partisi-ruangan-laser-cutting",
     href: "/produk/partisi-ruangan-laser-cutting/",
-    image: "/images/displyacrylic.webp",
+    image: "/images/products/partisi-ruangan-laser-cutting.webp",
     material: "Acrylic, MDF, plywood, metal",
     audience: "Interior rumah, kantor, retail, cafe",
     description: "Partisi dekoratif untuk membagi ruang tanpa membuat area terasa sempit, tersedia untuk kebutuhan interior dan semi-outdoor."
@@ -333,9 +333,60 @@ export const PRODUCT_DETAIL_PAGES = [
     metaTitle: "Pagar Laser Cutting Custom di Tangerang Selatan",
     metaDescription: "Jasa pembuatan pagar laser cutting custom untuk rumah, ruko, kantor, dan fasad proyek di Tangerang Selatan. Motif bisa custom, material menyesuaikan fungsi dan lokasi pemasangan.",
     keywords: "pagar laser cutting tangerang selatan, pagar laser cutting custom, pagar motif laser cutting, pagar plat laser cutting, pagar cutting metal",
-    image: "/images/stainlesssteel.webp",
+    image: "/images/pagar-laser-cutting/hero-laser-fiber-metal.webp",
     kicker: "Produk Custom Outdoor",
-    summary: "Kami memproduksi pagar laser cutting custom untuk kebutuhan rumah tinggal, ruko, kantor, dan proyek komersial dengan pendekatan desain, fabrikasi, dan finishing yang disesuaikan lokasi pemasangan.",
+    summary: "Pagar laser cutting adalah pagar berbahan lembaran metal yang motifnya dipotong presisi dari file digital. Kami membantu dari review referensi, pemilihan material, produksi panel, rangka, finishing, hingga koordinasi pemasangan untuk proyek di Tangerang Selatan dan sekitarnya.",
+    updatedAt: "11 Juli 2026",
+    gallery: [
+      {
+        src: "/images/pagar-laser-cutting/pagar-laser-cutting-geometris.webp",
+        alt: "Pagar laser cutting motif geometris untuk fasad rumah modern",
+        caption: "Motif geometris dengan bidang cukup rapat untuk menyeimbangkan privasi dan tampilan fasad."
+      },
+      {
+        src: "/images/pagar-laser-cutting/panel-pagar-laser-cutting-custom.webp",
+        alt: "Panel pagar laser cutting custom dari plat metal",
+        caption: "Panel custom dapat disesuaikan dengan modul rangka, ukuran bukaan, dan arah visual bangunan."
+      },
+      {
+        src: "/images/pagar-laser-cutting/pagar-cutting-metal-outdoor.webp",
+        alt: "Pagar cutting metal outdoor dengan finishing gelap",
+        caption: "Finishing untuk area outdoor dipilih berdasarkan material, paparan cuaca, dan target perawatan."
+      }
+    ],
+    materialComparison: [
+      {
+        material: "Mild steel / plat besi",
+        strength: "Struktur kuat dan fleksibel untuk motif custom",
+        finish: "Primer antikarat, cat duco, atau powder coating",
+        bestFor: "Pagar rumah, ruko, dan proyek dengan rangka metal"
+      },
+      {
+        material: "Galvanis",
+        strength: "Lapisan seng membantu ketahanan korosi",
+        finish: "Cat khusus galvanis atau powder coating",
+        bestFor: "Area outdoor yang membutuhkan perlindungan karat tambahan"
+      },
+      {
+        material: "Stainless steel",
+        strength: "Tampilan bersih dan kebutuhan perawatan lebih ringkas",
+        finish: "Hairline, polish, atau coating warna tertentu",
+        bestFor: "Fasad modern dan proyek dengan detail premium"
+      },
+      {
+        material: "Aluminium",
+        strength: "Lebih ringan dan tahan korosi alami",
+        finish: "Powder coating atau anodizing sesuai kebutuhan",
+        bestFor: "Panel dekoratif ringan dan area dengan beban struktur terbatas"
+      }
+    ],
+    priceFactors: [
+      "Luas panel dan jumlah daun pagar yang diproduksi.",
+      "Jenis material, ketebalan plat, serta ukuran rangka pendukung.",
+      "Kerumitan motif dan panjang lintasan potong pada file desain.",
+      "Jenis finishing, warna, serta kebutuhan perlindungan area outdoor.",
+      "Sistem bukaan sliding atau swing, lokasi proyek, dan lingkup pemasangan."
+    ],
     idealFor: [
       "Fasad rumah baru atau renovasi yang ingin tampil lebih rapi dan modern.",
       "Ruko, kantor, dan bangunan komersial yang membutuhkan pagar representatif.",
@@ -374,6 +425,14 @@ export const PRODUCT_DETAIL_PAGES = [
       {
         question: "Apakah Raja Cutting Laser juga menangani fabrikasi dan pemasangan?",
         answer: "Untuk beberapa proyek, kami bisa bantu sampai tahap fabrikasi produk jadi dan koordinasi pemasangan. Detailnya disesuaikan lokasi dan lingkup pekerjaan."
+      },
+      {
+        question: "Berapa harga pagar laser cutting per meter?",
+        answer: "Harga tidak ditentukan dari luas saja. Material, ketebalan plat, kerumitan motif, rangka, finishing, sistem bukaan, dan lingkup pemasangan ikut memengaruhi biaya. Kirim ukuran area dan foto referensi agar estimasi awal bisa dihitung sesuai kebutuhan nyata."
+      },
+      {
+        question: "Berapa lama proses pembuatan pagar laser cutting?",
+        answer: "Waktu produksi mengikuti kesiapan desain, material, jumlah panel, finishing, dan antrean kerja. Estimasi jadwal diberikan setelah ukuran, motif, serta lingkup produksi disepakati."
       }
     ],
     supportServiceIds: ["laser-fiber", "cnc-router", "laser-co2"],
@@ -385,7 +444,7 @@ export const PRODUCT_DETAIL_PAGES = [
     metaTitle: "Railing Balkon Laser Cutting Custom Tangsel",
     metaDescription: "Pembuatan railing balkon laser cutting custom untuk rumah, tangga, mezzanine, dan rooftop di Tangerang Selatan. Fokus pada keamanan, proporsi desain, dan finishing.",
     keywords: "railing balkon laser cutting, railing tangga laser cutting, railing balkon tangsel, railing motif custom, railing stainless custom",
-    image: "/images/furnituremetal.webp",
+    image: "/images/products/railing-balkon-laser-cutting.webp",
     kicker: "Produk Custom Arsitektural",
     summary: "Railing balkon laser cutting cocok untuk proyek hunian dan komersial yang membutuhkan pagar pengaman dengan tampilan lebih presisi, serasi dengan fasad, dan tetap nyaman dilihat dari dekat.",
     idealFor: [
@@ -437,7 +496,7 @@ export const PRODUCT_DETAIL_PAGES = [
     metaTitle: "Partisi Ruangan Laser Cutting Custom di Tangerang Selatan",
     metaDescription: "Pembuatan partisi ruangan laser cutting untuk rumah, kantor, cafe, retail, dan ruang komersial. Tersedia opsi acrylic, MDF, plywood, dan metal sesuai konsep ruang.",
     keywords: "partisi ruangan laser cutting, partisi dekoratif custom, partisi acrylic laser cutting, partisi mdf laser cutting, partisi kantor custom",
-    image: "/images/displyacrylic.webp",
+    image: "/images/products/partisi-ruangan-laser-cutting.webp",
     kicker: "Produk Custom Interior",
     summary: "Partisi ruangan laser cutting membantu membagi area tanpa menutup ruang sepenuhnya. Produk ini cocok untuk kebutuhan interior yang ingin tetap terasa terbuka tetapi punya batas visual yang jelas.",
     idealFor: [

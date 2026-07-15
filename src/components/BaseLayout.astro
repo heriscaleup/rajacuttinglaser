@@ -40,42 +40,66 @@ export interface Props {
   jsonLd?: any[];
   canonical?: string;
   metaTags?: MetaTags;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
 }
 
-const { metaTags, noindex = false, jsonLd } = Astro.props;
-
-const currentUrl = typeof Astro.url === 'string' ? Astro.url : Astro.url.href;
-const defaultMetaTags = {
-  title: SITE_CONFIG.title,
-  description: SITE_CONFIG.description,
-  keywords: SITE_CONFIG.keywords,
-  canonical: currentUrl,
-  url: currentUrl,
-  type: "website",
-  openGraph: {
-    title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
-    url: currentUrl,
-    image: "/images/logo.webp",
-    type: "website",
-    siteName: SITE_CONFIG.name,
-    locale: "id_ID"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
-    image: "/images/logo.webp"
-  }
-};
-
-const meta = metaTags || defaultMetaTags;
+const {
+  metaTags,
+  title,
+  description,
+  keywords,
+  image,
+  url,
+  type = "website",
+  canonical,
+  noindex = false,
+  jsonLd,
+  publishedTime,
+  modifiedTime,
+  author
+} = Astro.props;
 
 if (!Astro.site) {
   throw new Error('SITE_URL environment variable is not set. Please update your astro.config.mjs');
 }
 
 const siteUrl = new URL(Astro.site);
+const currentUrl = typeof Astro.url === 'string' ? Astro.url : Astro.url.href;
+const pageUrl = url ? new URL(url, siteUrl).href : currentUrl;
+const canonicalUrl = canonical ? new URL(canonical, siteUrl).href : pageUrl;
+const pageTitle = title || SITE_CONFIG.title;
+const pageDescription = description || SITE_CONFIG.description;
+const pageImage = image || "/images/logo.webp";
+const generatedMetaTags = {
+  title: pageTitle,
+  description: pageDescription,
+  keywords: keywords || SITE_CONFIG.keywords,
+  canonical: canonicalUrl,
+  url: pageUrl,
+  type,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    image: pageImage,
+    type,
+    siteName: SITE_CONFIG.name,
+    locale: "id_ID",
+    ...(publishedTime && { publishedTime }),
+    ...(modifiedTime && { modifiedTime }),
+    ...(author && { author })
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    image: pageImage
+  }
+};
+
+const meta = metaTags || generatedMetaTags;
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -129,6 +153,9 @@ const siteUrl = new URL(Astro.site);
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content={meta.openGraph.siteName} />
     <meta property="og:locale" content={meta.openGraph.locale} />
+    {meta.openGraph.publishedTime && <meta property="article:published_time" content={meta.openGraph.publishedTime} />}
+    {meta.openGraph.modifiedTime && <meta property="article:modified_time" content={meta.openGraph.modifiedTime} />}
+    {meta.openGraph.author && <meta property="article:author" content={meta.openGraph.author} />}
 
     <meta name="twitter:card" content={meta.twitter.card} />
     <meta name="twitter:title" content={meta.twitter.title} />
@@ -199,7 +226,7 @@ const siteUrl = new URL(Astro.site);
         try{
           let cls=0; new PerformanceObserver(list=>{for (const e of list.getEntries()){if(!(e as any).hadRecentInput){cls += (e as any).value}}}).observe({type:'layout-shift', buffered:true});
           new PerformanceObserver(list=>{const e=list.getEntries().pop(); if(e){console.log('[CWV] LCP', (e as any).renderTime||(e as any).loadTime)}}).observe({type:'largest-contentful-paint', buffered:true});
-          new PerformanceObserver(list=>{const e=list.getEntries().pop(); if(e){console.log('[CWV] INP', (e as any).processingStart - (e as any).startTime)}}).observe({type:'event', buffered:true, durationThreshold: 40});
+          new PerformanceObserver(list=>{const e=list.getEntries().pop(); if(e){console.log('[CWV] INP', (e as any).processingStart - (e as any).startTime)}}).observe({type:'event', buffered:true, durationThreshold: 40} as any);
           window.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden'){ console.log('[CWV] CLS', cls.toFixed(3)); }});
         }catch(err){}
       })();
@@ -257,5 +284,3 @@ const siteUrl = new URL(Astro.site);
       })();
     </script>  </body>
 </html>
-
-

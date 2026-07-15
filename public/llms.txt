@@ -1,53 +1,30 @@
 # Raja Cutting Laser
 
-Raja Cutting Laser adalah produsen dan penyedia jasa laser cutting, CNC router, dan galvo engraving berbasis di Tangerang Selatan, Banten. Melayani kebutuhan custom berbasis laser cutting sejak 2014 untuk proyek residensial, komersial, dan industri di wilayah Jabodetabek.
-
-## Fokus Utama
-
-Website ini difokuskan pada produk jadi berbasis laser cutting — bukan hanya jasa pemotongan material. Kami membantu klien dari brief desain hingga produk custom siap pasang.
+> Raja Cutting Laser adalah produsen dan penyedia jasa laser cutting, CNC router, dan galvo engraving berbasis di Tangerang Selatan, Banten. Melayani kebutuhan custom berbasis laser cutting sejak 2014 untuk proyek residensial, komersial, dan industri di wilayah Jabodetabek.
 
 ## Produk Unggulan
+Kami memproduksi berbagai macam produk jadi berbasis laser cutting berkualitas premium:
+- [Pagar Laser Cutting](https://rajacuttinglaser.com/produk/pagar-laser-cutting/): Pagar logam &amp; besi hollow custom luar ruangan.
+- [Railing Balkon Laser Cutting](https://rajacuttinglaser.com/produk/railing-balkon-laser-cutting/): Pengaman balkon dengan ornamen estetis.
+- [Partisi Ruangan Laser Cutting](https://rajacuttinglaser.com/produk/partisi-ruangan-laser-cutting/): Penyekat interior berbahan logam, akrilik, atau PVC.
+- [Huruf Timbul &amp; Signage](https://rajacuttinglaser.com/produk/huruf-timbul-signage/): Identitas brand dari akrilik dan stainless steel.
+- [Mihrab &amp; Ornamen Islami](https://rajacuttinglaser.com/produk/mihrab-panel-islami/): Ornamen artistik masjid dan mushola.
+- [Plafon Dekoratif](https://rajacuttinglaser.com/produk/plafon-dekoratif-laser-cutting/): Panel plafon artistik penambah estetika langit-langit.
+- [Panel Fasad (Secondary Skin)](https://rajacuttinglaser.com/produk/panel-fasad-secondary-skin/): Lapisan pelindung fasad luar gedung bermotif custom.
+- [Display Acrylic Custom](https://rajacuttinglaser.com/produk/display-acrylic-custom/): Dudukan pajangan toko, box custom, dan holder akrilik.
+- [Nameplate &amp; Wayfinding Custom](https://rajacuttinglaser.com/produk/nameplate-wayfinding-custom/): Papan petunjuk arah komersial dan plat identitas mesin.
 
-- Pagar laser cutting (stainless steel, besi hollow, carbon steel)
-- Railing balkon laser cutting
-- Partisi ruangan laser cutting (akrilik, stainless, besi)
-- Huruf timbul dan signage (stainless, akrilik, ACP)
-- Mihrab dan ornamen masjid laser cutting
-- Plafon dekoratif dan panel GRC laser cutting
+## Layanan &amp; Teknologi Produksi
+- [Jasa Laser Fiber](https://rajacuttinglaser.com/jasa-laser-fiber/): Cutting metal (stainless steel, carbon steel, aluminium, tembaga, brass, titanium) dengan presisi ±0.05mm.
+- [Jasa Laser CO2](https://rajacuttinglaser.com/jasa-laser-co2/): Cutting &amp; engraving material non-metal seperti akrilik, kayu, MDF, PVC, kulit.
+- [Jasa CNC Router](https://rajacuttinglaser.com/jasa-cnc-router/): Routing dan relief 3D pada kayu solid, plywood, MDF, dan PVC board.
+- [Jasa Galvo Engraving](https://rajacuttinglaser.com/jasa-galvo-engraving/): Laser marking berkecepatan tinggi untuk logo dan serial number pada material metal.
 
-## Layanan & Teknologi
-
-- **Laser Fiber**: Cutting dan marking material logam (stainless steel, carbon steel, aluminium, tembaga, brass, titanium). Presisi ±0.05mm, ketebalan hingga 20mm.
-- **Laser CO2**: Cutting dan engraving material non-metal (akrilik, kayu, MDF, PVC, kulit, kain). Detail ±0.1mm.
-- **CNC Router**: Routing kayu, MDF, akrilik, HDPE untuk furniture, signage, dan dekorasi interior. Presisi ±0.1mm.
-- **Galvo Engraving**: Engraving dan marking presisi tinggi untuk produk, branding, dan personalisasi item logam.
-
-## Material yang Diproses
-
-Stainless Steel, Carbon Steel, Aluminium, Tembaga, Brass, Akrilik, Kayu, MDF, Plywood, PVC, ACP (Aluminium Composite Panel), GRC (Glass Reinforced Concrete)
-
-## Area Layanan
-
-Tangerang Selatan, Bintaro, BSD, Serpong, Jakarta, Bogor, Depok, Bekasi, Serang
-
-## Informasi Bisnis
-
-- **Nama**: Raja Cutting Laser
-- **Alamat**: Jl. BSD Bintaro No.1, Parigi, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15228
-- **Telepon/WhatsApp**: +62 851 6569 3179
-- **Email**: info@rajacuttinglaser.com
-- **Jam Operasional**: Senin - Sabtu, 08:00 - 17:00 WIB
-- **Website**: https://rajacuttinglaser.com
-
-## Konten Blog
-
-Blog kami membahas topik teknis dan praktis seputar laser cutting:
-- Panduan memilih material laser cutting
-- Perbandingan teknologi (laser fiber vs CO2, CNC router vs laser cutting)
-- Maintenance dan perawatan hasil laser cutting
-- Optimasi file desain untuk laser cutting
-- Trend industri laser cutting
+## Halaman Penting Lainnya
+- [Portfolio Proyek](https://rajacuttinglaser.com/portfolio/): Galeri foto dari 1000+ proyek laser cutting yang telah kami selesaikan.
+- [Hubungi Kami](https://rajacuttinglaser.com/contact/): Layanan konsultasi desain, kalkulasi biaya (quote), dan order.
+- [Tentang Raja Cutting Laser](https://rajacuttinglaser.com/about/): Profil studio manufaktur dan workshop kami di Tangerang Selatan.
+- [Blog &amp; Artikel](https://rajacuttinglaser.com/blog/): Kumpulan artikel edukatif, spesifikasi material, dan panduan desain laser cutting.
 
 ## Sitemap
-
-https://rajacuttinglaser.com/sitemap-index.xml
+- [Sitemap XML](https://rajacuttinglaser.com/sitemap-index.xml)

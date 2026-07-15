@@ -139,27 +139,27 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
         <!-- Contact Form -->
         <div class="corner-brackets bg-surface/60 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border hover:border-accent/50 hover:shadow-glow transition-all duration-500">
           <h2 class="display-lg text-text-main mb-8">Kirim Pesan</h2>
-          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6" toolname="submitContactInquiry" tooldescription="Submit a contact or project inquiry to Raja Cutting Laser including name, email, phone, and message details" toolautosubmit="true">
             <input type="hidden" name="form-name" value="contact" />
             <p class="hidden">
               <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
             <div>
               <label for="name" class="block text-sm font-medium text-text-secondary mb-2">Nama Lengkap *</label>
-              <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300" toolparamtitle="fullName" toolparamdescription="The full name of the contact person">
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-text-secondary mb-2">Email *</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300" toolparamtitle="emailAddress" toolparamdescription="The email address to reply to">
             </div>
             <div>
               <label for="phone" class="block text-sm font-medium text-text-secondary mb-2">Nomor WhatsApp *</label>
-              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300" placeholder="628XXXXXXXXXX">
+              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300" placeholder="628XXXXXXXXXX" toolparamtitle="phoneNumber" toolparamdescription="The WhatsApp phone number of the customer in format 628xxxxxxxxxx">
               <p class="mt-2 text-sm text-text-secondary">Format: 628XXXXXXXXXX</p>
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-text-secondary mb-2">Pesan *</label>
-              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"></textarea>
+              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300" toolparamtitle="messageText" toolparamdescription="The details of the project or questions regarding laser cutting services"></textarea>
             </div>
             <div>
               <label for="file" class="block text-sm font-medium text-text-secondary mb-2">Lampirkan File (Opsional)</label>

@@ -1,6 +1,5 @@
 ---
-// CTA.astro - Komponen Call-to-Action yang dapat digunakan kembali
-import { SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
+import { WHATSAPP_MESSAGES } from '../utils/constants.js';
 import WhatsAppButton from './WhatsAppButton.astro';
 
 export interface Props {
@@ -17,128 +16,56 @@ export interface Props {
 }
 
 const {
-  title = "Siap Memulai Proyek Laser Cutting Anda?",
-  description = "Dapatkan konsultasi gratis dan quote terbaik untuk kebutuhan laser cutting Anda. Tim ahli kami siap membantu mewujudkan ide kreatif Anda.",
-  primaryText = "Konsultasi Gratis",
-  primaryLink = `https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.default)}`,
-  secondaryText = "Dapatkan Quote",
-  secondaryLink = "/contact",
+  title = 'Mari buat produk yang benar-benar siap diwujudkan.',
+  description = 'Kirim ukuran, foto lokasi, atau referensi desain. Tim kami akan membantu membaca kebutuhan material, teknologi, dan prosesnya.',
+  primaryText = 'Konsultasi proyek',
+  secondaryText = 'Kirim brief lengkap',
+  secondaryLink = '/contact/',
   backgroundImage,
   variant = 'default',
   size = 'md',
-  whatsappMessage = WHATSAPP_MESSAGES.default
+  whatsappMessage = WHATSAPP_MESSAGES.productDefault
 } = Astro.props;
 
-  const getVariantClasses = () => {
-    switch (variant) {
-      case 'gradient': return 'bg-gradient-to-r from-accent to-accent-orange text-background';
-      case 'image': return 'relative text-white';
-      case 'minimal': return 'bg-background text-text-main border border-accent';
-      default: return 'bg-accent text-background';
-    }
-  };
-
-const getSizeClasses = () => {
-  switch (size) {
-    case 'sm': return 'py-12';
-    case 'lg': return 'py-24 md:py-32';
-    default: return 'py-16 md:py-20';
-  }
-};
-
-const variantClasses = getVariantClasses();
-const sizeClasses = getSizeClasses();
+const isDark = variant === 'minimal' || variant === 'image';
+const sizeClass = size === 'sm' ? 'py-16 md:py-20' : size === 'lg' ? 'py-24 md:py-36' : 'py-20 md:py-28';
 ---
 
-<section class={`${variantClasses} ${sizeClasses} relative overflow-hidden`}>
-  <div class="absolute inset-0 metal-grain" aria-hidden="true"></div>
-
+<section class:list={['relative overflow-hidden border-y', sizeClass, isDark ? 'border-white/10 bg-surface text-text-main' : 'border-black/10 bg-paper text-ink']}>
   {variant === 'image' && backgroundImage && (
-    <div class="absolute inset-0 z-0">
-      <img src={backgroundImage} alt="Background" class="w-full h-full object-cover" loading="lazy"/>
-      <div class="absolute inset-0 bg-black/70"></div>
+    <div class="absolute inset-0">
+      <img src={backgroundImage} alt="" class="h-full w-full object-cover opacity-20" loading="lazy" decoding="async" />
+      <div class="absolute inset-0 bg-background/75"></div>
     </div>
   )}
+  <div class="pointer-events-none absolute inset-0 metal-grain" aria-hidden="true"></div>
 
-  <div class="relative z-20 container-custom text-center">
-    <h2 class="display-lg mb-6 fade-in-up text-text-main">{title}</h2>
-    <p class={`mb-8 max-w-2xl mx-auto leading-relaxed fade-in-up ${variant==='minimal'?'text-text-secondary':'text-white/95'}`} style="animation-delay:0.2s;">
-      {description}
-    </p>
-    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 fade-in-up" style="animation-delay:0.4s;">
-      <WhatsAppButton
-        message={whatsappMessage}
-        className={`text-lg px-8 py-4 font-bold rounded-lg transition-all duration-300 transform hover:scale-105 w-full sm:w-auto ${variant==='minimal'?'bg-accent hover:bg-accent-orange text-background':'bg-accent hover:bg-accent-orange text-background'}`}
-        source="cta_section"
-      />
-      <a href={secondaryLink}
-         class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg border-2 transition-all duration-300 w-full sm:w-auto
-           ${variant==='minimal'?'border-accent text-accent hover:bg-accent hover:text-background':'border-accent text-accent hover:bg-accent hover:text-background shadow-lg'}">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6-8h6"/>
-        </svg>
-        {secondaryText}
-      </a>
-    </div>
+  <div class="container-custom relative" data-reveal>
+    <div class="grid items-end gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
+      <div class="max-w-5xl">
+        <p class:list={['eyebrow mb-7', isDark ? 'text-text-secondary' : 'text-ink/55']}>Mulai percakapan</p>
+        <h2 class:list={['font-display text-[clamp(2.8rem,6vw,6.8rem)] font-semibold leading-[0.91] tracking-[-0.06em]', isDark ? 'text-text-main' : 'text-ink']}>{title}</h2>
+        <p class:list={['mt-7 max-w-2xl text-base leading-relaxed md:text-lg', isDark ? 'text-text-secondary' : 'text-ink/65']}>{description}</p>
+      </div>
 
-    <div class="mt-12 fade-in-up" style="animation-delay:0.6s;">
-      <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium ${variant==='minimal'?'text-text-secondary':'text-white/95'}">
-        <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 ${variant==='minimal'?'text-accent':'text-accent'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <span>Respon dalam 24 jam</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 ${variant==='minimal'?'text-accent':'text-accent'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <span>Konsultasi gratis</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 ${variant==='minimal'?'text-accent':'text-accent'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span>Tanpa komitmen</span>
-        </div>
+      <div class="flex min-w-[220px] flex-col gap-3 lg:pb-2">
+        <WhatsAppButton
+          message={whatsappMessage}
+          label={primaryText}
+          className="justify-center rounded-full bg-accent px-6 py-4 text-text-main hover:bg-accent-orange"
+          source="cta_section"
+        />
+        <a href={secondaryLink} class:list={['inline-flex min-h-14 items-center justify-center gap-3 rounded-full border px-6 py-4 text-sm font-bold transition-colors', isDark ? 'border-white/25 text-text-main hover:bg-text-main hover:text-background' : 'border-black/25 text-ink hover:bg-ink hover:text-paper']}>
+          {secondaryText}
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+        </a>
       </div>
     </div>
-  </div>
 
-  {variant!=='minimal' && (
-    <div class="absolute inset-0 z-10 pointer-events-none">
-      <div class="absolute top-10 right-10 w-20 h-20 border border-accent/20 rounded-full"></div>
-      <div class="absolute bottom-10 left-10 w-16 h-16 border border-accent/10 rounded-full"></div>
+    <div class:list={['mt-14 flex flex-wrap gap-x-7 gap-y-3 border-t pt-6 font-mono text-[0.6rem] uppercase tracking-[0.13em]', isDark ? 'border-white/10 text-text-secondary' : 'border-black/15 text-ink/55']}>
+      <span>Review brief awal</span>
+      <span>Rekomendasi material</span>
+      <span>Estimasi sesuai lingkup</span>
     </div>
-  )}
+  </div>
 </section>
-
-<style>
-  @keyframes fadeInUp { 
-    from { 
-      opacity: 0; 
-      transform: translateY(30px);
-    } 
-    to {
-      opacity: 1; 
-      transform: translateY(0);
-    } 
-  }
-  
-  .fade-in-up { 
-    animation: fadeInUp 0.8s ease-out forwards; 
-    opacity: 0; 
-    transform: translateY(30px); 
-  }
-  
-  /* Enhanced button hover effects */
-  .btn-hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .btn-hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-</style>
-

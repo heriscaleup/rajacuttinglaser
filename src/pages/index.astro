@@ -2,258 +2,164 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Hero from '../components/Hero.astro';
 import CTA from '../components/CTA.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 
-import {
-  PRODUCT_CATEGORIES,
-  PRODUCT_FAQ,
-  PRODUCT_REASONS,
-  PRODUCT_WORKFLOW,
-  SERVICES,
-  PORTFOLIO,
-  SITE_CONFIG,
-  WHATSAPP_MESSAGES
-} from '../utils/constants.js';
-
-import { generateMetaTags, generateFAQSchema } from '../utils/seo.ts';
+import { PRODUCT_CATEGORIES, PRODUCT_HOME_FAQ } from '../data/productCatalog.js';
+import { PRODUCT_WORKFLOW, SERVICES, SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
+import { generateFAQSchema, generateMetaTags } from '../utils/seo.ts';
 
 const metaTags = generateMetaTags({
-  title: "Produsen Produk Laser Cutting Custom Tangerang Selatan",
-  description: "Raja Cutting Laser memproduksi pagar laser cutting, railing balkon, partisi ruangan, huruf timbul, mihrab, dan plafon dekoratif custom untuk rumah, kantor, toko, dan proyek komersial di Tangerang Selatan dan sekitarnya.",
-  keywords: "produsen produk laser cutting, pagar laser cutting tangerang selatan, railing balkon laser cutting, partisi ruangan laser cutting, huruf timbul tangsel, mihrab laser cutting, plafon dekoratif laser cutting",
-  url: "/",
-  type: "website",
-  image: "/images/stainlesssteel.webp",
-  modifiedTime: "2026-04-23T00:00:00+07:00",
+  title: 'Produk Laser Cutting Custom untuk Arsitektur & Interior',
+  description: 'Raja Cutting Laser merancang dan memproduksi pagar, railing, partisi, signage, panel fasad, mihrab, plafon, display acrylic, dan wayfinding custom di Tangerang Selatan.',
+  keywords: 'produk laser cutting custom, pagar laser cutting tangerang selatan, partisi laser cutting, signage custom, panel fasad laser cutting, display acrylic tangsel',
+  url: '/',
+  type: 'website',
+  image: '/images/home/hero-workshop.webp',
+  modifiedTime: '2026-07-15T00:00:00+07:00',
   author: SITE_CONFIG.author
 });
 
-const faqSchema = generateFAQSchema(PRODUCT_FAQ);
-const featuredPortfolio = PORTFOLIO.slice(0, 6);
+const faqSchema = generateFAQSchema(PRODUCT_HOME_FAQ);
+const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(WHATSAPP_MESSAGES.productDefault)}`;
+
+const technologyNotes: Record<string, { index: string; role: string; result: string }> = {
+  'laser-fiber': { index: '01', role: 'Sheet metal', result: 'Panel metal, komponen, fasad, pagar' },
+  'laser-co2': { index: '02', role: 'Non-metal', result: 'Acrylic, MDF tipis, detail display' },
+  'cnc-router': { index: '03', role: 'Panel & relief', result: 'Plywood, MDF, PVC, ACP, GRC' },
+  'galvo-engraving': { index: '04', role: 'Permanent marking', result: 'Nameplate, serial, logo, QR' }
+};
 ---
 
 <BaseLayout metaTags={metaTags} jsonLd={[faqSchema]}>
   <Header slot="header" />
 
-  <Hero
-    title="Produsen Produk Laser Cutting Custom untuk Rumah, Kantor, dan Proyek Komersial"
-    subtitle="Pagar, railing balkon, partisi ruangan, huruf timbul, mihrab, dan panel dekoratif"
-    description="Raja Cutting Laser membantu kebutuhan produk custom berbasis laser cutting di Tangerang Selatan dan sekitarnya. Fokus kami bukan hanya proses cutting material, tetapi hasil jadi yang siap dipakai untuk fasad, interior, signage, dan elemen dekoratif proyek Anda."
-    primaryCTA="Konsultasi Desain & Harga"
-    secondaryCTA="Lihat Produk Prioritas"
-    secondaryCTALink="/#products"
-    backgroundImage="/images/stainlesssteel.webp"
-    whatsappMessage={WHATSAPP_MESSAGES.productDefault}
-  />
+  <section class="relative min-h-[860px] overflow-hidden bg-background pt-[76px] md:min-h-[940px]">
+    <div class="absolute inset-0 top-[76px]">
+      <OptimizedImage
+        src="/images/home/hero-workshop.webp"
+        alt="Workshop fiber laser Raja Cutting Laser untuk produksi panel metal custom"
+        className="hero-breathe h-full w-full object-cover object-[58%_center]"
+        loading="eager"
+        fetchpriority="high"
+        width={1920}
+        height={1080}
+      />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,9,8,0.98)_0%,rgba(7,9,8,0.8)_38%,rgba(7,9,8,0.18)_72%,rgba(7,9,8,0.38)_100%)]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/25"></div>
+    </div>
+    <div class="pointer-events-none absolute inset-0 metal-grain" aria-hidden="true"></div>
 
-  <section id="products" class="section-padding bg-background cv-auto">
-    <div class="container-custom">
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
-          </svg>
-          Produk Prioritas
+    <div class="container-custom relative flex min-h-[784px] flex-col justify-between py-16 md:min-h-[864px] md:py-20">
+      <div class="max-w-5xl pt-12 md:pt-20">
+        <p class="eyebrow mb-8 text-text-main/70">Custom fabrication studio · Tangerang Selatan</p>
+        <h1 class="display-hero max-w-[1020px] text-shadow">
+          Produk laser cutting<br />
+          <span class="text-stroke">untuk ruang nyata.</span>
+        </h1>
+        <div class="mt-9 grid max-w-3xl gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <p class="max-w-xl text-base leading-relaxed text-text-main/75 md:text-lg">Dari panel fasad dan pagar hingga signage, partisi, serta display. Kami menerjemahkan referensi menjadi material, modul, dan detail yang siap diproduksi.</p>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="button-primary min-w-[190px]">
+            Ceritakan proyek
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+          </a>
         </div>
-        <h2 class="display-lg text-text-main mb-8">Produk Laser Cutting yang Paling Sering Diminta</h2>
-        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-          Website ini kami arahkan khusus untuk kebutuhan produk jadi dan aplikasi laser cutting. Cocok untuk Anda yang mencari solusi pagar, railing, partisi, huruf timbul, atau panel dekoratif custom.
-        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {PRODUCT_CATEGORIES.map((product) => {
-          const isDetailPage = product.href.startsWith('/produk/');
-          return (
-            <article class="group bg-surface/80 rounded-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-border hover:border-accent/50 flex flex-col">
-              <div class="relative overflow-hidden">
-                <OptimizedImage
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                  width={640}
-                  height={400}
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent"></div>
-                <div class="absolute top-4 left-4 rounded-full bg-accent/10 border border-accent/20 px-3 py-1 text-xs font-semibold text-accent shadow-lg">
-                  {product.audience}
-                </div>
+      <div class="grid gap-7 border-t border-white/20 pt-6 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.7fr_1.2fr_auto] lg:items-end">
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.17em] text-text-secondary">Kapabilitas</p>
+          <p class="mt-2 text-sm font-semibold text-text-main">Fiber · CO₂ · CNC Router · Galvo</p>
+        </div>
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.17em] text-text-secondary">Cakupan</p>
+          <p class="mt-2 text-sm font-semibold text-text-main">Hunian hingga komersial</p>
+        </div>
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.17em] text-text-secondary">Pendekatan</p>
+          <p class="mt-2 text-sm font-semibold text-text-main">Review desain → produksi → finishing</p>
+        </div>
+        <a href="#products" class="link-arrow self-end text-xs">Jelajahi
+          <svg class="h-4 w-4 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="overflow-hidden border-y border-white/10 bg-accent py-4 text-background" aria-hidden="true">
+    <div class="marquee-track flex items-center whitespace-nowrap font-display text-2xl font-extrabold uppercase tracking-[-0.035em] md:text-4xl">
+      {Array.from({ length: 2 }).map(() => (
+        <span class="flex items-center">
+          <span class="mx-6">Cut with purpose</span><span>✳</span>
+          <span class="mx-6">Built for use</span><span>✳</span>
+          <span class="mx-6">Finished with care</span><span>✳</span>
+          <span class="mx-6">Made in Tangsel</span><span>✳</span>
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <section class="section-padding bg-paper text-ink">
+    <div class="container-custom" data-reveal>
+      <div class="grid gap-12 lg:grid-cols-[0.36fr_1fr] lg:gap-20">
+        <div>
+          <p class="eyebrow text-ink/55">Bukan sekadar jasa potong</p>
+        </div>
+        <div>
+          <h2 class="font-display text-[clamp(2.8rem,5.7vw,6.2rem)] font-semibold leading-[0.95] tracking-[-0.06em] text-ink">Desain yang bagus baru berarti ketika bisa diwujudkan dengan tepat.</h2>
+          <div class="mt-12 grid gap-8 border-t border-black/15 pt-8 md:grid-cols-3">
+            <div><strong class="block text-4xl font-semibold tracking-[-0.05em] text-ink">09</strong><p class="mt-2 text-sm text-ink/60">keluarga produk custom</p></div>
+            <div><strong class="block text-4xl font-semibold tracking-[-0.05em] text-ink">04</strong><p class="mt-2 text-sm text-ink/60">teknologi produksi saling melengkapi</p></div>
+            <div><strong class="block text-4xl font-semibold tracking-[-0.05em] text-ink">01</strong><p class="mt-2 text-sm text-ink/60">alur dari brief hingga produk</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section-padding bg-background">
+    <div class="container-custom">
+      <div class="mb-14 grid gap-8 lg:grid-cols-[1fr_0.55fr] lg:items-end" data-reveal>
+        <div>
+          <p class="eyebrow mb-6">Katalog aplikasi</p>
+          <h2 class="display-lg">Sembilan cara membuat ide menjadi bagian dari ruang.</h2>
+        </div>
+        <p class="max-w-xl text-base leading-relaxed lg:justify-self-end">Setiap kategori dibangun dari kebutuhan fungsi, material, dan teknologi yang berbeda. Pilih hasil akhirnya—kami bantu menentukan prosesnya.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-12">
+        {PRODUCT_CATEGORIES.map((product, index) => (
+          <a
+            href={product.href}
+            class:list={[
+              'group surface-card image-zoom relative flex min-h-[520px] flex-col overflow-hidden',
+              index === 0 ? 'xl:col-span-8' : 'xl:col-span-4',
+              index > 0 && 'xl:min-h-[470px]'
+            ]}
+            data-reveal
+          >
+            <OptimizedImage
+              src={product.image}
+              alt={`${product.name} custom oleh Raja Cutting Laser`}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+              width={index === 0 ? 1100 : 720}
+              height={720}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/[0.94] via-black/35 to-black/5"></div>
+            <div class="relative mt-auto p-6 md:p-8">
+              <div class="mb-5 flex items-center justify-between gap-4">
+                <span class="font-mono text-[0.62rem] text-accent">{product.number}</span>
+                <span class="tag text-white/70">{product.technology}</span>
               </div>
-
-              <div class="p-8 flex flex-col flex-grow">
-                <h3 class="text-2xl font-bold text-text-main mb-4 group-hover:text-accent transition-colors duration-300">
-                  {product.name}
-                </h3>
-                <p class="text-text-secondary leading-relaxed mb-6 flex-grow">
-                  {product.description}
-                </p>
-
-                <div class="mb-6 space-y-3">
-                  <div class="rounded-xl bg-surface border border-accent/20 px-4 py-3">
-                    <p class="text-xs uppercase tracking-wide text-text-secondary mb-1">Material Umum</p>
-                    <p class="text-sm font-medium text-text-main">{product.material}</p>
-                  </div>
-                </div>
-
-                <a
-                  href={product.href}
-                  class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-orange text-background font-semibold px-6 py-4 rounded-xl transition-all duration-300"
-                >
-                  <span class="flex items-center justify-center">
-                    {isDetailPage ? 'Lihat Detail Produk' : 'Konsultasi Produk'}
-                    <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </span>
-                </a>
+              <h3 class:list={['font-display font-semibold leading-[0.96] tracking-[-0.045em] text-white', index === 0 ? 'text-4xl md:text-6xl' : 'text-3xl md:text-4xl']}>{product.name}</h3>
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-white/65">{product.description}</p>
+              <div class="mt-7 flex items-center justify-between border-t border-white/20 pt-5">
+                <span class="font-mono text-[0.58rem] uppercase tracking-[0.13em] text-white/55">{product.material}</span>
+                <span class="grid h-10 w-10 place-items-center rounded-full border border-white/35 text-white transition group-hover:border-accent group-hover:bg-accent">
+                  <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+                </span>
               </div>
-            </article>
-          );
-        })}
-      </div>
-    </div>
-  </section>
-
-  <section id="why-us" class="section-padding bg-container cv-auto">
-    <div class="container-custom">
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-          Pendekatan Kerja
-        </div>
-        <h2 class="display-lg text-text-main mb-8">Kenapa Website Ini Difokuskan ke Produk Jadi</h2>
-        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-          Banyak calon klien tidak sedang mencari proses laser cutting mentah. Mereka mencari hasil akhirnya: panel pagar, railing, partisi, huruf timbul, atau elemen dekoratif yang siap masuk ke proyek.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        {PRODUCT_REASONS.map((reason) => (
-          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <h3 class="text-xl font-bold text-text-main mb-4">{reason.title}</h3>
-            <p class="text-text-secondary leading-relaxed">{reason.description}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="workflow" class="section-padding bg-background cv-auto">
-    <div class="container-custom">
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          Alur Pengerjaan
-        </div>
-        <h2 class="display-lg text-text-main mb-8">Dari Brief Sampai Produk Custom Siap Diproses</h2>
-        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-          Alur ini kami pakai untuk memastikan desain, material, ukuran panel, dan hasil akhir tetap realistis saat diproduksi, bukan hanya bagus di referensi visual.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        {PRODUCT_WORKFLOW.map((item) => (
-          <article class="relative rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg transition-all duration-300">
-            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg font-bold text-background">
-              {item.step}
-            </div>
-            <h3 class="text-xl font-bold text-text-main mb-4">{item.title}</h3>
-            <p class="text-text-secondary leading-relaxed">{item.description}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="technology-support" class="section-padding bg-container cv-auto">
-    <div class="container-custom">
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          Teknologi Produksi
-        </div>
-        <h2 class="display-lg text-text-main mb-8">Produk Kami Dibuat dengan Teknologi yang Menyesuaikan Material</h2>
-        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-          Walau website ini fokus ke produk jadi, proses produksinya tetap penting. Karena itu kami tetap tampilkan teknologi pendukung yang relevan untuk metal, acrylic, kayu, MDF, dan material dekoratif lain.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        {SERVICES.map((service) => (
-          <article class="rounded-2xl border border-accent/20 bg-surface/60 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
-            <div class="mb-6">
-              <OptimizedImage
-                src={service.image}
-                alt={service.name}
-                className="h-44 w-full rounded-xl object-cover"
-                loading="lazy"
-                width={480}
-                height={280}
-              />
-            </div>
-            <h3 class="text-xl font-bold text-text-main mb-4">{service.name}</h3>
-            <p class="text-text-secondary leading-relaxed mb-6 flex-grow">{service.description}</p>
-            <a
-              href={`/${service.slug}/`}
-              class="inline-flex items-center font-semibold text-accent hover:text-accent-orange transition-colors duration-300"
-            >
-              Pelajari Teknologinya
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="section-padding bg-background cv-auto">
-    <div class="container-custom">
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"></path>
-          </svg>
-          Referensi Pengerjaan
-        </div>
-        <h2 class="display-lg text-text-main mb-8">Contoh Pengerjaan Material dan Panel Custom</h2>
-        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-          Sebagian proyek berangkat dari kebutuhan cutting material, sebagian lagi berkembang menjadi panel custom dan elemen produk. Referensi ini membantu calon klien melihat arah kualitas dan jenis aplikasi yang bisa kami kerjakan.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-        {featuredPortfolio.map((project) => (
-          <a href="/portfolio/" class="group rounded-2xl overflow-hidden border border-accent/20 bg-surface/60 shadow-lg transition-all duration-500 hover:-translate-y-2">
-            <div class="relative overflow-hidden">
-              <OptimizedImage
-                src={project.image}
-                alt={project.title}
-                className="h-64 w-full object-cover group-hover:scale-110 transition-transform duration-700"
-                loading="lazy"
-                width={640}
-                height={420}
-              />
-              <div class="absolute top-4 left-4 rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold text-background">
-                {project.category}
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold text-text-main mb-3 group-hover:text-accent transition-colors duration-300">
-                {project.title}
-              </h3>
-              <p class="text-sm text-text-secondary mb-4">{project.material}</p>
-              <p class="text-text-secondary leading-relaxed">{project.description}</p>
             </div>
           </a>
         ))}
@@ -261,81 +167,128 @@ const featuredPortfolio = PORTFOLIO.slice(0, 6);
     </div>
   </section>
 
-  <section id="faq" class="section-padding bg-container cv-auto">
+  <section id="technology-support" class="section-padding overflow-hidden border-y border-white/10 bg-surface">
     <div class="container-custom">
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center px-6 py-3 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01"></path>
-          </svg>
-          FAQ Produk
+      <div class="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div class="lg:sticky lg:top-32 lg:self-start" data-reveal>
+          <p class="eyebrow mb-6">Technology follows material</p>
+          <h2 class="display-lg">Satu workshop. Empat cara bekerja presisi.</h2>
+          <p class="mt-7 max-w-lg text-base leading-relaxed">Kami tidak memaksakan satu mesin untuk semua kebutuhan. Teknologi dipilih berdasarkan sifat material, detail, ukuran, dan finishing yang ingin dicapai.</p>
+          <p class="mt-7 font-mono text-[0.6rem] uppercase leading-relaxed tracking-[0.13em] text-text-secondary">Spesifikasi aktual mengikuti jenis material, ketebalan, file, dan hasil uji produksi.</p>
         </div>
-        <h2 class="display-lg text-text-main mb-8">Pertanyaan yang Paling Sering Muncul Sebelum Produksi</h2>
-        <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-          Kalau Anda masih ada di tahap cari referensi, bagian ini akan membantu membedakan kapan kebutuhan Anda masuk kategori jasa cutting biasa dan kapan lebih cocok masuk jalur produk custom.
-        </p>
-      </div>
 
-      <div class="max-w-4xl mx-auto space-y-6" data-faq-container>
-        {PRODUCT_FAQ.map((faq) => (
-          <div class="bg-surface/60 rounded-2xl shadow-lg border border-accent/20 overflow-hidden transition-all duration-300">
-            <button class="flex items-center justify-between w-full text-left p-8 group" data-faq-button>
-              <h3 class="text-lg font-semibold text-text-main pr-6 group-hover:text-accent transition-colors duration-300">
-                {faq.question}
-              </h3>
-              <div class="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                <svg class="w-5 h-5 text-accent group-hover:text-background transition-all duration-300" data-faq-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" data-faq-answer>
-              <div class="px-8 pb-8">
-                <p class="text-text-secondary leading-relaxed">{faq.answer}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+        <div class="border-t border-white/10">
+          {SERVICES.map((service) => {
+            const note = technologyNotes[service.id];
+            return (
+              <a href={`/${service.slug}/`} class="group grid gap-5 border-b border-white/10 py-8 transition-colors hover:bg-white/[0.025] md:grid-cols-[3rem_0.75fr_1fr_auto] md:items-center md:px-5" data-reveal>
+                <span class="font-mono text-[0.62rem] text-accent">{note.index}</span>
+                <div>
+                  <h3 class="text-2xl font-semibold tracking-[-0.035em] text-text-main md:text-3xl">{service.name}</h3>
+                  <p class="mt-1 font-mono text-[0.6rem] uppercase tracking-[0.13em]">{note.role}</p>
+                </div>
+                <div>
+                  <p class="text-sm leading-relaxed">{note.result}</p>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="tag">{service.thickness}</span>
+                    <span class="tag">Acuan {service.tolerance}</span>
+                  </div>
+                </div>
+                <span class="grid h-11 w-11 place-items-center rounded-full border border-white/20 text-text-main transition group-hover:border-accent group-hover:text-accent">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+                </span>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </div>
   </section>
 
-    <CTA
-    title="Butuh Produk Laser Cutting Custom untuk Proyek Anda?"
-    description="Kirim foto referensi, ukuran area, atau brief kebutuhan Anda. Kami bantu arahkan desain, material, dan pendekatan produksi yang paling masuk akal untuk proyek rumah, kantor, toko, atau ruang ibadah."
-    secondaryText="Hubungi Tim Kami"
+  <section id="workflow" class="section-padding bg-background">
+    <div class="container-custom">
+      <div class="mb-14 max-w-4xl" data-reveal>
+        <p class="eyebrow mb-6">Dari brief ke benda</p>
+        <h2 class="display-lg">Proses yang menjaga desain tetap utuh sampai tahap produksi.</h2>
+      </div>
+
+      <ol class="grid border-l border-t border-white/10 sm:grid-cols-2 xl:grid-cols-4">
+        {PRODUCT_WORKFLOW.map((item, index) => (
+          <li class="group relative min-h-[330px] border-b border-r border-white/10 p-7 transition-colors hover:bg-surface md:p-9" data-reveal>
+            <span class="font-mono text-[0.64rem] text-accent">{item.step}</span>
+            <h3 class="mt-20 text-2xl font-semibold leading-tight tracking-[-0.035em] text-text-main">{item.title}</h3>
+            <p class="mt-4 text-sm leading-relaxed">{item.description}</p>
+            <span class="absolute right-6 top-6 text-5xl font-light text-white/[0.06] transition-colors group-hover:text-accent/20">{String(index + 1).padStart(2, '0')}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-padding border-y border-black/10 bg-paper text-ink">
+    <div class="container-custom">
+      <div class="grid gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+        <div data-reveal>
+          <p class="eyebrow mb-6 text-ink/55">Brief yang lebih baik</p>
+          <h2 class="font-display text-[clamp(2.5rem,4.5vw,4.8rem)] font-semibold leading-[0.96] tracking-[-0.055em] text-ink">Empat hal yang membuat estimasi lebih cepat dan akurat.</h2>
+        </div>
+        <div class="grid sm:grid-cols-2" data-reveal>
+          {[
+            ['01', 'Foto atau kondisi lokasi', 'Untuk membaca skala, akses, bidang pemasangan, dan konteks visual.'],
+            ['02', 'Ukuran utama', 'Lebar, tinggi, jumlah, atau dimensi produk yang akan ditempatkan.'],
+            ['03', 'Referensi visual', 'Motif, bentuk, warna, atau bahasa desain yang ingin dicapai.'],
+            ['04', 'Target penggunaan', 'Indoor/outdoor, permanen/temporer, serta target waktu proyek.']
+          ].map((item) => (
+            <div class="border-b border-black/15 p-7 first:border-t last:border-b sm:odd:border-r sm:[&:nth-child(2)]:border-t">
+              <span class="font-mono text-[0.6rem] text-accent">{item[0]}</span>
+              <h3 class="mt-8 text-xl font-bold tracking-[-0.025em] text-ink">{item[1]}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-ink/60">{item[2]}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section-padding bg-background">
+    <div class="container-custom">
+      <div class="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div data-reveal>
+          <p class="eyebrow mb-6">Pertanyaan awal</p>
+          <h2 class="display-lg">Sebelum material masuk mesin.</h2>
+          <p class="mt-6 max-w-md text-base leading-relaxed">Jawaban ringkas untuk hal yang paling sering menentukan arah sebuah proyek custom.</p>
+        </div>
+        <div class="border-t border-white/10" data-reveal>
+          {PRODUCT_HOME_FAQ.map((faq, index) => (
+            <details class="group border-b border-white/10">
+              <summary class="flex list-none items-start justify-between gap-6 py-7 [&::-webkit-details-marker]:hidden">
+                <span class="flex gap-5">
+                  <span class="mt-1 font-mono text-[0.6rem] text-accent">0{index + 1}</span>
+                  <span class="text-lg font-semibold leading-snug text-text-main md:text-xl">{faq.question}</span>
+                </span>
+                <span class="relative mt-1 h-6 w-6 flex-none">
+                  <span class="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 bg-text-main"></span>
+                  <span class="absolute left-1/2 top-1/2 h-4 w-px -translate-y-1/2 bg-text-main transition-transform group-open:rotate-90"></span>
+                </span>
+              </summary>
+              <p class="max-w-2xl pb-8 pl-10 text-sm leading-relaxed md:text-base">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Punya referensi? Mari kita ubah menjadi produk yang siap dipakai."
+    description="Kirim foto lokasi, ukuran, dan referensi desain. Kami akan membantu memetakan material, teknologi, serta lingkup pengerjaan yang paling masuk akal."
+    primaryText="Kirim brief proyek"
+    secondaryText="Buka halaman kontak"
     secondaryLink="/contact/"
-    variant="gradient"
+    variant="default"
+    size="lg"
     whatsappMessage={WHATSAPP_MESSAGES.productDefault}
   />
 
   <Footer slot="footer" />
 </BaseLayout>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqContainer = document.querySelector('[data-faq-container]');
-    if (!faqContainer) return;
-
-    faqContainer.addEventListener('click', (event) => {
-      if (!(event.target instanceof Element)) return;
-
-      const button = event.target.closest('[data-faq-button]');
-      if (!button) return;
-
-      const answer = button.nextElementSibling;
-      const icon = button.querySelector('[data-faq-icon]');
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-      button.setAttribute('aria-expanded', String(!isExpanded));
-
-      if (answer && answer instanceof HTMLElement) {
-        answer.style.maxHeight = isExpanded ? '0' : `${answer.scrollHeight}px`;
-      }
-
-      if (icon) {
-        icon.classList.toggle('rotate-180');
-      }
-    });
-  });
-</script>

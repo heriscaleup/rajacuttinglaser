@@ -20,6 +20,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "rebuild:blog": "node scripts/rebuild-blog.mjs",
-    "audit:blog": "node scripts/audit-blog.mjs"
+    "audit:blog": "node scripts/audit-blog.mjs",
+    "audit:products": "node scripts/audit-products.mjs"
   }
 }

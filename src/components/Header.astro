@@ -1,443 +1,158 @@
 ---
-import { NAVIGATION, SITE_CONFIG } from '../utils/constants.js';
-import WhatsAppButton from './WhatsAppButton.astro';
+import { PRODUCT_CATEGORIES } from '../data/productCatalog.js';
+import { SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
 
 const currentPath = new URL(Astro.request.url).pathname;
-const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak").map(item => ({
-  ...item,
-  active: currentPath === `${item.href}` || (item.submenu && item.submenu.some(subitem => currentPath === `${subitem.href}`))
-}));
+const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(WHATSAPP_MESSAGES.productDefault)}`;
+
+const navigation = [
+  { name: 'Teknologi', href: '/#technology-support' },
+  { name: 'Cara kerja', href: '/#workflow' },
+  { name: 'Portfolio', href: '/portfolio/' },
+  { name: 'Blog', href: '/blog/' }
+];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-xl border-b border-accent/20" id="main-header">
-  <div class="container-custom">
-    <div class="flex items-center justify-between h-16">
-      <div class="flex items-center">
-        <a href="/" class="flex items-center space-x-3">
-          <div class="sm:block">
-            <span class="text-xl font-bold text-text-main display">
-              Raja Cutting Laser
-            </span>
-            <p class="text-xs text-text-secondary hidden lg:block">Produk Custom Laser Cutting</p>
-          </div>
-        </a>
-      </div>
-      <nav class="hidden lg:flex items-center space-x-8" aria-label="Main navigation">
-        {filteredNavigation.map((item, index) => (
-          <div class="relative">
-            {item.submenu ? (
-              <div class="relative">
-                <button
-                  class="flex items-center space-x-1 text-text-secondary hover:text-accent font-medium py-2"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-desktop-dropdown={index}
-                >
-                  <span>{item.name}</span>
-                  <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
-                <div class="absolute top-full left-0 mt-2 w-56 bg-container rounded-lg shadow-lg border border-accent/20 hidden" data-desktop-menu={index}>
-                  <div class="py-2">
-                    {item.submenu.map((subitem) => (
-                      <a
-                        href={subitem.href}
-                        class="block px-4 py-3 text-text-secondary hover:text-accent hover:bg-surface text-sm font-medium"
-                      >
-                        {subitem.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <a
-                href={item.href}
-                class="text-text-secondary hover:text-accent font-medium py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
-                class:list={[item.active && 'text-accent after:w-full']}
-              >
-                {item.name}
-              </a>
-            )}
-          </div>
-        ))}
-      </nav>
-      <div class="hidden lg:flex items-center space-x-4">
-        <WhatsAppButton
-          message="Halo raja cutting laser, saya ingin konsultasi dong tentang produk laser cutting custom untuk proyek saya."
-          className="bg-accent hover:bg-accent-orange text-background text-sm px-4 py-2"
-          source="header"
-        />
-        <a
-          href="/contact/"
-          class="btn-primary text-sm px-4 py-2"
+<header id="main-header" class="group fixed inset-x-0 top-0 z-40 h-[76px] border-b border-white/10 bg-background/75 backdrop-blur-xl transition-all duration-500">
+  <div class="container-custom flex h-full items-center justify-between gap-8">
+    <a href="/" class="group/brand flex min-w-fit items-center gap-3" aria-label="Raja Cutting Laser — Beranda">
+      <span class="grid h-9 w-9 place-items-center border border-white/25 bg-white/[0.04] font-display text-base font-extrabold text-text-main transition-colors group-hover/brand:border-accent group-hover/brand:text-accent">R</span>
+      <span class="leading-none">
+        <strong class="block text-[0.82rem] font-extrabold uppercase tracking-[0.13em] text-text-main">Raja Cutting</strong>
+        <span class="mt-1 block font-mono text-[0.55rem] uppercase tracking-[0.24em] text-text-secondary">Laser atelier</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Navigasi utama">
+      <div class="relative" data-products-root>
+        <button
+          type="button"
+          class:list={[
+            'flex items-center gap-2 py-3 text-sm font-semibold text-text-secondary transition-colors hover:text-text-main',
+            currentPath.startsWith('/produk/') && 'text-text-main'
+          ]}
+          aria-expanded="false"
+          aria-controls="product-mega-menu"
+          data-products-trigger
         >
-          Diskusi Produk
-        </a>
+          Produk
+          <svg class="h-3.5 w-3.5 transition-transform duration-300" data-chevron fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+
+        <div id="product-mega-menu" class="invisible fixed left-1/2 top-[76px] w-[min(900px,calc(100vw-3rem))] -translate-x-1/2 translate-y-2 border border-white/10 bg-[#111412]/[0.98] p-3 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300" data-products-menu>
+          <div class="grid grid-cols-3">
+            {PRODUCT_CATEGORIES.map((product) => (
+              <a href={product.href} class="group/item flex min-h-[108px] gap-4 border border-transparent p-4 transition-colors hover:border-white/10 hover:bg-white/[0.035]">
+                <span class="font-mono text-[0.6rem] text-accent">{product.number}</span>
+                <span>
+                  <strong class="block text-sm font-bold leading-snug text-text-main group-hover/item:text-accent">{product.name}</strong>
+                  <span class="mt-2 block font-mono text-[0.58rem] uppercase tracking-[0.1em] text-text-secondary">{product.technology}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+          <div class="mt-3 flex items-center justify-between border-t border-white/10 px-4 pt-4">
+            <p class="font-mono text-[0.58rem] uppercase tracking-[0.14em] text-text-secondary">9 aplikasi · 4 teknologi produksi</p>
+            <a href="/#products" class="link-arrow text-xs">Lihat seluruh katalog
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+            </a>
+          </div>
+        </div>
       </div>
-      <button
-        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-container"
-        id="mobile-menu-button"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-      >
-        <svg class="w-6 h-6 text-text-secondary" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-        <svg class="w-6 h-6 text-text-secondary hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
+
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'py-3 text-sm font-semibold text-text-secondary transition-colors hover:text-text-main',
+            currentPath === item.href && 'text-text-main'
+          ]}
+        >{item.name}</a>
+      ))}
+    </nav>
+
+    <div class="hidden items-center gap-5 lg:flex">
+      <a href={`tel:${SITE_CONFIG.phone}`} class="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-text-secondary transition-colors hover:text-text-main">{SITE_CONFIG.phone}</a>
+      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="button-primary px-5 py-2.5">
+        Mulai proyek
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
+      </a>
     </div>
-  </div>
-  <div class="border-b border-accent/15 bg-surface/60">
-    <div class="container-custom py-3">
-      <div class="flex items-center justify-center gap-6 text-xs font-semibold uppercase tracking-widest text-text-secondary">
-        <span class="text-accent">◆ Laser Fiber</span>
-        <span class="text-accent">◆ Laser CO2</span>
-        <span class="text-accent">◆ CNC Router</span>
-        <span class="text-accent">◆ Galvo Engraving</span>
-      </div>
-    </div>
+
+    <button type="button" class="grid h-11 w-11 place-items-center border border-white/15 text-text-main lg:hidden" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu" data-mobile-trigger>
+      <span class="relative h-4 w-5" aria-hidden="true">
+        <span class="absolute left-0 top-1 block h-px w-5 bg-current transition-all" data-menu-line="1"></span>
+        <span class="absolute bottom-1 left-0 block h-px w-5 bg-current transition-all" data-menu-line="2"></span>
+      </span>
+    </button>
   </div>
 </header>
 
-<div
-  class="lg:hidden fixed inset-0 top-0 bg-background z-50 hidden overflow-y-auto"
-  id="mobile-menu"
->
-  <div class="h-16 border-b border-accent/15 bg-background/80 backdrop-blur-xl flex items-center justify-between px-4">
-    <div class="flex items-center">
-      <a href="/" class="flex items-center space-x-3">
-        <span class="text-xl font-bold text-text-main display">Raja Cutting Laser</span>
-      </a>
-    </div>
-    <button
-      class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-container"
-      id="mobile-menu-close-button"
-      aria-label="Close mobile menu"
-    >
-      <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="flex flex-col min-h-screen bg-background">
-    <nav class="flex-1 px-4 py-6 space-y-2" aria-label="Mobile navigation">
-      {filteredNavigation.map((item, index) => (
-        <div>
-          {item.submenu ? (
-            <div>
-              <button
-                class="flex items-center justify-between w-full text-left text-text-secondary font-medium py-3 px-4 rounded-lg hover:bg-container"
-                data-submenu-index={index}
-                aria-expanded="false"
-              >
-                <span>{item.name}</span>
-                <svg
-                  class="w-5 h-5"
-                  id={`submenu-icon-${index}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              <div
-                class="hidden bg-container rounded-lg mx-2 mt-1"
-                id={`submenu-${index}`}
-              >
-                <div class="pl-4 pt-2 pb-2 space-y-1">
-                  {item.submenu.map((subitem) => (
-                    <a
-                      href={subitem.href}
-                      class="block text-text-secondary hover:text-accent py-2 px-4 rounded-lg hover:bg-surface text-sm font-medium"
-                    >
-                      {subitem.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <a
-              href={item.href}
-              class="block text-text-secondary hover:text-accent font-medium py-3 px-4 rounded-lg hover:bg-container"
-              class:list={[item.active && 'text-accent bg-container']}
-            >
-              {item.name}
-            </a>
-          )}
-        </div>
+<div id="mobile-menu" class="invisible fixed inset-0 z-30 translate-y-[-1rem] overflow-y-auto bg-background pb-10 pt-[100px] opacity-0 transition-all duration-300 lg:hidden" data-mobile-menu>
+  <div class="container-custom">
+    <p class="eyebrow mb-7">Katalog produk</p>
+    <div class="grid grid-cols-1 border-t border-white/10 sm:grid-cols-2">
+      {PRODUCT_CATEGORIES.map((product) => (
+        <a href={product.href} class="group flex items-center gap-5 border-b border-white/10 py-5 sm:odd:pr-5 sm:even:border-l sm:even:pl-5">
+          <span class="font-mono text-[0.62rem] text-accent">{product.number}</span>
+          <span class="text-base font-bold text-text-main group-hover:text-accent">{product.name}</span>
+        </a>
       ))}
-    </nav>
-    <div class="p-4 border-t border-accent/15 space-y-3 bg-background">
-      <WhatsAppButton
-        message="Halo raja cutting laser, saya ingin konsultasi dong tentang produk laser cutting custom untuk proyek saya."
-        className="bg-accent hover:bg-accent-blue text-background w-full text-center block py-3 shadow-glow"
-        source="mobile_header"
-      />
-      <a
-        href="/contact/"
-        class="btn-primary w-full text-center block py-3"
-      >
-        Diskusi Produk
-      </a>
-      <div class="grid grid-cols-2 gap-3">
-        <a
-          href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent("Halo raja cutting laser, saya ingin konsultasi dong tentang produk laser cutting custom untuk proyek saya.")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-accent hover:bg-accent-blue text-background text-center py-2 px-4 rounded-lg text-sm font-medium flex items-center justify-center space-x-2"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-          </svg>
-          <span>WhatsApp</span>
-        </a>
-        <a
-          href={`tel:${SITE_CONFIG.phone}`}
-          class="bg-accent-blue hover:bg-accent-blue/80 text-white text-center py-2 px-4 rounded-lg text-sm font-medium flex items-center justify-center space-x-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-          </svg>
-          <span>Telepon</span>
-        </a>
-      </div>
     </div>
+
+    <nav class="mt-10 grid grid-cols-2 gap-x-5 border-t border-white/10" aria-label="Navigasi mobile">
+      {navigation.map((item) => <a href={item.href} class="border-b border-white/10 py-5 text-sm font-semibold text-text-secondary">{item.name}</a>)}
+      <a href="/about/" class="border-b border-white/10 py-5 text-sm font-semibold text-text-secondary">Tentang</a>
+      <a href="/contact/" class="border-b border-white/10 py-5 text-sm font-semibold text-text-secondary">Kontak</a>
+    </nav>
+
+    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="button-primary mt-9 w-full">Konsultasi via WhatsApp</a>
   </div>
 </div>
 
-<div
-  class="lg:hidden fixed inset-0 bg-black/50 z-20 hidden"
-  id="mobile-menu-overlay"
-></div>
+<script>
+  const header = document.querySelector<HTMLElement>('#main-header');
+  const productRoot = document.querySelector<HTMLElement>('[data-products-root]');
+  const productTrigger = document.querySelector<HTMLButtonElement>('[data-products-trigger]');
+  const productMenu = document.querySelector<HTMLElement>('[data-products-menu]');
+  const chevron = document.querySelector<HTMLElement>('[data-chevron]');
+  const mobileTrigger = document.querySelector<HTMLButtonElement>('[data-mobile-trigger]');
+  const mobileMenu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+  const menuLines = document.querySelectorAll<HTMLElement>('[data-menu-line]');
 
-<script type="module">
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
-    const header = document.getElementById('main-header');
+  const setProductsOpen = (open: boolean) => {
+    productTrigger?.setAttribute('aria-expanded', String(open));
+    productMenu?.classList.toggle('invisible', !open);
+    productMenu?.classList.toggle('opacity-0', !open);
+    productMenu?.classList.toggle('translate-y-2', !open);
+    chevron?.classList.toggle('rotate-180', open);
+  };
 
-    let activeDesktopDropdown = null;
-
-    function closeAllDesktopDropdowns() {
-      document.querySelectorAll('[data-desktop-menu]').forEach((menu) => {
-        menu.classList.add('hidden');
-      });
-      document.querySelectorAll('[data-desktop-dropdown] svg').forEach((icon) => {
-        icon.style.transform = 'rotate(0deg)';
-      });
-      document.querySelectorAll('[data-desktop-dropdown]').forEach((button) => {
-        button.setAttribute('aria-expanded', 'false');
-      });
-      activeDesktopDropdown = null;
-    }
-
-    function toggleDesktopDropdown(index) {
-      const menu = document.querySelector(`[data-desktop-menu="${index}"]`);
-      const button = document.querySelector(`[data-desktop-dropdown="${index}"]`);
-      const icon = button?.querySelector('svg');
-
-      if (!menu || !button || !icon) return;
-
-      const isOpen = !menu.classList.contains('hidden');
-
-      if (isOpen && activeDesktopDropdown === index) {
-        menu.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-        button.setAttribute('aria-expanded', 'false');
-        activeDesktopDropdown = null;
-      } else {
-        closeAllDesktopDropdowns();
-        menu.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-        button.setAttribute('aria-expanded', 'true');
-        activeDesktopDropdown = index;
-      }
-    }
-
-    document.querySelectorAll('[data-desktop-dropdown]').forEach((button) => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const index = parseInt(button.getAttribute('data-desktop-dropdown'));
-        toggleDesktopDropdown(index);
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('[data-desktop-dropdown]') && !e.target.closest('[data-desktop-menu]')) {
-        closeAllDesktopDropdowns();
-      }
-    });
-
-    function openMobileMenu() {
-      if (mobileMenu && mobileMenuOverlay) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenuOverlay.classList.remove('hidden');
-        menuIcon?.classList.add('hidden');
-        closeIcon?.classList.remove('hidden');
-        mobileMenuButton?.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    function closeMobileMenu() {
-      if (mobileMenu && mobileMenuOverlay) {
-        mobileMenu.classList.add('hidden');
-        mobileMenuOverlay.classList.add('hidden');
-        menuIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
-        mobileMenuButton?.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-
-        document.querySelectorAll('[id^="submenu-"]').forEach((submenu) => {
-          submenu.classList.add('hidden');
-        });
-        document.querySelectorAll('[id^="submenu-icon-"]').forEach((icon) => {
-          icon.style.transform = 'rotate(0deg)';
-        });
-        document.querySelectorAll('[data-submenu-index]').forEach((button) => {
-          button.setAttribute('aria-expanded', 'false');
-        });
-      }
-    }
-
-    function toggleMobileMenu() {
-      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
-    }
-
-    function toggleSubmenu(index) {
-      const submenu = document.getElementById(`submenu-${index}`);
-      const icon = document.getElementById(`submenu-icon-${index}`);
-      const button = document.querySelector(`[data-submenu-index="${index}"]`);
-
-      if (!submenu || !icon || !button) return;
-
-      const isOpen = !submenu.classList.contains('hidden');
-
-      if (isOpen) {
-        submenu.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-        button.setAttribute('aria-expanded', 'false');
-      } else {
-        document.querySelectorAll('[id^="submenu-"]:not(#submenu-' + index + ')').forEach((otherSubmenu) => {
-          otherSubmenu.classList.add('hidden');
-          const otherIndex = otherSubmenu.id.split('-')[1];
-          const otherIcon = document.getElementById(`submenu-icon-${otherIndex}`);
-          const otherButton = document.querySelector(`[data-submenu-index="${otherIndex}"]`);
-          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-          if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
-        });
-
-        submenu.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-        button.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    mobileMenuButton?.addEventListener('click', (e) => {
-      e.preventDefault();
-      toggleMobileMenu();
-    });
-
-    mobileMenuCloseButton?.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMobileMenu();
-    });
-
-    mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
-
-    document.querySelectorAll('[data-submenu-index]').forEach((button) => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const index = parseInt(button.getAttribute('data-submenu-index') || '0');
-        toggleSubmenu(index);
-      });
-    });
-
-    document.querySelectorAll('#mobile-menu a[href]').forEach((link) => {
-      link.addEventListener('click', () => {
-        setTimeout(() => {
-          closeMobileMenu();
-        }, 100);
-      });
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) {
-        closeMobileMenu();
-        closeAllDesktopDropdowns();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          closeMobileMenu();
-        } else {
-          closeAllDesktopDropdowns();
-        }
-      }
-    });
+  productTrigger?.addEventListener('click', () => setProductsOpen(productTrigger.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Node) || productRoot?.contains(event.target)) return;
+    setProductsOpen(false);
   });
+
+  const setMobileOpen = (open: boolean) => {
+    mobileTrigger?.setAttribute('aria-expanded', String(open));
+    mobileTrigger?.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    mobileMenu?.classList.toggle('invisible', !open);
+    mobileMenu?.classList.toggle('opacity-0', !open);
+    mobileMenu?.classList.toggle('translate-y-[-1rem]', !open);
+    document.body.classList.toggle('overflow-hidden', open);
+    menuLines[0]?.classList.toggle('rotate-45', open);
+    menuLines[0]?.classList.toggle('top-[7px]', open);
+    menuLines[1]?.classList.toggle('-rotate-45', open);
+    menuLines[1]?.classList.toggle('bottom-[8px]', open);
+  };
+
+  mobileTrigger?.addEventListener('click', () => setMobileOpen(mobileTrigger.getAttribute('aria-expanded') !== 'true'));
+  mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMobileOpen(false)));
+
+  const updateHeader = () => header?.classList.toggle('shadow-[0_18px_60px_rgba(0,0,0,0.24)]', window.scrollY > 16);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 </script>
-
-<style>
-  #main-header {
-    transition: none;
-  }
-
-  [id^="submenu-"] {
-  }
-
-  #mobile-menu {
-    -webkit-overflow-scrolling: touch;
-  }
-
-  button:focus-visible,
-  a:focus-visible {
-    outline: 2px solid #FF6B00;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-
-  [id^="submenu-icon-"],
-  [data-desktop-dropdown] svg {
-    transition: transform 0.2s ease-in-out;
-  }
-
-  @supports (padding-top: env(safe-area-inset-top)) {
-    #main-header {
-      padding-top: env(safe-area-inset-top);
-    }
-    #mobile-menu {
-      top: calc(env(safe-area-inset-top));
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-
-  @media print {
-    #main-header {
-      display: none;
-    }
-  }
-</style>

@@ -103,4 +103,4 @@ Setiap pekerjaan kami kerjakan dengan standar QC yang ketat — dari verifikasi 
 
 Punya proyek yang membutuhkan presisi tinggi di logam? **Raja Cutting Laser** siap memberikan solusi terbaik untuk kebutuhan cutting metal kamu.
 
-Konsultasikan kebutuhan proyekmu sekarang via WhatsApp: **[Chat WhatsApp Raja Cutting Laser](https://wa.me/6281234567890)**. Estimasi harga GRATIS, pengerjaan cepat, kualitas terjamin!
+Konsultasikan kebutuhan proyekmu sekarang via WhatsApp: **[Chat WhatsApp Raja Cutting Laser](https://wa.me/6285165693179)**. Estimasi harga GRATIS, pengerjaan cepat, kualitas terjamin!

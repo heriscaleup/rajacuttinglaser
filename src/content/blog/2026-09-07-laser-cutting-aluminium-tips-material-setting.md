@@ -132,4 +132,4 @@ Dengan pendekatan yang tepat, aluminium bisa dipotong dengan presisi sub-milimet
 
 Tim teknis Raja Cutting Laser siap konsultasi untuk menentukan setting optimal sesuai spesifikasi material dan toleransi yang kamu butuhkan. Kami berpengalaman menangani proyek dari skala prototipe hingga produksi massal.
 
-👉 **[Hubungi kami via WhatsApp untuk konsultasi teknis gratis](https://wa.me/6281234567890)**
+👉 **[Hubungi kami via WhatsApp untuk konsultasi teknis gratis](https://wa.me/6285165693179)**

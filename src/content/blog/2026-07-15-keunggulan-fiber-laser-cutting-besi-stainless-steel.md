@@ -102,4 +102,4 @@ Kami mengoperasikan mesin fiber laser dengan daya hingga 6kW yang mampu menangan
 
 Apakah Anda membutuhkan 10 atau 10.000 potong, kami siap memberikan solusi yang tepat. Kirimkan file desain atau spesifikasi material Anda, dan tim teknis kami akan memberikan estimasi harga dan timeline secara detail.
 
-👉 **[Konsultasi via WhatsApp Sekarang](https://wa.me/6281234567890)** — Respons cepat, estimasi akurat, hasil terjamin.
+👉 **[Konsultasi via WhatsApp Sekarang](https://wa.me/6285165693179)** — Respons cepat, estimasi akurat, hasil terjamin.

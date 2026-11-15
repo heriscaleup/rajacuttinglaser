@@ -1,9 +1,16 @@
 ---
 import { PRODUCT_CATEGORIES } from '../data/productCatalog.js';
-import { SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
+import { SITE_CONFIG, UTILS } from '../utils/constants.js';
 
+export interface Props {
+  whatsappMessage?: string;
+}
+
+const { whatsappMessage } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
-const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(WHATSAPP_MESSAGES.productDefault)}`;
+const matchedProduct = PRODUCT_CATEGORIES.find((p) => currentPath.startsWith(`/produk/${p.slug}`));
+const resolvedMessage = whatsappMessage || matchedProduct?.whatsappMessage || UTILS.getContextualWhatsAppMessage(currentPath);
+const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(resolvedMessage)}`;
 
 const navigation = [
   { name: 'Teknologi', href: '/#technology-support' },
@@ -74,8 +81,8 @@ const navigation = [
     </nav>
 
     <div class="hidden items-center gap-5 lg:flex">
-      <a href={`tel:${SITE_CONFIG.phone}`} class="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-text-secondary transition-colors hover:text-text-main">{SITE_CONFIG.phone}</a>
-      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="button-primary px-5 py-2.5">
+      <a href={`tel:${SITE_CONFIG.phone}`} data-wa-placement="header_tel" class="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-text-secondary transition-colors hover:text-text-main">{SITE_CONFIG.phone}</a>
+      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" data-wa-placement="header_desktop" class="button-primary px-5 py-2.5">
         Mulai proyek
         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m-5-5 5 5-5 5" /></svg>
       </a>
@@ -108,7 +115,7 @@ const navigation = [
       <a href="/contact/" class="border-b border-white/10 py-5 text-sm font-semibold text-text-secondary">Kontak</a>
     </nav>
 
-    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="button-primary mt-9 w-full">Konsultasi via WhatsApp</a>
+    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" data-wa-placement="header_mobile" class="button-primary mt-9 w-full">Konsultasi via WhatsApp</a>
   </div>
 </div>
 

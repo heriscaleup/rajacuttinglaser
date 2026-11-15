@@ -316,7 +316,8 @@ export const PRODUCT_CATEGORIES = PRODUCTS.map((product) => ({
   audience: product.audience,
   description: product.cardDescription,
   material: product.materialSummary,
-  technology: product.technologyLabel
+  technology: product.technologyLabel,
+  whatsappMessage: product.whatsappMessage
 }));
 
 export const PRODUCT_HOME_FAQ = [

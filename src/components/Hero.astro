@@ -21,14 +21,16 @@ const {
   subtitle = "10+ Tahun Pengalaman | 1000+ Proyek Selesai | Garansi Kualitas Premium",
   description = "Teknologi laser cutting terdepan dengan presisi tinggi untuk semua kebutuhan industri dan kreatif Anda. Dari CNC Router hingga Galvo Engraving, kami siap memberikan hasil terbaik.",
   primaryCTA = "Konsultasi Gratis Sekarang",
-  primaryCTALink = `https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.default)}`,
+  primaryCTALink,
   secondaryCTA = "Lihat Portfolio Kami",
-  secondaryCTALink = "/portfolio",
+  secondaryCTALink = "/portfolio/",
   backgroundImage = "/images/logo.webp",
   showTrustSignals = true,
   whatsappMessage = WHATSAPP_MESSAGES.default,
   bgClass = "bg-hero-mesh"
 } = Astro.props;
+
+const resolvedPrimaryLink = primaryCTALink || `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
 <section class:list={["relative min-h-[500px] md:min-h-[580px] flex items-center justify-center overflow-hidden", bgClass]}>
@@ -78,9 +80,10 @@ const {
 
       <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16 animate-slide-up" style="animation-delay: 0.6s;">
         <a
-          href={primaryCTALink}
-          target={primaryCTALink.startsWith('http') ? '_blank' : '_self'}
-          rel={primaryCTALink.startsWith('http') ? 'noopener noreferrer' : ''}
+          href={resolvedPrimaryLink}
+          target={resolvedPrimaryLink.startsWith('http') ? '_blank' : '_self'}
+          rel={resolvedPrimaryLink.startsWith('http') ? 'noopener noreferrer' : ''}
+          data-wa-placement="hero"
           class="group btn-primary text-lg px-10 py-5 w-full sm:w-auto relative overflow-hidden"
         >
           <div class="absolute inset-0 bg-gradient-to-r from-accent to-accent-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

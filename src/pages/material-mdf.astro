@@ -58,7 +58,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
  </p>
  <div class="flex flex-wrap gap-4">
  <a 
- href={`https://api.whatsapp.com/send?phone=6285165693179&text=Halo%20raja%20cutting%20laser,%20saya%20ingin%20konsultasi%20dong%20tentang%20jasa%20laser%20cutting%20${material.name}.%20Bisa%20konsultasi?`}
+ href={`https://wa.me/6285165693179?text=${encodeURIComponent(`Halo Raja Cutting Laser, saya ingin konsultasi tentang jasa laser cutting ${material.name}. Bisa dibantu?`)}`} data-wa-placement="material_cta"
  target="_blank"
  rel="noopener noreferrer"
  class="bg-accent hover:bg-accent-orange text-white hover:text-accent px-8 py-3 rounded-lg font-semibold transition-colors"
@@ -66,7 +66,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
  Konsultasi Gratis
  </a>
  <a 
- href="contact" 
+ href="/contact/" 
  class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
  >
  Request Quote
@@ -234,7 +234,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
  </p>
  <div class="flex flex-col sm:flex-row gap-4 justify-center">
  <a 
- href={`https://api.whatsapp.com/send?phone=6285165693179&text=Halo%20raja%20cutting%20laser,%20saya%20ingin%20konsultasi%20dong%20tentang%20jasa%20laser%20cutting%20${material.name}.%20Bisa%20konsultasi?`}
+ href={`https://wa.me/6285165693179?text=${encodeURIComponent(`Halo Raja Cutting Laser, saya ingin konsultasi tentang jasa laser cutting ${material.name}. Bisa dibantu?`)}`} data-wa-placement="material_cta"
  target="_blank"
  rel="noopener noreferrer"
  class="bg-accent hover:bg-accent-orange text-white hover:text-accent px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
@@ -245,7 +245,7 @@ const jsonLd = [serviceSchema, breadcrumbSchema].filter(Boolean);
  Chat WhatsApp
  </a>
  <a 
- href="contact" 
+ href="/contact/" 
  class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
  >
  Request Quote Detail

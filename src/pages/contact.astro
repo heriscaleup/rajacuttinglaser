@@ -39,28 +39,27 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
 
   // --- PERBAIKAN: Gunakan addEventListener dan type assertion ---
   document.addEventListener('DOMContentLoaded', function() {
-    // --- PERBAIKAN: Tambahkan type assertion dan pengecekan null untuk form ---
     const form = document.getElementById('contact-form');
-    if (form) { // --- PERBAIKAN: Pastikan form tidak null sebelum digunakan ---
+    if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        // --- PERBAIKAN: Type assertion untuk e.target ---
         const formData = new FormData(e.target);
+        const name = (formData.get('name') || '').toString().trim();
+        const email = (formData.get('email') || '').toString().trim();
+        const phone = (formData.get('phone') || '').toString().trim();
+        const message = (formData.get('message') || '').toString().trim();
 
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-          alert('Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.');
-          // --- PERBAIKAN: Gunakan form.reset() dan tambahkan pengecekan null jika diperlukan ---
-          form.reset(); // Reset form setelah pengiriman berhasil
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-          alert('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.');
-        });
+        const waLines = [
+          'Halo Raja Cutting Laser, saya ingin konsultasi proyek dari form website:',
+          name ? `• Nama: ${name}` : '',
+          email ? `• Email: ${email}` : '',
+          phone ? `• No. WA: ${phone}` : '',
+          message ? `• Detail Proyek: ${message}` : ''
+        ].filter(Boolean).join('\n');
+
+        const waUrl = 'https://wa.me/6285165693179?text=' + encodeURIComponent(waLines);
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        form.reset();
       });
     }
     // ---
@@ -334,7 +333,7 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
       </div>
       <div class="text-center mt-12">
         <p class="text-text-secondary mb-4">Wilayah lain di Jawa Barat? Hubungi kami untuk informasi layanan.</p>
-        <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=Halo%20raja%20cutting%20laser,%20saya%20ingin%20konsultasi%20dong%20tentang%20area%20layanan%20di%20wilayah%20saya.`} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+        <a href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Halo Raja Cutting Laser, saya ingin konsultasi tentang area layanan dan pengiriman di wilayah saya.')}`} target="_blank" rel="noopener noreferrer" data-wa-placement="contact_service_area" class="btn-secondary">
           Tanya Area Layanan
         </a>
       </div>
@@ -386,7 +385,7 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
       </div>
       <div class="text-center mt-12">
         <p class="text-text-secondary mb-4">Masih ada pertanyaan yang belum terjawab?</p>
-        <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=Halo%20raja%20cutting%20laser,%20saya%20ingin%20konsultasi%20dong%20lebih%20lanjut%20tentang%20layanan%20LaserCut%20Pro.`} target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <a href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Halo Raja Cutting Laser, saya ingin konsultasi lebih lanjut mengenai layanan dan estimasi proyek laser cutting.')}`} target="_blank" rel="noopener noreferrer" data-wa-placement="contact_faq" class="btn-primary">
           Tanya Langsung via WhatsApp
         </a>
       </div>

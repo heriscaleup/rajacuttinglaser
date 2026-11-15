@@ -262,26 +262,55 @@ const meta = metaTags || generatedMetaTags;
         if (window.__ADS_AGENT_GA4_LEAD_TRACKER__) return;
         window.__ADS_AGENT_GA4_LEAD_TRACKER__ = true;
 
+        try {
+          var urlParams = new URLSearchParams(window.location.search);
+          var gclid = urlParams.get('gclid');
+          if (gclid) sessionStorage.setItem('rcl_gclid', gclid);
+        } catch (e) {}
+
+        function getGclid() {
+          try {
+            return new URLSearchParams(window.location.search).get('gclid') || sessionStorage.getItem('rcl_gclid') || '';
+          } catch (e) {
+            return '';
+          }
+        }
+
         function sendEvent(name, params) {
           if (typeof window.gtag !== 'function') return;
-          window.gtag('event', name, Object.assign({
+          var gclidVal = getGclid();
+          var baseParams = {
             page_location: window.location.href,
+            page_path: window.location.pathname,
             page_title: document.title
-          }, params || {}));
+          };
+          if (gclidVal) baseParams.gclid = gclidVal;
+          window.gtag('event', name, Object.assign(baseParams, params || {}));
         }
 
         document.addEventListener('click', function (event) {
           var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
           if (!link) return;
           var href = link.getAttribute('href') || '';
+          var placement = link.getAttribute('data-wa-placement') || (link.classList.contains('fixed') ? 'floating' : 'inline');
           var text = (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 120);
           var lowerHref = href.toLowerCase();
           var lowerText = text.toLowerCase();
-          var params = { link_url: href, link_text: text };
+          var params = {
+            link_url: href,
+            link_text: text,
+            button_placement: placement
+          };
 
           if (lowerHref.indexOf('wa.me') !== -1 || lowerHref.indexOf('api.whatsapp.com') !== -1 || lowerHref.indexOf('whatsapp') !== -1) {
             sendEvent('wa_click', params);
             sendEvent('generate_lead', Object.assign({ lead_type: 'whatsapp' }, params));
+            return;
+          }
+
+          if (lowerHref.indexOf('tel:') === 0) {
+            sendEvent('tel_click', params);
+            sendEvent('generate_lead', Object.assign({ lead_type: 'phone_call' }, params));
             return;
           }
 
@@ -296,10 +325,11 @@ const meta = metaTags || generatedMetaTags;
           var params = {
             form_id: form.id || '',
             form_name: form.getAttribute('name') || '',
-            form_action: form.getAttribute('action') || window.location.href
+            form_action: form.getAttribute('action') || window.location.href,
+            button_placement: 'contact_form'
           };
           sendEvent('form_submit', params);
-          sendEvent('generate_lead', Object.assign({ lead_type: 'form' }, params));
+          sendEvent('generate_lead', Object.assign({ lead_type: 'whatsapp_form' }, params));
         }, true);
       })();
     </script>  </body>

@@ -163,7 +163,7 @@ if (post.data.faq.length > 0) structuredData.push(generateFAQSchema(post.data.fa
  <div class=" rounded-3xl border border-accent/20 bg-surface/60 p-6 backdrop-blur-sm shadow-lg transition-all duration-500 hover:-translate-y-1 hover">
  <h2 class="display text-lg font-black text-text-main">Butuh Konsultasi?</h2>
  <p class="mt-3 text-sm leading-6 text-text-secondary">Diskusikan kebutuhan material, desain, estimasi biaya, dan produksi dengan tim kami.</p>
- <a href={'https://api.whatsapp.com/send?phone=6285165693179&text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20ingin%20konsultasi'} target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex w-full justify-center rounded-full bg-accent px-5 py-3 text-sm font-black text-background transition-all duration-300 hover:bg-accent-orange hover">Konsultasi Sekarang</a>
+ <a href={`https://wa.me/6285165693179?text=${encodeURIComponent(`Halo Raja Cutting Laser, saya membaca artikel "${post.data.title}" dan ingin konsultasi proyek.`)}`} target="_blank" rel="noopener noreferrer" data-wa-placement="blog_sidebar" class="mt-5 inline-flex w-full justify-center rounded-full bg-accent px-5 py-3 text-sm font-black text-background transition-all duration-300 hover:bg-accent-orange hover">Konsultasi Sekarang</a>
  </div>
  </div>
  </aside>
@@ -195,7 +195,7 @@ if (post.data.faq.length > 0) structuredData.push(generateFAQSchema(post.data.fa
  )}
  </div>
 
- <Footer slot="footer" />
+ <Footer slot="footer" whatsappMessage={`Halo Raja Cutting Laser, saya membaca artikel "${post.data.title}" dan ingin konsultasi proyek.`} />
 </BaseLayout>
 
 

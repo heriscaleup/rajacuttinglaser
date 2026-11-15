@@ -1,5 +1,6 @@
 ---
-import { WHATSAPP_MESSAGES } from '../utils/constants.js';
+import { PRODUCT_CATEGORIES } from '../data/productCatalog.js';
+import { UTILS } from '../utils/constants.js';
 import WhatsAppButton from './WhatsAppButton.astro';
 
 export interface Props {
@@ -15,6 +16,9 @@ export interface Props {
   whatsappMessage?: string;
 }
 
+const currentPath = new URL(Astro.request.url).pathname;
+const matchedProduct = PRODUCT_CATEGORIES.find((p) => currentPath.startsWith(`/produk/${p.slug}`));
+
 const {
   title = 'Mari buat produk yang benar-benar siap diwujudkan.',
   description = 'Kirim ukuran, foto lokasi, atau referensi desain. Tim kami akan membantu membaca kebutuhan material, teknologi, dan prosesnya.',
@@ -24,7 +28,7 @@ const {
   backgroundImage,
   variant = 'default',
   size = 'md',
-  whatsappMessage = WHATSAPP_MESSAGES.productDefault
+  whatsappMessage = matchedProduct?.whatsappMessage || UTILS.getContextualWhatsAppMessage(currentPath)
 } = Astro.props;
 
 const isDark = variant === 'minimal' || variant === 'image';

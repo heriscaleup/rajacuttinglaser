@@ -1794,7 +1794,36 @@ export const UTILS = {
 
   // Generate WhatsApp URL
   generateWhatsAppURL: (message = WHATSAPP_MESSAGES.default) => {
-    return `https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(message)}`;
+    return `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+  },
+
+  // Resolve contextual WhatsApp message based on active URL path
+  getContextualWhatsAppMessage: (pathname = '/', customMessage = '') => {
+    if (customMessage) return customMessage;
+    const cleanPath = (pathname || '/').toLowerCase();
+
+    if (cleanPath.includes('/jasa-laser-fiber')) return WHATSAPP_MESSAGES.fiber;
+    if (cleanPath.includes('/jasa-laser-co2')) return WHATSAPP_MESSAGES.co2;
+    if (cleanPath.includes('/jasa-cnc-router')) return WHATSAPP_MESSAGES.cnc;
+    if (cleanPath.includes('/jasa-galvo-engraving')) return WHATSAPP_MESSAGES.engraving;
+
+    if (cleanPath.startsWith('/material-')) {
+      const slug = cleanPath.replace(/^\/|\/$/g, '');
+      const mat = MATERIALS.find((m) => m.slug === slug);
+      if (mat) {
+        return `Halo Raja Cutting Laser, saya ingin konsultasi tentang jasa laser cutting ${mat.name}. Bisa dibantu?`;
+      }
+      return WHATSAPP_MESSAGES.material;
+    }
+
+    if (cleanPath.startsWith('/portfolio')) return WHATSAPP_MESSAGES.portfolio;
+    if (cleanPath.startsWith('/contact')) return WHATSAPP_MESSAGES.quote;
+    if (cleanPath.startsWith('/about')) return 'Halo Raja Cutting Laser, saya ingin konsultasi untuk berkolaborasi proyek laser cutting.';
+    if (cleanPath.startsWith('/blog/') && cleanPath !== '/blog/') {
+      return 'Halo Raja Cutting Laser, saya baru membaca artikel di blog Anda dan ingin konsultasi proyek laser cutting.';
+    }
+
+    return WHATSAPP_MESSAGES.productDefault;
   },
 
   // Format currency

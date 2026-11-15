@@ -436,7 +436,7 @@ export const PRODUCT_DETAIL_PAGES = [
       }
     ],
     supportServiceIds: ["laser-fiber", "cnc-router", "laser-co2"],
-    whatsappMessage: "Halo raja cutting laser, saya ingin konsultasi dong tentang pembuatan pagar laser cutting custom. Bisa dibantu?"
+    whatsappMessage: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan pagar laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-PAGAR-SEO"
   },
   {
     slug: "railing-balkon-laser-cutting",
@@ -488,7 +488,7 @@ export const PRODUCT_DETAIL_PAGES = [
       }
     ],
     supportServiceIds: ["laser-fiber", "cnc-router"],
-    whatsappMessage: "Halo raja cutting laser, saya ingin konsultasi dong tentang railing balkon laser cutting custom. Bisa dibantu?"
+    whatsappMessage: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan railing balkon laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-RAILING-SEO"
   },
   {
     slug: "partisi-ruangan-laser-cutting",
@@ -540,7 +540,7 @@ export const PRODUCT_DETAIL_PAGES = [
       }
     ],
     supportServiceIds: ["laser-co2", "cnc-router", "laser-fiber"],
-    whatsappMessage: "Halo raja cutting laser, saya ingin konsultasi dong tentang partisi ruangan laser cutting custom. Bisa dibantu?"
+    whatsappMessage: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan partisi ruangan laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-PARTISI-SEO"
   }
 ];
 
@@ -922,22 +922,22 @@ export const FAQ = [
 
 // ===== PESAN WHATSAPP =====
 export const WHATSAPP_MESSAGES = {
-  default: "Halo Raja Cutting Laser, saya ingin konsultasi mengenai produk dan jasa laser cutting. Boleh dibantu?",
-  productDefault: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan produk laser cutting custom untuk proyek saya. Boleh dibantu info dan konsultasinya?",
-  cnc: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa CNC Router untuk material kayu/MDF. Boleh dibantu konsultasinya?",
-  fiber: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa laser fiber untuk cutting metal. Boleh dibantu diskusi proyek saya?",
-  co2: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa laser CO2 untuk cutting acrylic/non-metal. Boleh dibantu konsultasinya?",
-  engraving: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa galvo engraving untuk marking produk. Boleh dibantu info dan konsultasinya?",
-  pagar: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan pagar laser cutting custom. Boleh dibantu info dan konsultasinya?",
-  railing: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan railing balkon laser cutting custom. Boleh dibantu info dan konsultasinya?",
-  partisi: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan partisi ruangan laser cutting custom. Boleh dibantu info dan konsultasinya?",
-  hurufTimbul: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan huruf timbul dan signage custom. Boleh dibantu info dan konsultasinya?",
-  mihrab: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan mihrab dan panel islami laser cutting custom. Boleh dibantu info dan konsultasinya?",
-  plafon: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan plafon dekoratif laser cutting custom. Boleh dibantu info dan konsultasinya?",
-  quote: "Halo Raja Cutting Laser, saya ingin tanya estimasi harga dan konsultasi untuk proyek laser cutting. Boleh dibantu?",
-  material: "Halo Raja Cutting Laser, saya ingin tanya info pilihan material yang tersedia untuk laser cutting. Boleh dibantu?",
-  portfolio: "Halo Raja Cutting Laser, saya tertarik dengan hasil proyek di portfolio Anda dan ingin diskusi proyek serupa. Boleh dibantu?",
-  urgent: "Halo Raja Cutting Laser, saya ada kebutuhan proyek laser cutting yang cukup mendesak. Boleh dibantu cek ketersediaan jadwalnya?"
+  default: "Halo Raja Cutting Laser, saya ingin konsultasi mengenai produk dan jasa laser cutting. Boleh dibantu?\n\nKode konsultasi: RCL-HOME-SEO",
+  productDefault: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan produk laser cutting custom untuk proyek saya. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-HOME-SEO",
+  cnc: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa CNC Router untuk material kayu/MDF. Boleh dibantu konsultasinya?\n\nKode konsultasi: RCL-CNC-SEO",
+  fiber: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa laser fiber untuk cutting metal. Boleh dibantu diskusi proyek saya?\n\nKode konsultasi: RCL-FIBER-SEO",
+  co2: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa laser CO2 untuk cutting acrylic/non-metal. Boleh dibantu konsultasinya?\n\nKode konsultasi: RCL-CO2-SEO",
+  engraving: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa galvo engraving untuk marking produk. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-GALVO-SEO",
+  pagar: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan pagar laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-PAGAR-SEO",
+  railing: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan railing balkon laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-RAILING-SEO",
+  partisi: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan partisi ruangan laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-PARTISI-SEO",
+  hurufTimbul: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan huruf timbul dan signage custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-SIGNAGE-SEO",
+  mihrab: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan mihrab dan panel islami laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-MIHRAB-SEO",
+  plafon: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan plafon dekoratif laser cutting custom. Boleh dibantu info dan konsultasinya?\n\nKode konsultasi: RCL-PLAFON-SEO",
+  quote: "Halo Raja Cutting Laser, saya ingin tanya estimasi harga dan konsultasi untuk proyek laser cutting. Boleh dibantu?\n\nKode konsultasi: RCL-KONTAK-SEO",
+  material: "Halo Raja Cutting Laser, saya ingin tanya info pilihan material yang tersedia untuk laser cutting. Boleh dibantu?\n\nKode konsultasi: RCL-MATERIAL-SEO",
+  portfolio: "Halo Raja Cutting Laser, saya tertarik dengan hasil proyek di portfolio Anda dan ingin diskusi proyek serupa. Boleh dibantu?\n\nKode konsultasi: RCL-PORTFOLIO-SEO",
+  urgent: "Halo Raja Cutting Laser, saya ada kebutuhan proyek laser cutting yang cukup mendesak. Boleh dibantu cek ketersediaan jadwalnya?\n\nKode konsultasi: RCL-URGENT-SEO"
 };
 
 // ===== DATA BLOG POSTS =====
@@ -1793,13 +1793,57 @@ export const UTILS = {
   },
 
   // Generate WhatsApp URL
-  generateWhatsAppURL: (message = WHATSAPP_MESSAGES.default) => {
-    return `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+  generateWhatsAppURL: (message = WHATSAPP_MESSAGES.default, pathname = '/') => {
+    const finalMessage = UTILS.appendConsultCode(message, pathname, 'SEO');
+    return `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(finalMessage)}`;
+  },
+
+  // Get short page code for consultation attribution
+  getPageCode: (pathname = '/') => {
+    const cleanPath = (pathname || '/').toLowerCase();
+    if (cleanPath.includes('pagar-laser-cutting')) return 'PAGAR';
+    if (cleanPath.includes('railing-balkon')) return 'RAILING';
+    if (cleanPath.includes('partisi-ruangan')) return 'PARTISI';
+    if (cleanPath.includes('huruf-timbul')) return 'SIGNAGE';
+    if (cleanPath.includes('mihrab')) return 'MIHRAB';
+    if (cleanPath.includes('plafon')) return 'PLAFON';
+    if (cleanPath.includes('panel-fasad') || cleanPath.includes('secondary-skin')) return 'FASAD';
+    if (cleanPath.includes('display-acrylic')) return 'DISPLAY';
+    if (cleanPath.includes('nameplate') || cleanPath.includes('wayfinding')) return 'WAYFINDING';
+
+    if (cleanPath.includes('/jasa-laser-fiber')) return 'FIBER';
+    if (cleanPath.includes('/jasa-laser-co2')) return 'CO2';
+    if (cleanPath.includes('/jasa-cnc-router')) return 'CNC';
+    if (cleanPath.includes('/jasa-galvo-engraving')) return 'GALVO';
+
+    if (cleanPath.includes('/material-acrylic')) return 'ACRYLIC';
+    if (cleanPath.includes('/material-metal')) return 'METAL';
+    if (cleanPath.includes('/material-mdf')) return 'MDF';
+    if (cleanPath.includes('/material-ply-wood')) return 'PLYWOOD';
+    if (cleanPath.includes('/material-pvc')) return 'PVC';
+    if (cleanPath.includes('/material-acp')) return 'ACP';
+    if (cleanPath.includes('/material-grc')) return 'GRC';
+    if (cleanPath.startsWith('/material-')) return 'MATERIAL';
+
+    if (cleanPath.startsWith('/portfolio')) return 'PORTFOLIO';
+    if (cleanPath.startsWith('/contact')) return 'KONTAK';
+    if (cleanPath.startsWith('/about')) return 'ABOUT';
+    if (cleanPath.startsWith('/blog')) return 'BLOG';
+    return 'HOME';
+  },
+
+  // Ensure every WhatsApp message carries a 1-line attribution code (Kode konsultasi: RCL-<PAGE>-SEO)
+  appendConsultCode: (message = '', pathname = '/', sourceTag = 'SEO') => {
+    const raw = String(message || WHATSAPP_MESSAGES.default).trim();
+    const existingMatch = raw.match(/Kode konsultasi:\s*RCL-([A-Z0-9]+)-(SEO|ADS)/i);
+    const pageCode = existingMatch ? existingMatch[1].toUpperCase() : UTILS.getPageCode(pathname);
+    const base = raw.replace(/\n*Kode konsultasi:\s*RCL-[A-Z0-9-]+/gi, '').trim();
+    return `${base}\n\nKode konsultasi: RCL-${pageCode}-${sourceTag}`;
   },
 
   // Resolve contextual WhatsApp message based on active URL path
   getContextualWhatsAppMessage: (pathname = '/', customMessage = '') => {
-    if (customMessage) return customMessage;
+    if (customMessage) return UTILS.appendConsultCode(customMessage, pathname, 'SEO');
     const cleanPath = (pathname || '/').toLowerCase();
 
     if (cleanPath.includes('/jasa-laser-fiber')) return WHATSAPP_MESSAGES.fiber;
@@ -1811,19 +1855,40 @@ export const UTILS = {
       const slug = cleanPath.replace(/^\/|\/$/g, '');
       const mat = MATERIALS.find((m) => m.slug === slug);
       if (mat) {
-        return `Halo Raja Cutting Laser, saya ingin konsultasi tentang jasa laser cutting ${mat.name}. Bisa dibantu?`;
+        return UTILS.appendConsultCode(
+          `Halo Raja Cutting Laser, saya ingin konsultasi tentang jasa laser cutting ${mat.name}. Bisa dibantu?`,
+          cleanPath,
+          'SEO'
+        );
       }
       return WHATSAPP_MESSAGES.material;
     }
 
     if (cleanPath.startsWith('/portfolio')) return WHATSAPP_MESSAGES.portfolio;
     if (cleanPath.startsWith('/contact')) return WHATSAPP_MESSAGES.quote;
-    if (cleanPath.startsWith('/about')) return 'Halo Raja Cutting Laser, saya ingin konsultasi untuk berkolaborasi proyek laser cutting.';
+    if (cleanPath.startsWith('/about')) {
+      return UTILS.appendConsultCode(
+        'Halo Raja Cutting Laser, saya ingin konsultasi untuk berkolaborasi proyek laser cutting.',
+        cleanPath,
+        'SEO'
+      );
+    }
     if (cleanPath.startsWith('/blog/') && cleanPath !== '/blog/') {
-      return 'Halo Raja Cutting Laser, saya baru membaca artikel di blog Anda dan ingin konsultasi proyek laser cutting.';
+      return UTILS.appendConsultCode(
+        'Halo Raja Cutting Laser, saya baru membaca artikel di blog Anda dan ingin konsultasi proyek laser cutting.',
+        cleanPath,
+        'SEO'
+      );
+    }
+    if (cleanPath.startsWith('/blog')) {
+      return UTILS.appendConsultCode(
+        'Halo Raja Cutting Laser, saya tertarik konsultasi proyek laser cutting setelah membaca blog Anda.',
+        cleanPath,
+        'SEO'
+      );
     }
 
-    return WHATSAPP_MESSAGES.productDefault;
+    return UTILS.appendConsultCode(WHATSAPP_MESSAGES.productDefault, cleanPath, 'SEO');
   },
 
   // Format currency

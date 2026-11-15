@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # Crush tool data
 .crush/
+
+graphify-out/

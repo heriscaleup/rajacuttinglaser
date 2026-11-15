@@ -1,4 +1,4 @@
----
+﻿---
 title: "Laser Cutting Stainless Steel: Panduan Ketebalan & Daya"
 description: "Panduan lengkap laser cutting stainless steel 1mm–20mm: parameter daya, kecepatan potong, dan jenis gas yang tepat untuk hasil presisi maksimal."
 pubDate: 2026-09-18T07:00:00.000Z
@@ -118,4 +118,4 @@ Tim teknisi kami berpengalaman dalam mengerjakan proyek dari skala prototipe hin
 
 **Konsultasikan proyek kamu sekarang:**
 
-📱 [Hubungi via WhatsApp](https://wa.me/6285165693179) — respons cepat, estimasi hari ini.
+📱 [Hubungi via WhatsApp](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20baru%20membaca%20artikel%20di%20blog%20Anda%20dan%20ingin%20konsultasi%20proyek%20laser%20cutting.%0A%0AKode%20konsultasi%3A%20RCL-BLOG-SEO) — respons cepat, estimasi hari ini.

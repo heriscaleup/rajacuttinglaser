@@ -1,4 +1,4 @@
----
+﻿---
 title: "Toleransi Potong Laser Fiber: Seberapa Presisi?"
 description: "Pelajari toleransi presisi laser fiber cutting untuk metal. Panduan teknis memilih standar toleransi yang tepat untuk industri manufaktur dan spare part."
 pubDate: 2026-07-23T07:00:00.000Z
@@ -103,4 +103,4 @@ Setiap pekerjaan kami kerjakan dengan standar QC yang ketat — dari verifikasi 
 
 Punya proyek yang membutuhkan presisi tinggi di logam? **Raja Cutting Laser** siap memberikan solusi terbaik untuk kebutuhan cutting metal kamu.
 
-Konsultasikan kebutuhan proyekmu sekarang via WhatsApp: **[Chat WhatsApp Raja Cutting Laser](https://wa.me/6285165693179)**. Estimasi harga GRATIS, pengerjaan cepat, kualitas terjamin!
+Konsultasikan kebutuhan proyekmu sekarang via WhatsApp: **[Chat WhatsApp Raja Cutting Laser](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20baru%20membaca%20artikel%20di%20blog%20Anda%20dan%20ingin%20konsultasi%20proyek%20laser%20cutting.%0A%0AKode%20konsultasi%3A%20RCL-BLOG-SEO)**. Estimasi harga GRATIS, pengerjaan cepat, kualitas terjamin!

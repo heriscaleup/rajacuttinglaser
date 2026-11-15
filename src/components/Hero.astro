@@ -1,6 +1,6 @@
 ---
 import OptimizedImage from './OptimizedImage.astro';
-import { SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
+import { SITE_CONFIG, UTILS, WHATSAPP_MESSAGES } from '../utils/constants.js';
 
 export interface Props {
   title?: string;
@@ -30,7 +30,9 @@ const {
   bgClass = "bg-hero-mesh"
 } = Astro.props;
 
-const resolvedPrimaryLink = primaryCTALink || `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+const currentPath = new URL(Astro.request.url).pathname;
+const stampedMessage = UTILS.appendConsultCode(whatsappMessage, currentPath, 'SEO');
+const resolvedPrimaryLink = primaryCTALink || `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(stampedMessage)}`;
 ---
 
 <section class:list={["relative min-h-[500px] md:min-h-[580px] flex items-center justify-center overflow-hidden", bgClass]}>

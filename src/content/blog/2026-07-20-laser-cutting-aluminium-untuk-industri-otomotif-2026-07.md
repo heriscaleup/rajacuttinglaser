@@ -1,4 +1,4 @@
----
+﻿---
 title: "Laser Cutting Aluminium untuk Industri Otomotif Indonesia"
 description: "Laser cutting aluminium kini jadi solusi utama industri otomotif Indonesia. Pelajari keunggulan, toleransi, dan aplikasi nyata fiber laser untuk komponen kendaraan."
 pubDate: 2026-07-20T07:00:00.000Z
@@ -96,6 +96,6 @@ Raja Cutting Laser hadir sebagai mitra terpercaya untuk kebutuhan fiber laser cu
 
 Kami telah melayani klien dari industri otomotif, manufaktur, dan konstruksi di seluruh Indonesia.
 
-**[Hubungi Kami via WhatsApp untuk Konsultasi & Quotation →](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20ingin%20konsultasi%20laser%20cutting%20aluminium.)**
+**[Hubungi Kami via WhatsApp untuk Konsultasi & Quotation →](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20ingin%20konsultasi%20laser%20cutting%20aluminium.%0A%0AKode%20konsultasi%3A%20RCL-BLOG-SEO)**
 
 Tim engineering kami siap diskusi teknis dan memberikan rekomendasi terbaik untuk proyek kamu.

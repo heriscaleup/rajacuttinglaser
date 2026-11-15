@@ -1,4 +1,4 @@
----
+﻿---
 title: "Laser Cutting Aluminium: Tips Material dan Setting Terbaik"
 description: "Panduan lengkap laser cutting aluminium: tips memilih material, setting mesin fiber laser terbaik, dan cara mendapat hasil potongan presisi untuk industri."
 pubDate: 2026-09-07T07:00:00.000Z
@@ -132,4 +132,4 @@ Dengan pendekatan yang tepat, aluminium bisa dipotong dengan presisi sub-milimet
 
 Tim teknis Raja Cutting Laser siap konsultasi untuk menentukan setting optimal sesuai spesifikasi material dan toleransi yang kamu butuhkan. Kami berpengalaman menangani proyek dari skala prototipe hingga produksi massal.
 
-👉 **[Hubungi kami via WhatsApp untuk konsultasi teknis gratis](https://wa.me/6285165693179)**
+👉 **[Hubungi kami via WhatsApp untuk konsultasi teknis gratis](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20baru%20membaca%20artikel%20di%20blog%20Anda%20dan%20ingin%20konsultasi%20proyek%20laser%20cutting.%0A%0AKode%20konsultasi%3A%20RCL-BLOG-SEO)**

@@ -1,6 +1,6 @@
 ---
 // WhatsApp Button Component
-import { SITE_CONFIG } from '../utils/constants.js';
+import { SITE_CONFIG, UTILS } from '../utils/constants.js';
 
 export interface Props {
   message?: string;
@@ -18,6 +18,9 @@ const {
   label = "Chat WhatsApp"
 } = Astro.props;
 
+const currentPath = new URL(Astro.request.url).pathname;
+const stampedMessage = UTILS.appendConsultCode(message, currentPath, 'SEO');
+
 const hasCustomPadding = /\bp[xy]?-\d+/.test(className);
 const hasCustomRadius = /\brounded(-[a-z0-9]+)?\b/.test(className);
 const defaultUtilityClasses = [
@@ -27,7 +30,7 @@ const defaultUtilityClasses = [
 ---
 
 <a 
-  href={`https://wa.me/${number}?text=${encodeURIComponent(message)}`}
+  href={`https://wa.me/${number}?text=${encodeURIComponent(stampedMessage)}`}
   class={`whatsapp-button inline-flex items-center font-semibold transition-colors duration-200 ${defaultUtilityClasses} ${className}`.trim()}
   target="_blank"
   rel="noopener noreferrer"

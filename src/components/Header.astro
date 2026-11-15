@@ -9,7 +9,8 @@ export interface Props {
 const { whatsappMessage } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
 const matchedProduct = PRODUCT_CATEGORIES.find((p) => currentPath.startsWith(`/produk/${p.slug}`));
-const resolvedMessage = whatsappMessage || matchedProduct?.whatsappMessage || UTILS.getContextualWhatsAppMessage(currentPath);
+const rawMessage = whatsappMessage || matchedProduct?.whatsappMessage || UTILS.getContextualWhatsAppMessage(currentPath);
+const resolvedMessage = UTILS.appendConsultCode(rawMessage, currentPath, 'SEO');
 const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(resolvedMessage)}`;
 
 const navigation = [

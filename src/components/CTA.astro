@@ -33,6 +33,7 @@ const {
 
 const isDark = variant === 'minimal' || variant === 'image';
 const sizeClass = size === 'sm' ? 'py-16 md:py-20' : size === 'lg' ? 'py-24 md:py-36' : 'py-20 md:py-28';
+const stampedMessage = UTILS.appendConsultCode(whatsappMessage, currentPath, 'SEO');
 ---
 
 <section class:list={['relative overflow-hidden border-y', sizeClass, isDark ? 'border-white/10 bg-surface text-text-main' : 'border-black/10 bg-paper text-ink']}>
@@ -54,7 +55,7 @@ const sizeClass = size === 'sm' ? 'py-16 md:py-20' : size === 'lg' ? 'py-24 md:p
 
       <div class="flex min-w-[220px] flex-col gap-3 lg:pb-2">
         <WhatsAppButton
-          message={whatsappMessage}
+          message={stampedMessage}
           label={primaryText}
           className="justify-center rounded-full bg-accent px-6 py-4 text-text-main hover:bg-accent-orange"
           source="cta_section"

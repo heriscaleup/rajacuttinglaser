@@ -49,13 +49,16 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
         const phone = (formData.get('phone') || '').toString().trim();
         const message = (formData.get('message') || '').toString().trim();
 
+        const sourceTag = (window.__RCL_TRAFFIC_LABEL__ || 'SEO');
         const waLines = [
           'Halo Raja Cutting Laser, saya ingin konsultasi proyek dari form website:',
           name ? `• Nama: ${name}` : '',
           email ? `• Email: ${email}` : '',
           phone ? `• No. WA: ${phone}` : '',
-          message ? `• Detail Proyek: ${message}` : ''
-        ].filter(Boolean).join('\n');
+          message ? `• Detail Proyek: ${message}` : '',
+          '',
+          `Kode konsultasi: RCL-KONTAK-${sourceTag}`
+        ].filter((line, idx, arr) => line !== '' || idx === arr.length - 2).join('\n');
 
         const waUrl = 'https://wa.me/6285165693179?text=' + encodeURIComponent(waLines);
         window.open(waUrl, '_blank', 'noopener,noreferrer');
@@ -333,7 +336,7 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
       </div>
       <div class="text-center mt-12">
         <p class="text-text-secondary mb-4">Wilayah lain di Jawa Barat? Hubungi kami untuk informasi layanan.</p>
-        <a href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Halo Raja Cutting Laser, saya ingin konsultasi tentang area layanan dan pengiriman di wilayah saya.')}`} target="_blank" rel="noopener noreferrer" data-wa-placement="contact_service_area" class="btn-secondary">
+        <a href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Halo Raja Cutting Laser, saya ingin konsultasi tentang area layanan dan pengiriman di wilayah saya.\n\nKode konsultasi: RCL-KONTAK-SEO')}`} target="_blank" rel="noopener noreferrer" data-wa-placement="contact_service_area" class="btn-secondary">
           Tanya Area Layanan
         </a>
       </div>
@@ -385,7 +388,7 @@ const metaTags = generateMetaTags(seoData) as BaseLayoutProps;
       </div>
       <div class="text-center mt-12">
         <p class="text-text-secondary mb-4">Masih ada pertanyaan yang belum terjawab?</p>
-        <a href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Halo Raja Cutting Laser, saya ingin konsultasi lebih lanjut mengenai layanan dan estimasi proyek laser cutting.')}`} target="_blank" rel="noopener noreferrer" data-wa-placement="contact_faq" class="btn-primary">
+        <a href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Halo Raja Cutting Laser, saya ingin konsultasi lebih lanjut mengenai layanan dan estimasi proyek laser cutting.\n\nKode konsultasi: RCL-KONTAK-SEO')}`} target="_blank" rel="noopener noreferrer" data-wa-placement="contact_faq" class="btn-primary">
           Tanya Langsung via WhatsApp
         </a>
       </div>

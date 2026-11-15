@@ -1,4 +1,4 @@
----
+﻿---
 title: "Keunggulan Fiber Laser Cutting untuk Besi dan Stainless"
 description: "Fiber laser cutting unggul dalam memotong besi dan stainless steel dengan kecepatan tinggi, presisi akurat, dan biaya operasional efisien untuk industri."
 pubDate: 2026-07-15T07:00:00.000Z
@@ -102,4 +102,4 @@ Kami mengoperasikan mesin fiber laser dengan daya hingga 6kW yang mampu menangan
 
 Apakah Anda membutuhkan 10 atau 10.000 potong, kami siap memberikan solusi yang tepat. Kirimkan file desain atau spesifikasi material Anda, dan tim teknis kami akan memberikan estimasi harga dan timeline secara detail.
 
-👉 **[Konsultasi via WhatsApp Sekarang](https://wa.me/6285165693179)** — Respons cepat, estimasi akurat, hasil terjamin.
+👉 **[Konsultasi via WhatsApp Sekarang](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20baru%20membaca%20artikel%20di%20blog%20Anda%20dan%20ingin%20konsultasi%20proyek%20laser%20cutting.%0A%0AKode%20konsultasi%3A%20RCL-BLOG-SEO)** — Respons cepat, estimasi akurat, hasil terjamin.

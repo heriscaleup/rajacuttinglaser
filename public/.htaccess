@@ -62,6 +62,32 @@
 #     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # </IfModule>
 
+# Consolidate duplicate Article Agent blog posts (301 Redirects to canonical URLs)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Group 1: Keunggulan Fiber Laser Besi & Stainless
+    RewriteRule ^blog/(2026-07-22-keunggulan-fiber-laser-cutting-besi-stainless|2026-07-29-keunggulan-fiber-laser-cutting-besi-stainless-steel-2026-07)/?$ /blog/2026-07-15-keunggulan-fiber-laser-cutting-besi-stainless-steel/ [R=301,L]
+
+    # Group 2: Toleransi Potong Laser Fiber
+    RewriteRule ^blog/(2026-07-16-toleransi-potong-laser-fiber-presisi-2026-07|2026-07-30-standar-akurasi-toleransi-pemotongan-laser-fiber|2026-08-20-toleransi-potong-laser-fiber-seberapa-presisi-2026-08|2026-09-03-toleransi-presisi-fiber-laser-cutting)/?$ /blog/2026-07-23-toleransi-potong-laser-fiber-presisi-2026-07/ [R=301,L]
+
+    # Group 3: Laser Cutting Stainless Steel 1-20mm Ketebalan & Daya
+    RewriteRule ^blog/(2026-07-17-laser-cutting-stainless-steel-panduan-ketebalan-daya-2026-07|2026-07-31-laser-cutting-stainless-steel-panduan-ketebalan-daya-2026-07|2026-09-18-laser-cutting-stainless-steel-panduan-ketebalan-daya)/?$ /blog/2026-07-24-laser-cutting-stainless-steel-panduan-ketebalan-daya-2026-07/ [R=301,L]
+
+    # Group 4: Industri yang Paling Butuh Jasa Laser Cutting Logam
+    RewriteRule ^blog/(2026-07-18-industri-butuh-jasa-laser-cutting-logam|2026-07-25-industri-butuh-jasa-laser-cutting-logam-2026-07|2026-08-15-industri-butuh-jasa-laser-cutting-logam|2026-09-05-industri-butuh-laser-cutting-logam|2026-09-26-industri-yang-butuh-jasa-laser-cutting-logam)/?$ /blog/2026-08-01-industri-yang-butuh-jasa-laser-cutting-logam/ [R=301,L]
+
+    # Group 5: Custom Spare Part Logam: Laser Cutting vs CNC
+    RewriteRule ^blog/(2026-07-19-custom-spare-part-laser-cutting-lebih-cepat-dari-cnc|2026-07-26-custom-spare-part-fiber-laser-efisiensi-produksi|2026-08-02-custom-spare-part-logam-laser-cutting-vs-cnc|2026-08-09-custom-spare-part-logam-laser-cutting-vs-cnc|2026-08-30-custom-spare-part-logam-laser-cutting-vs-cnc-2026-08|2026-10-18-custom-spare-part-logam-laser-cutting-vs-cnc)/?$ /blog/2026-08-16-custom-spare-part-logam-laser-cutting-vs-cnc/ [R=301,L]
+
+    # Group 6: Laser Cutting Aluminium: Tips Material & Setting
+    RewriteRule ^blog/(2026-07-27-laser-cutting-aluminium-tips-material-setting|2026-08-03-laser-cutting-aluminium-tips-material-setting-2026-08|2026-09-07-laser-cutting-aluminium-tips-material-setting|2026-09-14-laser-cutting-aluminium-tips-material-setting|2026-10-05-laser-cutting-aluminium-tips-material-setting)/?$ /blog/2026-08-10-laser-aluminium-panduan-setting-fiber-laser-2026-08/ [R=301,L]
+
+    # Group 7: ROI Laser Cutting untuk UKM Manufaktur Indonesia
+    RewriteRule ^blog/2026-07-28-roi-laser-cutting-ukm-manufaktur/?$ /blog/2026-07-21-roi-laser-cutting-untuk-ukm-manufaktur-indonesia/ [R=301,L]
+</IfModule>
+
 # Remove trailing slashes
 <IfModule mod_rewrite.c>
     RewriteEngine On

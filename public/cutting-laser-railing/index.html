@@ -1,6 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-TWZC7V4M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'GT-TWZC7V4M');
+    gtag('config', 'G-R92F8J843F');
+  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jasa Cutting Laser Railing Tangga Minimalis | Raja Cutting Laser</title>
@@ -278,5 +288,181 @@ footer ul li{margin-bottom:6px;}
 document.querySelector('.nav-toggle').addEventListener('click',function(){document.querySelector('.main-nav').classList.toggle('open');});
 document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-q').addEventListener('click',function(){item.classList.toggle('open');});});
 </script>
+  <script>
+  </script>
+  <script>
+    (function () {
+        if (window.__ADS_AGENT_GA4_LEAD_TRACKER__) return;
+        window.__ADS_AGENT_GA4_LEAD_TRACKER__ = true;
+
+        function detectPaidTraffic() {
+          try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var gclid = urlParams.get('gclid');
+            var wbraid = urlParams.get('wbraid');
+            var gbraid = urlParams.get('gbraid');
+            var gadSource = urlParams.get('gad_source');
+            var fbclid = urlParams.get('fbclid');
+            var utmMedium = (urlParams.get('utm_medium') || '').toLowerCase();
+            var isPaidParam = Boolean(
+              gclid || wbraid || gbraid || gadSource || fbclid ||
+              utmMedium === 'cpc' || utmMedium === 'ppc' || utmMedium === 'paid' || utmMedium === 'ads'
+            );
+            if (gclid) sessionStorage.setItem('rcl_gclid', gclid);
+            if (isPaidParam) sessionStorage.setItem('rcl_traffic_label', 'ADS');
+            return sessionStorage.getItem('rcl_traffic_label') === 'ADS';
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function getPageCode(pathname) {
+          var cleanPath = String(pathname || '/').toLowerCase();
+          if (cleanPath.indexOf('pagar-laser-cutting') !== -1) return 'PAGAR';
+          if (cleanPath.indexOf('railing-balkon') !== -1) return 'RAILING';
+          if (cleanPath.indexOf('partisi-ruangan') !== -1) return 'PARTISI';
+          if (cleanPath.indexOf('huruf-timbul') !== -1) return 'SIGNAGE';
+          if (cleanPath.indexOf('mihrab') !== -1) return 'MIHRAB';
+          if (cleanPath.indexOf('plafon') !== -1) return 'PLAFON';
+          if (cleanPath.indexOf('panel-fasad') !== -1 || cleanPath.indexOf('secondary-skin') !== -1) return 'FASAD';
+          if (cleanPath.indexOf('display-acrylic') !== -1) return 'DISPLAY';
+          if (cleanPath.indexOf('nameplate') !== -1 || cleanPath.indexOf('wayfinding') !== -1) return 'WAYFINDING';
+          if (cleanPath.indexOf('/jasa-laser-fiber') !== -1) return 'FIBER';
+          if (cleanPath.indexOf('/jasa-laser-co2') !== -1) return 'CO2';
+          if (cleanPath.indexOf('/jasa-cnc-router') !== -1) return 'CNC';
+          if (cleanPath.indexOf('/jasa-galvo-engraving') !== -1) return 'GALVO';
+          if (cleanPath.indexOf('/material-acrylic') !== -1) return 'ACRYLIC';
+          if (cleanPath.indexOf('/material-metal') !== -1) return 'METAL';
+          if (cleanPath.indexOf('/material-mdf') !== -1) return 'MDF';
+          if (cleanPath.indexOf('/material-ply-wood') !== -1) return 'PLYWOOD';
+          if (cleanPath.indexOf('/material-pvc') !== -1) return 'PVC';
+          if (cleanPath.indexOf('/material-acp') !== -1) return 'ACP';
+          if (cleanPath.indexOf('/material-grc') !== -1) return 'GRC';
+          if (cleanPath.indexOf('/material-') === 0) return 'MATERIAL';
+          if (cleanPath.indexOf('/portfolio') === 0) return 'PORTFOLIO';
+          if (cleanPath.indexOf('/contact') === 0) return 'KONTAK';
+          if (cleanPath.indexOf('/about') === 0) return 'ABOUT';
+          if (cleanPath.indexOf('/blog') === 0) return 'BLOG';
+          return 'HOME';
+        }
+
+        var isPaidAds = detectPaidTraffic();
+        var trafficLabel = isPaidAds ? 'ADS' : 'SEO';
+        window.__RCL_TRAFFIC_LABEL__ = trafficLabel;
+
+        function stampWaLink(link) {
+          try {
+            var rawHref = link.getAttribute('href') || '';
+            if (rawHref.indexOf('wa.me') === -1 && rawHref.indexOf('api.whatsapp.com') === -1) return '';
+            var u = new URL(rawHref, window.location.origin);
+            var textParam = u.searchParams.get('text') || 'Halo Raja Cutting Laser, saya ingin konsultasi proyek laser cutting.';
+            var existingMatch = textParam.match(/Kode konsultasi:\s*RCL-([A-Z0-9]+)-(SEO|ADS)/i);
+            var pageCode = existingMatch ? existingMatch[1].toUpperCase() : getPageCode(window.location.pathname);
+            var consultCode = 'RCL-' + pageCode + '-' + trafficLabel;
+            var cleanText = textParam.replace(/\n*Kode konsultasi:\s*RCL-[A-Z0-9-]+/gi, '').trim();
+            var finalText = cleanText + '\n\nKode konsultasi: ' + consultCode;
+            u.searchParams.set('text', finalText);
+            link.setAttribute('href', u.toString());
+            link.setAttribute('data-wa-code', consultCode);
+            return consultCode;
+          } catch (e) {
+            return '';
+          }
+        }
+
+        function stampAllWaLinks() {
+          var links = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+          for (var i = 0; i < links.length; i++) {
+            stampWaLink(links[i]);
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', stampAllWaLinks);
+        } else {
+          stampAllWaLinks();
+        }
+
+        function getGclid() {
+          try {
+            return new URLSearchParams(window.location.search).get('gclid') || sessionStorage.getItem('rcl_gclid') || '';
+          } catch (e) {
+            return '';
+          }
+        }
+
+        function sendEvent(name, params) {
+          if (typeof window.gtag !== 'function') return;
+          var gclidVal = getGclid();
+          var baseParams = {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            traffic_label: trafficLabel
+          };
+          if (gclidVal) baseParams.gclid = gclidVal;
+          window.gtag('event', name, Object.assign(baseParams, params || {}));
+        }
+
+        document.addEventListener('click', function (event) {
+          var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+          if (!link) return;
+          var href = link.getAttribute('href') || '';
+          var lowerHref = href.toLowerCase();
+
+          if (lowerHref.indexOf('wa.me') !== -1 || lowerHref.indexOf('api.whatsapp.com') !== -1 || lowerHref.indexOf('whatsapp') !== -1) {
+            var consultCode = stampWaLink(link) || link.getAttribute('data-wa-code') || ('RCL-' + getPageCode(window.location.pathname) + '-' + trafficLabel);
+            href = link.getAttribute('href') || href;
+            var placement = link.getAttribute('data-wa-placement') || (link.classList.contains('fixed') ? 'floating' : 'inline');
+            var text = (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 120);
+            var waParams = {
+              link_url: href,
+              link_text: text,
+              button_placement: placement,
+              consult_code: consultCode,
+              traffic_label: trafficLabel
+            };
+            sendEvent('wa_click', waParams);
+            sendEvent('generate_lead', Object.assign({ lead_type: 'whatsapp' }, waParams));
+            return;
+          }
+
+          var placementOther = link.getAttribute('data-wa-placement') || (link.classList.contains('fixed') ? 'floating' : 'inline');
+          var textOther = (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 120);
+          var lowerText = textOther.toLowerCase();
+          var params = {
+            link_url: href,
+            link_text: textOther,
+            button_placement: placementOther,
+            traffic_label: trafficLabel
+          };
+
+          if (lowerHref.indexOf('tel:') === 0) {
+            sendEvent('tel_click', params);
+            sendEvent('generate_lead', Object.assign({ lead_type: 'phone_call' }, params));
+            return;
+          }
+
+          if (lowerHref.indexOf('/konsultasi') !== -1 || lowerHref.indexOf('/contact') !== -1 || lowerText.indexOf('konsultasi') !== -1 || lowerText.indexOf('hubungi') !== -1 || lowerText.indexOf('audit') !== -1) {
+            sendEvent('click_consultation', params);
+          }
+        }, true);
+
+        document.addEventListener('submit', function (event) {
+          var form = event.target;
+          if (!form || !form.tagName || form.tagName.toLowerCase() !== 'form') return;
+          var params = {
+            form_id: form.id || '',
+            form_name: form.getAttribute('name') || '',
+            form_action: form.getAttribute('action') || window.location.href,
+            button_placement: 'contact_form',
+            consult_code: 'RCL-KONTAK-' + trafficLabel,
+            traffic_label: trafficLabel
+          };
+          sendEvent('form_submit', params);
+          sendEvent('generate_lead', Object.assign({ lead_type: 'whatsapp_form' }, params));
+        }, true);
+      })();
+  </script>
 </body>
 </html>

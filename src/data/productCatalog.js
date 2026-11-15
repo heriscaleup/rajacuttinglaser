@@ -35,7 +35,7 @@ const PRODUCTS = [
       { question: 'Apakah bisa menangani rangka dan pemasangan?', answer: 'Bisa untuk lingkup proyek tertentu. Kirim lokasi, foto area, ukuran bukaan, dan sistem pagar yang diinginkan agar lingkup fabrikasi serta instalasi dapat dihitung sejak awal.' },
       { question: 'Berapa harga pagar laser cutting per meter?', answer: 'Harga dipengaruhi material, ketebalan, kepadatan motif, rangka, finishing, sistem bukaan, dan kondisi pemasangan. Estimasi yang layak membutuhkan ukuran dan referensi desain, bukan luas saja.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi pagar laser cutting custom. Saya akan kirim foto lokasi, ukuran, dan referensi motifnya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan pagar laser cutting custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '02',
@@ -68,7 +68,7 @@ const PRODUCTS = [
       { question: 'Bisa dibuat berdasarkan gambar kerja arsitek?', answer: 'Bisa. File akan diperiksa dari sisi skala, ketebalan, garis potong, modul, dan detail sambungan sebelum masuk produksi.' },
       { question: 'Apakah tersedia pemasangan?', answer: 'Ketersediaan pemasangan mengikuti lokasi dan lingkup pekerjaan. Sertakan foto area dan gambar ukuran agar kebutuhan survey serta instalasi dapat dinilai.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi railing balkon laser cutting. Saya akan kirim gambar area dan ukuran awalnya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan railing balkon laser cutting custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '03',
@@ -101,7 +101,7 @@ const PRODUCTS = [
       { question: 'Apakah motif kecil selalu bisa dipotong?', answer: 'Belum tentu. Detail minimum bergantung pada material, ketebalan, dan proses. Desain akan ditinjau agar tidak rapuh atau kehilangan bentuk setelah dipotong.' },
       { question: 'Bisa mulai dari foto referensi?', answer: 'Bisa. Sertakan foto ruang, ukuran bidang, dan tingkat privasi yang diinginkan agar arah motif serta material lebih cepat ditentukan.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi partisi ruangan custom. Saya akan kirim foto ruang, ukuran, dan referensi desain.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan partisi ruangan laser cutting custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '04',
@@ -134,7 +134,7 @@ const PRODUCTS = [
       { question: 'Apakah bisa tanpa lampu?', answer: 'Bisa. Stainless hairline, mirror, atau acrylic solid tetap efektif untuk area dengan pencahayaan ruang yang memadai.' },
       { question: 'Apakah menangani pemasangan fasad?', answer: 'Untuk lokasi tertentu, lingkup pemasangan dapat disertakan setelah kondisi dinding, akses, titik listrik, dan ketinggian diperiksa.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi huruf timbul atau signage custom. Saya akan kirim logo, ukuran, dan foto lokasi.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan huruf timbul dan signage custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '05',
@@ -167,7 +167,7 @@ const PRODUCTS = [
       { question: 'Apakah bisa ditambahkan pencahayaan?', answer: 'Bisa. Backlight atau pencahayaan tidak langsung dapat direncanakan bersama jarak panel, rongga kabel, dan akses perawatan.' },
       { question: 'Apakah bisa dikerjakan per modul?', answer: 'Bisa. Sistem modular sering lebih aman untuk transportasi dan pemasangan, terutama pada bidang tinggi atau akses ruang yang terbatas.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi mihrab atau panel islami custom. Saya akan kirim ukuran dinding dan referensinya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan mihrab dan panel islami laser cutting custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '06',
@@ -200,7 +200,7 @@ const PRODUCTS = [
       { question: 'Material mana yang paling ringan?', answer: 'ACP dan beberapa jenis panel berbasis plywood relatif ringan, tetapi pilihan akhir tetap mengikuti bentang, pola, finishing, serta standar area pemasangan.' },
       { question: 'Bagaimana akses untuk perawatan AC atau lampu?', answer: 'Modul dapat dirancang removable atau menyisakan access panel pada titik utilitas agar maintenance tidak merusak keseluruhan instalasi.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi plafon dekoratif custom. Saya akan kirim denah, ukuran area, dan referensinya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan plafon dekoratif laser cutting custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '07',
@@ -233,7 +233,7 @@ const PRODUCTS = [
       { question: 'Material apa yang paling tahan outdoor?', answer: 'Aluminium dan galvanis dengan finishing tepat umum digunakan. Pemilihan mempertimbangkan lingkungan, beban, target umur pakai, dan kemampuan perawatan.' },
       { question: 'Bisa mengikuti gambar kerja arsitek?', answer: 'Bisa. Tim akan meninjau file pola, pembagian modul, toleransi sambungan, penomoran panel, dan kebutuhan produksi sebelum pengerjaan.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi panel fasad atau secondary skin. Saya akan kirim elevasi dan ukuran bidangnya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan panel fasad dan secondary skin laser cutting. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '08',
@@ -266,7 +266,7 @@ const PRODUCTS = [
       { question: 'Apakah acrylic bisa di-engraving logo?', answer: 'Bisa. Logo, nomor, atau pola dapat di-engraving dan dikombinasikan dengan printing sesuai kebutuhan visual.' },
       { question: 'File apa yang perlu disiapkan?', answer: 'Ukuran produk yang akan ditampilkan, referensi bentuk, logo vector bila ada, jumlah, dan cara penggunaan akan mempercepat estimasi.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi display acrylic custom. Saya akan kirim ukuran produk, jumlah, dan referensinya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan display acrylic custom. Boleh dibantu info dan konsultasinya?'
   },
   {
     number: '09',
@@ -299,7 +299,7 @@ const PRODUCTS = [
       { question: 'Bisa dibuat satu sistem untuk satu gedung?', answer: 'Bisa. Ukuran, tipografi, warna, material, ikon, dan mounting dapat distandarkan lalu diterapkan ke berbagai tipe penanda.' },
       { question: 'Apakah bisa menambahkan QR code?', answer: 'Bisa bila ukuran, kontras, permukaan, dan jarak pindai mendukung. File QR final perlu diuji sebelum produksi massal.' }
     ],
-    whatsappMessage: 'Halo Raja Cutting Laser, saya ingin konsultasi nameplate atau wayfinding custom. Saya akan kirim daftar ukuran, jumlah, dan datanya.'
+    whatsappMessage: 'Halo Raja Cutting Laser, saya tertarik dengan pembuatan nameplate dan wayfinding custom. Boleh dibantu info dan konsultasinya?'
   }
 ];
 

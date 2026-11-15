@@ -96,6 +96,6 @@ Butuh custom spare part logam dengan kualitas presisi tinggi dan pengiriman cepa
 
 **Konsultasikan kebutuhan spare part kamu sekarang:**
 
-👉 **[Hubungi Tim Raja Cutting Laser via WhatsApp](https://wa.me/62xxxxxxxxxx)**
+👉 **[Hubungi Tim Raja Cutting Laser via WhatsApp](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20ingin%20konsultasi%20pembuatan%20custom%20spare%20part%20logam.)**
 
 Kami melayani order custom berbagai industri — otomotif, elektronik, konstruksi, hingga peralatan rumah sakit. Dapatkan estimasi harga dan waktu pengerjaan dalam hitungan jam!

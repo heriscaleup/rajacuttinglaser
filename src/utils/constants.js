@@ -922,22 +922,22 @@ export const FAQ = [
 
 // ===== PESAN WHATSAPP =====
 export const WHATSAPP_MESSAGES = {
-  default: "Halo raja cutting laser, saya ingin konsultasi dong tentang produk atau jasa laser cutting. Bisa dibantu?",
-  productDefault: "Halo raja cutting laser, saya ingin konsultasi dong tentang produk laser cutting custom untuk proyek saya. Bisa dibantu?",
-  cnc: "Halo raja cutting laser, saya ingin konsultasi dong tentang jasa CNC Router untuk material kayu/MDF. Bisa konsultasi?",
-  fiber: "Halo raja cutting laser, saya ingin konsultasi dong tentang laser fiber untuk cutting metal. Bisa diskusi project saya?",
-  co2: "Halo raja cutting laser, saya ingin konsultasi dong tentang laser CO2 untuk cutting acrylic/kayu. Bisa konsultasi?",
-  engraving: "Halo raja cutting laser, saya ingin konsultasi dong tentang jasa galvo engraving untuk marking produk. Bisa bantuan?",
-  pagar: "Halo raja cutting laser, saya ingin konsultasi dong tentang pembuatan pagar laser cutting custom. Bisa dibantu?",
-  railing: "Halo raja cutting laser, saya ingin konsultasi dong tentang railing balkon laser cutting custom. Bisa dibantu?",
-  partisi: "Halo raja cutting laser, saya ingin konsultasi dong tentang partisi ruangan laser cutting custom. Bisa dibantu?",
-  hurufTimbul: "Halo raja cutting laser, saya ingin konsultasi dong tentang huruf timbul custom untuk signage. Bisa dibantu?",
-  mihrab: "Halo raja cutting laser, saya ingin konsultasi dong tentang pembuatan mihrab laser cutting. Bisa dibantu?",
-  plafon: "Halo raja cutting laser, saya ingin konsultasi dong tentang plafon dekoratif laser cutting. Bisa dibantu?",
-  quote: "Halo raja cutting laser, saya ingin konsultasi dong untuk request quote untuk project laser cutting. Bisa dibantu?",
-  material: "Halo raja cutting laser, saya ingin konsultasi dong tentang material yang bisa di-cutting. Bisa info?",
-  portfolio: "Halo raja cutting laser, saya ingin konsultasi dong tentang portfolio Anda. Bisa diskusi project serupa?",
-  urgent: "Halo raja cutting laser, saya ingin konsultasi dong tentang project urgent laser cutting. Bisa dibantu segera?"
+  default: "Halo Raja Cutting Laser, saya ingin konsultasi mengenai produk dan jasa laser cutting. Boleh dibantu?",
+  productDefault: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan produk laser cutting custom untuk proyek saya. Boleh dibantu info dan konsultasinya?",
+  cnc: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa CNC Router untuk material kayu/MDF. Boleh dibantu konsultasinya?",
+  fiber: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa laser fiber untuk cutting metal. Boleh dibantu diskusi proyek saya?",
+  co2: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa laser CO2 untuk cutting acrylic/non-metal. Boleh dibantu konsultasinya?",
+  engraving: "Halo Raja Cutting Laser, saya tertarik dengan layanan jasa galvo engraving untuk marking produk. Boleh dibantu info dan konsultasinya?",
+  pagar: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan pagar laser cutting custom. Boleh dibantu info dan konsultasinya?",
+  railing: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan railing balkon laser cutting custom. Boleh dibantu info dan konsultasinya?",
+  partisi: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan partisi ruangan laser cutting custom. Boleh dibantu info dan konsultasinya?",
+  hurufTimbul: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan huruf timbul dan signage custom. Boleh dibantu info dan konsultasinya?",
+  mihrab: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan mihrab dan panel islami laser cutting custom. Boleh dibantu info dan konsultasinya?",
+  plafon: "Halo Raja Cutting Laser, saya tertarik dengan pembuatan plafon dekoratif laser cutting custom. Boleh dibantu info dan konsultasinya?",
+  quote: "Halo Raja Cutting Laser, saya ingin tanya estimasi harga dan konsultasi untuk proyek laser cutting. Boleh dibantu?",
+  material: "Halo Raja Cutting Laser, saya ingin tanya info pilihan material yang tersedia untuk laser cutting. Boleh dibantu?",
+  portfolio: "Halo Raja Cutting Laser, saya tertarik dengan hasil proyek di portfolio Anda dan ingin diskusi proyek serupa. Boleh dibantu?",
+  urgent: "Halo Raja Cutting Laser, saya ada kebutuhan proyek laser cutting yang cukup mendesak. Boleh dibantu cek ketersediaan jadwalnya?"
 };
 
 // ===== DATA BLOG POSTS =====

@@ -96,6 +96,6 @@ Raja Cutting Laser hadir sebagai mitra terpercaya untuk kebutuhan fiber laser cu
 
 Kami telah melayani klien dari industri otomotif, manufaktur, dan konstruksi di seluruh Indonesia.
 
-**[Hubungi Kami via WhatsApp untuk Konsultasi & Quotation →](https://wa.me/)**
+**[Hubungi Kami via WhatsApp untuk Konsultasi & Quotation →](https://wa.me/6285165693179?text=Halo%20Raja%20Cutting%20Laser%2C%20saya%20ingin%20konsultasi%20laser%20cutting%20aluminium.)**
 
 Tim engineering kami siap diskusi teknis dan memberikan rekomendasi terbaik untuk proyek kamu.
